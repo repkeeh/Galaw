@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".actLogin">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="800dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="64dp"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="80dp"
+                    />
+                <ImageView
+                    android:layout_width="122dp"
+                    android:layout_height="122dp"
+                    android:src="@drawable/galawlogo"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    />
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:text="galaw Apps"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    />
+                <EditText
+                    android:background="@drawable/etboxstroke"
+                    android:id="@+id/username"
+                    android:text="Username"
+                    android:layout_width="307dp"
+                    android:layout_height="46dp"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:layout_marginTop="80dp"
+                    />
+
+                <EditText
+                    android:background="@drawable/etboxstroke"
+                    android:id="@+id/password"
+                    android:text="Password"
+                    android:layout_width="307dp"
+                    android:layout_height="46dp"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:layout_marginTop="20dp"
+                    />
+
+                <Button
+                    android:background="@drawable/custombutton"
+                    android:id="@+id/loginButton"
+                    android:layout_width="307dp"
+                    android:layout_height="40dp"
+                    android:text="Log In"
+                    android:textColor="#ffffff"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.532"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="385dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+
+                    >
+                    <TextView
+                        android:layout_width="178dp"
+                        android:layout_height="14dp"
+                        android:text="Forgot your password?"
+                        android:layout_gravity="center"
+                        android:textSize="12dp"
+
+                        />
+                    <TextView
+                        android:id="@+id/forgotPass"
+                        android:layout_width="178dp"
+                        android:layout_height="14dp"
+                        android:text="Click Here"
+                        android:textSize="12dp"
+                        android:textColor="#56E0B9"
+                        />
+
+                </LinearLayout>
+
+                <Button
+                    android:background="@drawable/buttonstroke"
+                    android:layout_width="307dp"
+                    android:layout_height="39dp"
+                    android:id="@+id/buttonstroke"
+                    android:layout_gravity="center"
+                    android:text="log in with google"
+                    android:layout_marginTop="20dp"
+                    />
+                <TextView
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:text="OR"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp" >
+                    <TextView
+                        android:layout_width="178dp"
+                        android:layout_height="14dp"
+                        android:text="Don't have an account?"
+                        android:layout_gravity="center"
+                        android:textSize="12dp"
+
+                        />
+                    <TextView
+                        android:id="@+id/signup"
+                        android:layout_width="178dp"
+                        android:layout_height="14dp"
+                        android:text="Sign up here"
+                        android:textSize="12dp"
+                        android:textColor="#56E0B9"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
