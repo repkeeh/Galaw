@@ -79,6 +79,7 @@
             android:textSize="14dp"
             />
         <Button
+            android:id="@+id/save"
             android:layout_width="110dp"
             android:layout_height="36dp"
             android:background="@drawable/buttonstroke"

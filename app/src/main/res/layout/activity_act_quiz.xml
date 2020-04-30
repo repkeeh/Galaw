@@ -4,54 +4,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".actQuiz"
     android:background="@drawable/backgroundhome"
     >
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <ImageView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="210dp"
-            android:layout_marginTop="30dp"
-            />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="310dp"
-            android:layout_height="90dp"
-            android:layout_gravity="center"
-            />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="700dp">
 
-        <Button
-            android:layout_width="370dp"
-            android:layout_height="55dp"
-            android:background="@drawable/buttonstroke"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            />
-        <Button
-            android:layout_width="370dp"
-            android:layout_height="55dp"
-            android:background="@drawable/buttonstroke"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            />
-        <Button
-            android:layout_width="370dp"
-            android:layout_height="55dp"
-            android:background="@drawable/buttonstroke"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            />
-        <Button
-            android:layout_width="370dp"
-            android:layout_height="55dp"
-            android:background="@drawable/buttonstroke"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            />
-    </LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:layout_marginTop="30dp"
+                    />
+
+                <TextView
+                    android:layout_width="310dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:background="@drawable/whitebtn"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/jwbA"
+                    />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:background="@drawable/whitebtn"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/jwbB"
+                    />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:background="@drawable/whitebtn"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/jwbC"
+                    />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:background="@drawable/whitebtn"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/jwbD"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

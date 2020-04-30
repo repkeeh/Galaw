@@ -13,11 +13,11 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="3"
+        android:weightSum="2"
         >
 
         <Button
-
+            android:id="@+id/post"
             android:background="@drawable/white"
             android:layout_weight="1"
             android:layout_width="match_parent"
@@ -25,19 +25,20 @@
             android:text="Posting"
             />
         <Button
+            android:id="@+id/quotes"
             android:background="@drawable/white"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="quotes"
             />
-        <Button
-            android:background="@drawable/white"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="friends"
-            />
+<!--        <Button-->
+<!--            android:background="@drawable/white"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="friends"-->
+<!--            />-->
     </LinearLayout>
 
     <LinearLayout
