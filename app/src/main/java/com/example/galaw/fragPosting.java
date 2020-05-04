@@ -61,4 +61,7 @@ public class fragPosting extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_frag_posting, container, false);
     }
+
+    public interface OnFragmentInteractionListener {
+    }
 }
