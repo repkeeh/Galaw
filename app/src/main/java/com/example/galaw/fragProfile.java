@@ -1,5 +1,6 @@
 package com.example.galaw;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -22,7 +23,7 @@ import android.widget.Button;
  */
 
 
-public class fragProfile extends Fragment implements fragPosting.OnFragmentInteractionListener, fragQuotes.OnfragmentInteractionListener {
+public class fragProfile extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -31,7 +32,8 @@ public class fragProfile extends Fragment implements fragPosting.OnFragmentInter
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    Button postButton;
+    Button quotesButton;
 
 
     public fragProfile() {
@@ -73,64 +75,30 @@ public class fragProfile extends Fragment implements fragPosting.OnFragmentInter
     }
 
 
-    Button[] navigationButton = new Button[2];
+
     private int indexNav;
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        indexNav = 0;
-        navigationButton[0] = getActivity().findViewById(R.id.post);
-        navigationButton[1] = getActivity().findViewById(R.id.quotes);
+         postButton = view.findViewById(R.id.postButton);
+        quotesButton = view.findViewById(R.id.quotesButton);
 
-        Fragment posting = new fragPosting();
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.replace(R.id.frameLayout, posting, posting.getClass().getSimpleName());
-        ft.commit();
-
-        navigationButton[0].setOnClickListener(new View.OnClickListener() {
+        postButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Fragment posting = new fragPosting();
-                FragmentTransaction ft = getChildFragmentManager().beginTransaction();
-                ft.replace(R.id.frameLayout, posting, posting.getClass().getSimpleName());
-                ft.commit();
-
-                navigationButton[indexNav].setTextColor((Color.parseColor("#000000")));
-                navigationButton[indexNav].setBackgroundColor((Color.parseColor("#FFFFFF")));
-
-                indexNav = 0;
-
-                navigationButton[indexNav].setTextColor((Color.parseColor("#ffffff")));
-                navigationButton[indexNav].setBackgroundColor((Color.parseColor("#7B5CFF")));
-
+                Intent intent = new Intent(getActivity(), fragPosting.class);
+                startActivity(intent);
             }
         });
 
-        navigationButton[1].setOnClickListener(new View.OnClickListener() {
+        quotesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Fragment quotes = new fragQuotes();
-                FragmentTransaction ft = getChildFragmentManager().beginTransaction();
-                ft.replace(R.id.frameLayout, quotes, quotes.getClass().getSimpleName());
-                ft.commit();
-
-                navigationButton[indexNav].setTextColor((Color.parseColor("#000000")));
-                navigationButton[indexNav].setBackgroundColor((Color.parseColor("#FFFFFF")));
-
-                indexNav = 1;
-
-                navigationButton[indexNav].setTextColor((Color.parseColor("#ffffff")));
-                navigationButton[indexNav].setBackgroundColor((Color.parseColor("#7B5CFF")));
+                Intent intent = new Intent(getActivity(), fragQuotes.class);
+                startActivity(intent);
             }
         });
 
-
     }
 
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
-    }
 }

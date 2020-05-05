@@ -10,41 +10,33 @@
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
+
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         >
 
         <Button
-            android:id="@+id/post"
-            android:background="@drawable/white"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
+            android:id="@+id/postButton"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Posting"
+            android:background="@drawable/postbt"
+            android:text="Post"
+            android:textColor="#ffffff"
             />
-        <Button
-            android:id="@+id/quotes"
-            android:background="@drawable/white"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="quotes"
-            />
-<!--        <Button-->
-<!--            android:background="@drawable/white"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="friends"-->
-<!--            />-->
-    </LinearLayout>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/quotesButton"
+            android:layout_marginLeft="10dp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/quotesbt"
+            android:text="quotes"
+            android:textColor="#ffffff"
+            />
+
     </LinearLayout>
 
     <FrameLayout
