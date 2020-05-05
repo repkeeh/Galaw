@@ -114,17 +114,10 @@
                         android:id="@+id/buttonSignup"
                         android:layout_width="178dp"
                         android:layout_height="14dp"
-<<<<<<< Updated upstream
-                        android:text="Click Here"
-                        android:textSize="12dp"
-                        android:textColor="#56E0B9"
+
+
                         />
-=======
-                        android:background="@drawable/buttonstroke"
-                        android:text="Create Account"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="10dp" />
->>>>>>> Stashed changes
+
 
                 </LinearLayout>
 
