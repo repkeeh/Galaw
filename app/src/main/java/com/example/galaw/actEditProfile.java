@@ -93,6 +93,7 @@ public class actEditProfile extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // close
+                        //test
 
                     }
                 });
