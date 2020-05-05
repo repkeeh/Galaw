@@ -81,24 +81,25 @@ public class fragProfile extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
          postButton = view.findViewById(R.id.postButton);
-        quotesButton = view.findViewById(R.id.quotesButton);
+         quotesButton = view.findViewById(R.id.quotesButton);
 
-        postButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), fragPosting.class);
-                startActivity(intent);
-            }
-        });
+         postButton.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 FragmentTransaction ft = getFragmentManager().beginTransaction();
+                 ft.replace(R.id.frameLayout, new fragPosting());
+                 ft.commit();
+             }
+         });
 
-        quotesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), fragQuotes.class);
-                startActivity(intent);
-            }
-        });
-
+         quotesButton.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 FragmentTransaction ft = getFragmentManager().beginTransaction();
+                 ft.replace(R.id.frameLayout, new fragQuotes());
+                 ft.commit();
+             }
+         });
     }
 
 }
