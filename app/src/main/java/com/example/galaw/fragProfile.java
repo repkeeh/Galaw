@@ -82,12 +82,18 @@ public class fragProfile extends Fragment implements fragPosting.OnFragmentInter
         navigationButton[0] = getActivity().findViewById(R.id.post);
         navigationButton[1] = getActivity().findViewById(R.id.quotes);
 
+        Fragment posting = new fragPosting();
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.replace(R.id.frameLayout, posting, posting.getClass().getSimpleName());
+        ft.commit();
+
         navigationButton[0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                Fragment posting = new fragPosting();
                 FragmentTransaction ft = getChildFragmentManager().beginTransaction();
-                ft.replace(R.id.frameLayout, new fragPosting());
+                ft.replace(R.id.frameLayout, posting, posting.getClass().getSimpleName());
                 ft.commit();
 
                 navigationButton[indexNav].setTextColor((Color.parseColor("#000000")));
@@ -97,6 +103,7 @@ public class fragProfile extends Fragment implements fragPosting.OnFragmentInter
 
                 navigationButton[indexNav].setTextColor((Color.parseColor("#ffffff")));
                 navigationButton[indexNav].setBackgroundColor((Color.parseColor("#7B5CFF")));
+
             }
         });
 
@@ -104,8 +111,9 @@ public class fragProfile extends Fragment implements fragPosting.OnFragmentInter
             @Override
             public void onClick(View v) {
 
+                Fragment quotes = new fragQuotes();
                 FragmentTransaction ft = getChildFragmentManager().beginTransaction();
-                ft.replace(R.id.frameLayout, new fragQuotes());
+                ft.replace(R.id.frameLayout, quotes, quotes.getClass().getSimpleName());
                 ft.commit();
 
                 navigationButton[indexNav].setTextColor((Color.parseColor("#000000")));
@@ -118,9 +126,7 @@ public class fragProfile extends Fragment implements fragPosting.OnFragmentInter
             }
         });
 
-            FragmentTransaction ft = getChildFragmentManager().beginTransaction();
-        ft.replace(R.id.frameLayout, new fragPosting());
-        ft.commit();
+
     }
 
     @Override
