@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,7 +26,9 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import javax.annotation.Nullable;
 
 public class actEditProfile extends AppCompatActivity {
-    TextView name,email,phone;
+    public static final String TAG = "Tag";
+    TextView name,email,phone, verifyMsg;
+    Button resendCode;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userID;
@@ -44,8 +47,39 @@ public class actEditProfile extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
+        resendCode = findViewById(R.id.resendCode);
+        verifyMsg = findViewById(R.id.verifyMsg);
+
+
         userID = fAuth.getCurrentUser().getUid();
-        user = fAuth.getCurrentUser();
+        final FirebaseUser user = fAuth.getCurrentUser();
+
+        if (!user.isEmailVerified()) {
+            resendCode.setVisibility(View.VISIBLE);
+            verifyMsg.setVisibility(View.VISIBLE);
+
+            resendCode.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(final View v) {
+                    user.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+
+                            Toast.makeText(v.getContext(), "Verification Email Has Been Sent", Toast.LENGTH_SHORT).show();
+
+
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.d(TAG, "onFailure: Email not sent " + e.getMessage());
+
+                        }
+                    });
+
+                }
+            });
+        }
 
         DocumentReference documentReference = fStore.collection("Users").document(userID);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
@@ -93,7 +127,6 @@ public class actEditProfile extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // close
-                        //test
 
                     }
                 });

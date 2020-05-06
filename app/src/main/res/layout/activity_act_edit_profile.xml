@@ -80,6 +80,28 @@
             android:layout_marginTop="30dp"
             android:text="Change password"
             android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/verifyMsg"
+            android:layout_width="136dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:text=" Email Not Verified !"
+            android:textColor="#F40E0E"
+            android:textSize="14dp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/resendCode"
+            android:layout_width="149dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/buttonstroke"
+            android:text="VERIFY NOW"
+            android:visibility="gone" />
+
         <Button
             android:layout_width="110dp"
             android:layout_height="36dp"
@@ -88,14 +110,15 @@
             android:layout_marginTop="30dp"
             android:layout_gravity="center"
             />
+
         <TextView
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
             android:text="Log out"
-            android:layout_marginTop="30dp"
-            android:textSize="14dp"
-            />
+            android:textSize="14dp" />
+
     </LinearLayout>
 
 
