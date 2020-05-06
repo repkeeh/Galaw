@@ -9,14 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".actDiary"></activity>
         <activity android:name=".actQuotes2" />
         <activity android:name=".actQuizReport" />
         <activity android:name=".actQuiz" />
         <activity android:name=".actEditProfile" />
         <activity android:name=".actLogin" />
         <activity android:name=".actHome" />
-
         <activity android:name=".actSignUp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
