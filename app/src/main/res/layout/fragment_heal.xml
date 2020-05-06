@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".heal"
     android:background="@drawable/backgroundgrey"
     >
 
@@ -19,23 +18,34 @@
         android:layout_height="wrap_content">
         
         <Button
+            android:id="@+id/anxiety"
             android:background="@drawable/buttonstroke"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:layout_width="370dp"
-            android:layout_height="60dp"/>
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="anxiety"
+            />
 
         <Button
+            android:id="@+id/stress"
             android:background="@drawable/buttonstroke"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:layout_width="370dp"
-            android:layout_height="60dp"/>
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="stress"
+            />
         <Button
-            android:background="@drawable/buttonstroke"
+            android:id="@+id/depresi"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:layout_width="370dp"
-            android:layout_height="60dp"/>
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="depresi"
+            />
     </LinearLayout>
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.example.galaw;
 
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -60,5 +61,9 @@ public class fragQuotes extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_frag_quotes, container, false);
+    }
+
+    public interface OnfragmentInteractionListener {
+        void onFragmentInteraction(Uri uri);
     }
 }

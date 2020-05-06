@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +25,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import javax.annotation.Nullable;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 
 public class actEditProfile extends AppCompatActivity {
     public static final String TAG = "Tag";
@@ -35,10 +41,13 @@ public class actEditProfile extends AppCompatActivity {
     TextView resetPass;
     FirebaseUser user;
 
+    Button save;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_edit_profile);
+
         name = findViewById(R.id.nameProfile);
         email = findViewById(R.id.emailProfile);
         phone = findViewById(R.id.phoneProfile);
@@ -135,7 +144,23 @@ public class actEditProfile extends AppCompatActivity {
             }
         });
 
+        save = findViewById(R.id.save);
+
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent( actEditProfile.this, fragProfile.class);
+                startActivity(intent);
+
+
+            }
+        });
+
             }
         }
+
+
+
 
 

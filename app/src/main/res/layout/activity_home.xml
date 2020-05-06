@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home"
     android:background="@drawable/backgroundgrey"
     >
 
@@ -41,24 +40,31 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Home"
+            android:background="@drawable/white"
             />
         <Button
+            android:id="@+id/publihome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Public"
+            android:background="@drawable/white"
             />
         <Button
+            android:id="@+id/healhome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Heal"
+            android:background="@drawable/white"
             />
         <Button
+            android:id="@+id/profilehome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Profile"
+            android:background="@drawable/white"
             />
 
     </LinearLayout>
