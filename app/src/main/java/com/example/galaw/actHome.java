@@ -13,7 +13,7 @@ import android.widget.ImageButton;
 public class actHome extends AppCompatActivity  {
 
 
-    ImageButton setting;
+    Button setting;
     Button[] navigationButton = new Button[4];
     int indexNav;
     @Override
