@@ -1,6 +1,7 @@
 package com.example.galaw;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -112,10 +113,6 @@ public class actSignUp extends AppCompatActivity {
                                 }
                             });
 
-
-
-
-
                             Toast.makeText(actSignUp.this, "User Created", Toast.LENGTH_SHORT).show();
                             userID = fAuth.getCurrentUser().getUid();
                             DocumentReference documentReference = fStore.collection("Users").document(userID);
@@ -139,6 +136,7 @@ public class actSignUp extends AppCompatActivity {
 
                         }else{
                             Toast.makeText(actSignUp.this, "Error !" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.GONE);
 
                         }
                     }
