@@ -24,30 +24,34 @@
 
             />
         <de.hdodenhof.circleimageview.CircleImageView
-            android:src="@drawable/galawlogo"
+            android:id="@+id/profileImage"
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@drawable/galawlogo"
+            android:layout_marginTop="25dp"
             android:layout_centerInParent="true"
             />
         <Button
-            android:id="@+id/editphoto"
+            android:id="@+id/changeProfile"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:background="@drawable/editppicon"
             android:layout_marginLeft="250dp"
             android:layout_marginTop="180dp"
-
             />
+
 
         <EditText
             android:layout_width="200dp"
             android:layout_height="40dp"
             android:layout_centerInParent="true"
             android:layout_marginTop="200dp"
-            android:id="@+id/name"
+            android:id="@+id/nameProfile"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="10dp"
-            />
+        />
+
         <Button
             android:id="@+id/editname"
             android:background="@drawable/editnameicon"
@@ -57,7 +61,6 @@
             android:layout_marginTop="260dp"
             />
     </RelativeLayout>
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="350dp"
@@ -69,36 +72,60 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Username"
+            android:text="Email"
             android:textSize="15dp"
-            />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="22dp"
-            android:textSize="15dp"
-            android:layout_marginTop="10dp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Birthday"
-            android:textSize="15dp"
-            />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="22dp"
-            android:textSize="15dp"
-            android:layout_marginTop="10dp"
             />
 
+        <EditText
+            android:id="@+id/emailProfile"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:layout_marginTop="10dp"
+            android:textSize="15dp" />
         <TextView
-            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone Number"
+            android:textSize="15dp"
+            />
+
+        <EditText
+            android:id="@+id/phoneProfile"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:layout_marginTop="10dp"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/resetPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Change password"
+            android:layout_gravity="center"
             android:layout_marginTop="30dp"
+            android:text="Change password"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/verifyMsg"
+            android:layout_width="136dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:text=" Email Not Verified !"
+            android:textColor="#F40E0E"
             android:textSize="14dp"
-            />
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/resendCode"
+            android:layout_width="149dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/buttonstroke"
+            android:text="VERIFY NOW"
+            android:visibility="gone" />
+
         <Button
             android:id="@+id/save"
             android:layout_width="110dp"
@@ -108,14 +135,15 @@
             android:layout_marginTop="30dp"
             android:layout_gravity="center"
             />
+
         <TextView
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
             android:text="Log out"
-            android:layout_marginTop="30dp"
-            android:textSize="14dp"
-            />
+            android:textSize="14dp" />
+
     </LinearLayout>
 
 

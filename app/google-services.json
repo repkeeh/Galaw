@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "227320776788",
+    "firebase_url": "https://galaw-28090.firebaseio.com",
+    "project_id": "galaw-28090",
+    "storage_bucket": "galaw-28090.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:227320776788:android:1f9e704aea2149ac9c45c1",
+        "android_client_info": {
+          "package_name": "com.example.galaw"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "227320776788-s2k2co9mnqp875jc20rhkgvcok2hbnlv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.galaw",
+            "certificate_hash": "3f6b732aecaf60cb7a268ad25ac46fe3e54b60d0"
+          }
+        },
+        {
+          "client_id": "227320776788-2vdqkepm02bvfq4oa9csosvot6a3h5dg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.galaw",
+            "certificate_hash": "bced0becba821e4ef6203f8ada2c658dd8d4e653"
+          }
+        },
+        {
+          "client_id": "227320776788-ko3jaibgaqvib87d2qsu7sqcobdvj94s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkoDOkEscKNI_N9F_LxVdtjRcZ-Zi5Vnk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "227320776788-ko3jaibgaqvib87d2qsu7sqcobdvj94s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
