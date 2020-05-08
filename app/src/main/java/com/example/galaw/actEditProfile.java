@@ -42,11 +42,10 @@ import android.widget.Button;
 public class actEditProfile extends AppCompatActivity {
     public static final String TAG = "Tag";
     TextView name,email,phone, verifyMsg;
-    Button resendCode, changeProfileImage;
+    Button resendCode, changeProfileImage, resetPass;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userID;
-    TextView resetPass;
     FirebaseUser user;
     ImageView profileImage;
     StorageReference storageReference;

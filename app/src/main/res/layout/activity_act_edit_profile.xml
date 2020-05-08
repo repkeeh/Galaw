@@ -96,14 +96,17 @@
             android:layout_marginTop="10dp"
             android:textSize="15dp" />
 
-        <TextView
+        <Button
             android:id="@+id/resetPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="110dp"
+            android:layout_height="36dp"
+            android:background="@drawable/backgroundgrey"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:text="Change password"
-            android:textSize="14dp" />
+            android:textSize="14dp"
+            android:textColor="#C062F5"
+            />
 
         <TextView
             android:id="@+id/verifyMsg"
@@ -137,13 +140,16 @@
             android:layout_gravity="center"
             />
 
-        <TextView
+        <Button
+            android:id="@+id/logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="30dp"
             android:text="Log out"
-            android:textSize="14dp" />
+            android:textColor="#C062F5"
+            android:background="@drawable/backgroundgrey"
+            />
 
     </LinearLayout>
 
