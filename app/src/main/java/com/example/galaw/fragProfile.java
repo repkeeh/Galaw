@@ -32,8 +32,7 @@ public class fragProfile extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    Button postButton;
-    Button quotesButton;
+    Button diaryButton;
 
 
     public fragProfile() {
@@ -80,24 +79,14 @@ public class fragProfile extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-         postButton = view.findViewById(R.id.postButton);
-         quotesButton = view.findViewById(R.id.quotesButton);
 
-         postButton.setOnClickListener(new View.OnClickListener() {
+         diaryButton = view.findViewById(R.id.diaryButton);
+
+         diaryButton.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                 ft.replace(R.id.frameLayout, new fragPosting());
-                 ft.commit();
-             }
-         });
-
-         quotesButton.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                 ft.replace(R.id.frameLayout, new fragQuotes());
-                 ft.commit();
+                 Intent intent = new Intent(getActivity(), actDiary.class);
+                 startActivity(intent);
              }
          });
     }
