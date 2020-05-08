@@ -52,7 +52,7 @@ public class actEditProfile extends AppCompatActivity {
     StorageReference storageReference;
 
     Button save;
-
+    Button backProfile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -177,6 +177,8 @@ public class actEditProfile extends AppCompatActivity {
          });
 
         save = findViewById(R.id.save);
+        backProfile =findViewById(R.id.backProfile);
+
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -188,6 +190,7 @@ public class actEditProfile extends AppCompatActivity {
 
             }
         });
+
 
             }
 
@@ -223,6 +226,18 @@ public class actEditProfile extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(actEditProfile.this, "Failed", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        backProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent( actEditProfile.this, fragProfile.class);
+                startActivity(intent);
+
+
             }
         });
 
