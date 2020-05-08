@@ -24,7 +24,7 @@ public class actEditProfile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent( actEditProfile.this, fragProfile.class);
+                Intent intent = new Intent( actEditProfile.this, actHome.class);
                 startActivity(intent);
 
 
@@ -35,7 +35,7 @@ public class actEditProfile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent( actEditProfile.this, fragProfile.class);
+                Intent intent = new Intent( actEditProfile.this, actHome.class);
                 startActivity(intent);
 
 

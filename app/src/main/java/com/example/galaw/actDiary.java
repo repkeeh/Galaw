@@ -20,7 +20,7 @@ public class actDiary extends AppCompatActivity {
         savediary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(actDiary.this, fragProfile.class);
+                Intent intent = new Intent(actDiary.this, actHome.class);
                 startActivity(intent);
             }
         });
