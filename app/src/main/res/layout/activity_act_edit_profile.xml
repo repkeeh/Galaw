@@ -16,12 +16,12 @@
         >
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:src="@drawable/galawlogo"
+            android:id="@+id/profileImage"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
-            />
+            android:src="@drawable/galawlogo" />
 
         <EditText
             android:id="@+id/nameProfile"
@@ -71,6 +71,12 @@
             android:layout_height="22dp"
             android:layout_marginTop="10dp"
             android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/changeProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Change Profile Picture" />
 
         <TextView
             android:id="@+id/resetPassword"
