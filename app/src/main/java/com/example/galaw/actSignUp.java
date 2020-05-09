@@ -148,7 +148,7 @@ public class actSignUp extends AppCompatActivity {
         mloginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext() ,actLogin.class));
+                startActivity(new Intent(getApplicationContext(),actLogin.class));
             }
         });
     }

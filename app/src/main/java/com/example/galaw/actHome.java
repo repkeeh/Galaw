@@ -11,22 +11,34 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
+import javax.annotation.Nullable;
+
 public class actHome extends AppCompatActivity  {
 
 
+    TextView name;
     Button setting;
     ImageView profileImage;
     StorageReference storageReference;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
+    String userID;
+
+
 
     Button[] navigationButton = new Button[4];
     int indexNav;
@@ -40,6 +52,17 @@ public class actHome extends AppCompatActivity  {
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
+
+        userID = fAuth.getCurrentUser().getUid();
+        name = findViewById(R.id.nameProfile);
+
+        DocumentReference documentReference = fStore.collection("Users").document(userID);
+        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                name.setText(documentSnapshot.getString("Name"));
+            }
+        });
 
 
         StorageReference profileRef = storageReference.child("Users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
@@ -149,4 +172,6 @@ public class actHome extends AppCompatActivity  {
         ft.replace(R.id.frameLayout, new fragHome());
         ft.commit();
     }
+
+
 }
