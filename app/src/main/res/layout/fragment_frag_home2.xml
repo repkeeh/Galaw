@@ -3,22 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragHome"
-    android:background="@drawable/backgroundgrey"
-    >
+    android:background="@drawable/backgroundgrey">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="wrap_content"
+        >
+        
+        <com.denzcoskun.imageslider.ImageSlider
+            android:layout_width="370dp"
+            android:layout_height="140dp"
+            app:auto_cycle="true"
+            app:delay="2"
+            app:period="1000"
+            android:layout_marginTop="20dp"
+            android:id="@+id/SliderBanner"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            />
+        
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="170dp"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="180dp"
         android:background="@drawable/backgroundhome"
         >
 
