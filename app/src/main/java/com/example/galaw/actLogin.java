@@ -39,7 +39,6 @@ public class actLogin extends AppCompatActivity {
         memail = findViewById(R.id.email);
         mpassword = findViewById(R.id.password);
         mloginButton = findViewById(R.id.loginButton);
-        signup = findViewById(R.id.signup);
         progressBar = findViewById(R.id.progressBar);
         msignup = findViewById(R.id.buttonSignup);
         forgotTextLink = findViewById(R.id.forgotPassword);
@@ -87,14 +86,6 @@ public class actLogin extends AppCompatActivity {
             }
         });
 
-        signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent2 = new Intent( actLogin.this, actSignUp.class );
-                startActivity(intent2);
-            }
-        });
 
         msignup.setOnClickListener(new View.OnClickListener() {
             @Override
