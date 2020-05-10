@@ -43,7 +43,7 @@ import android.widget.Button;
 public class actEditProfile extends AppCompatActivity {
     public static final String TAG = "Tag";
     TextView name,email,phone, verifyMsg;
-    Button resendCode, changeProfileImage, resetPass;
+    Button resendCode, changeUserData, resetPass;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userID;
@@ -51,7 +51,6 @@ public class actEditProfile extends AppCompatActivity {
     ImageView profileImage;
     StorageReference storageReference;
 
-    Button save;
     Button backProfile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +63,7 @@ public class actEditProfile extends AppCompatActivity {
         resetPass = findViewById(R.id.resetPassword );
 
         profileImage = findViewById(R.id.profileImage);
-        changeProfileImage = findViewById(R.id.changeProfile);
+        changeUserData = findViewById(R.id.editProfile);
 
 
         fAuth = FirebaseAuth.getInstance();
@@ -167,67 +166,20 @@ public class actEditProfile extends AppCompatActivity {
             }
         });
 
-         changeProfileImage.setOnClickListener(new View.OnClickListener() {
+        changeUserData.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
                  // open gallery
-                 Intent openGalleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                 startActivityForResult(openGalleryIntent,1000);
+                 Intent i = new Intent(v.getContext(),actEdit.class);
+                 i.putExtra("fullName",name.getText().toString());
+                 i.putExtra("email", email.getText().toString());
+                 i.putExtra("phone", phone.getText().toString());
+                 startActivity(i);
+
              }
          });
 
-        save = findViewById(R.id.save);
         backProfile =findViewById(R.id.backProfile);
-
-
-        save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent( actEditProfile.this, actHome.class);
-                startActivity(intent);
-
-
-            }
-        });
-
-
-            }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @androidx.annotation.Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 1000){
-            if(resultCode == Activity.RESULT_OK){
-                Uri imageUri = data.getData();
-
-                //profileImage.setImageURI(imageUri);
-
-                uploadImageToFirebase(imageUri);
-
-            }
-        }
-    }
-
-    private void uploadImageToFirebase(Uri imageUri) {
-        //upload image to FirebaseStorage
-        final StorageReference fileRef = storageReference.child("Users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
-        fileRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        Picasso.get().load(uri).into(profileImage);
-                    }
-                });
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(actEditProfile.this, "Failed", Toast.LENGTH_SHORT).show();
-            }
-        });
 
 
         backProfile.setOnClickListener(new View.OnClickListener() {
@@ -241,12 +193,14 @@ public class actEditProfile extends AppCompatActivity {
             }
         });
 
-    }
+            }
+
     public void logout(View view) {
         FirebaseAuth.getInstance().signOut();//logout
         startActivity(new Intent(getApplicationContext(),actLogin.class));
         finish();
     }
+
 }
 
 

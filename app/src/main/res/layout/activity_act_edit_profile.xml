@@ -32,14 +32,7 @@
             android:layout_marginTop="25dp"
             android:layout_centerInParent="true"
             />
-        <Button
-            android:id="@+id/changeProfile"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/editppicon"
-            android:layout_marginLeft="250dp"
-            android:layout_marginTop="180dp"
-            />
+
 
 
         <TextView
@@ -129,16 +122,6 @@
             android:text="VERIFY NOW"
             android:visibility="gone" />
 
-        <Button
-            android:id="@+id/save"
-            android:layout_width="110dp"
-            android:layout_height="36dp"
-            android:background="@drawable/custombutton"
-            android:text="Save"
-            android:textColor="#ffffff"
-            android:layout_marginTop="30dp"
-            android:layout_gravity="center"
-            />
 
         <Button
             android:id="@+id/button"
