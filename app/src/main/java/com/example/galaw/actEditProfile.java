@@ -42,7 +42,7 @@ import android.widget.Button;
 
 public class actEditProfile extends AppCompatActivity {
     public static final String TAG = "Tag";
-    TextView name,email,phone, verifyMsg;
+    TextView name, email, phone, verifyMsg;
     Button resendCode, changeUserData, resetPass;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -52,6 +52,7 @@ public class actEditProfile extends AppCompatActivity {
     StorageReference storageReference;
 
     Button backProfile;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +61,7 @@ public class actEditProfile extends AppCompatActivity {
         name = findViewById(R.id.nameProfile);
         email = findViewById(R.id.emailProfile);
         phone = findViewById(R.id.phoneProfile);
-        resetPass = findViewById(R.id.resetPassword );
+        resetPass = findViewById(R.id.resetPassword);
 
         profileImage = findViewById(R.id.profileImage);
         changeUserData = findViewById(R.id.editProfile);
@@ -70,7 +71,7 @@ public class actEditProfile extends AppCompatActivity {
         fStore = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
 
-        StorageReference profileRef = storageReference.child("Users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
+        StorageReference profileRef = storageReference.child("Users/" + fAuth.getCurrentUser().getUid() + "/profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
@@ -150,7 +151,6 @@ public class actEditProfile extends AppCompatActivity {
                         });
 
 
-
                     }
                 });
 
@@ -167,43 +167,88 @@ public class actEditProfile extends AppCompatActivity {
         });
 
         changeUserData.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 // open gallery
-                 Intent i = new Intent(v.getContext(),actEdit.class);
-                 i.putExtra("fullName",name.getText().toString());
-                 i.putExtra("email", email.getText().toString());
-                 i.putExtra("phone", phone.getText().toString());
-                 startActivity(i);
+            @Override
+            public void onClick(View v) {
+                // open gallery
+                Intent i = new Intent(v.getContext(), actEdit.class);
+                i.putExtra("fullName", name.getText().toString());
+                i.putExtra("email", email.getText().toString());
+                i.putExtra("phone", phone.getText().toString());
+                startActivity(i);
 
-             }
-         });
+            }
+        });
 
-        backProfile =findViewById(R.id.backProfile);
+        backProfile = findViewById(R.id.backProfile);
 
 
         backProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent( actEditProfile.this, actHome.class);
+                Intent intent = new Intent(actEditProfile.this, actHome.class);
                 startActivity(intent);
-
-
             }
         });
 
-            }
+        backProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-    public void logout(View view) {
+                Intent intent = new Intent(actEditProfile.this, actHome.class);
+                startActivity(intent);
+            }
+        });
+
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @androidx.annotation.Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1000) {
+            if (resultCode == Activity.RESULT_OK) {
+                Uri imageUri = data.getData();
+
+                //profileImage.setImageURI(imageUri);
+
+                uploadImageToFirebase(imageUri);
+
+            }
+        }
+    }
+
+    private void uploadImageToFirebase(Uri imageUri) {
+        //upload image to FirebaseStorage
+        final StorageReference fileRef = storageReference.child("Users/" + fAuth.getCurrentUser().getUid() + "/profile.jpg");
+        fileRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        Picasso.get().load(uri).into(profileImage);
+                    }
+                });
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(actEditProfile.this, "Failed", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+    }
+
+    public void logout (View view){
         FirebaseAuth.getInstance().signOut();//logout
-        startActivity(new Intent(getApplicationContext(),actLogin.class));
+        startActivity(new Intent(getApplicationContext(), actLogin.class));
         finish();
     }
 
 }
-
-
 
 
 

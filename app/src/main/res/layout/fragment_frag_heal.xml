@@ -19,33 +19,34 @@
 
         <Button
             android:id="@+id/anxiety"
-            android:background="@drawable/buttonstroke"
+            android:background="@drawable/whitebtn"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:text="anxiety"
+            android:textSize="15dp"
             />
 
         <Button
             android:id="@+id/stress"
-            android:background="@drawable/buttonstroke"
-            android:layout_marginTop="20dp"
+            android:background="@drawable/whitebtn"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:text="stress"
             />
         <Button
             android:id="@+id/depresi"
-            android:background="@drawable/buttonstroke"
-            android:layout_marginTop="20dp"
+            android:background="@drawable/whitebtn"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:text="depresi"
             />
     </LinearLayout>

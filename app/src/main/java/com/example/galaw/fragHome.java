@@ -11,6 +11,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ViewFlipper;
+
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.models.SlideModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -28,6 +35,7 @@ public class fragHome extends Fragment {
     private String mParam1;
     private String mParam2;
     Button banner1;
+    ViewFlipper flipperHome;
 
     public fragHome() {
         // Required empty public constructor
@@ -73,8 +81,14 @@ public class fragHome extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        banner1 = view.findViewById(R.id.banner1);
+        ImageSlider imageSlider = view.findViewById(R.id.SliderBanner);
+        List<SlideModel> slideModels = new ArrayList<>();
+        slideModels.add(new SlideModel(R.drawable.bannerdepresi));
+        slideModels.add(new SlideModel(R.drawable.bannerstress));
+        slideModels.add(new SlideModel(R.drawable.bannercemas));
+        imageSlider.setImageList(slideModels, true);
 
+        banner1 = view.findViewById(R.id.banner1);
         banner1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
