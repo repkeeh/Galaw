@@ -11,13 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".actProfilePrivacy"></activity>
+        <activity android:name=".actStress"></activity>
+        <activity android:name=".actProfilePrivacy" />
         <activity android:name=".actQuotes2" />
         <activity android:name=".actQuizReport" />
         <activity android:name=".actQuiz" />
         <activity android:name=".actEditProfile" />
         <activity android:name=".actLogin" />
-        <activity android:name=".actDiary"/>
+        <activity android:name=".actDiary" />
         <activity
             android:name=".actSignUp"
             android:label="@string/app_name">

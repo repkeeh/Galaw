@@ -92,7 +92,7 @@ public class fragHome extends Fragment {
         banner1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), actQuiz.class);
+                Intent intent = new Intent(getActivity(), actStress.class);
                 startActivity(intent);
             }
         });
