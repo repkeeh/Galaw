@@ -31,6 +31,7 @@
                     android:layout_width="310dp"
                     android:layout_height="90dp"
                     android:layout_gravity="center"
+                    android:id="@+id/dass"
                     />
 
                 <Button
@@ -52,6 +53,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:id="@+id/jwbB"
+
                     />
                 <Button
                     android:layout_width="match_parent"
@@ -62,6 +64,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:id="@+id/jwbC"
+
                     />
                 <Button
                     android:layout_width="match_parent"

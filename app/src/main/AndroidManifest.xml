@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".actStress"></activity>
+        <activity android:name=".actResult"></activity>
+        <activity android:name=".actStress" />
         <activity android:name=".actProfilePrivacy" />
         <activity android:name=".actQuotes2" />
         <activity android:name=".actQuizReport" />
