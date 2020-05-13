@@ -20,7 +20,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 >
-
+                <com.denzcoskun.imageslider.ImageSlider
+                    android:id="@+id/SliderBanner"
+                    android:layout_width="370dp"
+                    android:layout_height="140dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    app:auto_cycle="true"
+                    app:delay="2"
+                    app:period="1000" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -51,16 +60,7 @@
                     android:text="click here"
                     android:textSize="12dp" />
 
-                <com.denzcoskun.imageslider.ImageSlider
-                    android:id="@+id/SliderBanner"
-                    android:layout_width="370dp"
-                    android:layout_height="140dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="20dp"
-                    app:auto_cycle="true"
-                    app:delay="2"
-                    app:period="1000" />
+
             </RelativeLayout>
 
             <RelativeLayout
