@@ -14,13 +14,18 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:layout_width="300dp"
-            android:layout_height="50dp"/>
+            android:layout_marginLeft="20dp"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:background="@drawable/whitebtn"
+            android:layout_marginTop="20dp"
+            />
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
             />
     </LinearLayout>
 

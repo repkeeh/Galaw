@@ -74,21 +74,18 @@ public class fragProfile extends Fragment {
     }
 
 
-
-    private int indexNav;
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
 
-         diaryButton = view.findViewById(R.id.diaryButton);
+        diaryButton = view.findViewById(R.id.diaryButton);
 
-         diaryButton.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 Intent intent = new Intent(getActivity(), actDiary.class);
-                 startActivity(intent);
-             }
-         });
-    }
+        diaryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), actDiary.class);
+                startActivity(intent);
+            }
+        });
 
-}
+    }}
