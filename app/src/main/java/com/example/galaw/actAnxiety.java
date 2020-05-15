@@ -7,14 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class actStress extends AppCompatActivity {
+public class actAnxiety extends AppCompatActivity {
 
     Button stressTest, cancelStress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_act_stress);
+        setContentView(R.layout.activity_act_anxiety);
 
         stressTest = findViewById(R.id.stressTest);
         cancelStress = findViewById(R.id.cancelStress);
@@ -22,8 +22,8 @@ public class actStress extends AppCompatActivity {
         stressTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(actStress.this, actQuiz.class);
-                intent.putExtra("type_Question" , 0);
+                Intent intent = new Intent(actAnxiety.this, actQuiz.class);
+                intent.putExtra("type_Question" , 1);
                 startActivity(intent);
             }
         });
@@ -31,7 +31,7 @@ public class actStress extends AppCompatActivity {
         cancelStress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(actStress.this, actHome.class);
+                Intent intent = new Intent(actAnxiety.this, actHome.class);
 
                 startActivity(intent);
             }
