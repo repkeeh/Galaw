@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragQuotes"
+    android:background="@drawable/backgroundgrey">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textColor="#C062F5"
+            android:text="Test dan hasil nya bersifat pribadi.
+jadi cuma kamu dan pshycologist yang tau"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="250dp"
+            />
+        <Button
+            android:background="@drawable/custombutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Yuk mulai"
+            android:textColor="#fff"
+            android:layout_marginTop="400dp"
+            android:id="@+id/stressTest"
+            />
+        <Button
+            android:background="@drawable/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nanti dulu deh :("
+            android:textColor="#C062F5"
+            android:layout_marginTop="470dp"
+            android:id="@+id/cancelStress"
+            />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+</RelativeLayout>

@@ -19,6 +19,7 @@
             android:layout_width="200dp"
             android:layout_height="33dp"
             android:layout_marginTop="30dp"
+            android:id="@+id/total"
             />
         <ImageView
             android:layout_width="200dp"

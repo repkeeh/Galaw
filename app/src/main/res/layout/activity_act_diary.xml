@@ -40,6 +40,7 @@
             android:layout_height="300dp"
             android:layout_marginTop="80dp"
             android:background="@drawable/white"
+            android:gravity="top"
             />
         <Button
             android:id="@+id/savediary"

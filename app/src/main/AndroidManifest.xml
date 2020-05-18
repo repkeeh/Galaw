@@ -10,16 +10,21 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+
         android:theme="@style/AppTheme" >
         <activity android:name=".actEdit" >
         </activity>
+        <activity android:name=".actDepression"></activity>
+        <activity android:name=".actAnxiety" />
+        <activity android:name=".actResult" />
+        <activity android:name=".actStress" />
         <activity android:name=".actProfilePrivacy" />
         <activity android:name=".actQuotes2" />
         <activity android:name=".actQuizReport" />
         <activity android:name=".actQuiz" />
         <activity android:name=".actEditProfile" />
         <activity android:name=".actLogin" />
-        <activity android:name=".actDiary"/>
+        <activity android:name=".actDiary" />
         <activity
             android:name=".actSignUp"
             android:label="@string/app_name" >
