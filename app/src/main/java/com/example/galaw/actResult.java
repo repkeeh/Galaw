@@ -19,11 +19,10 @@ public class actResult extends AppCompatActivity {
 
         total = findViewById(R.id.total);
 
-
-
         type_Question = getIntent().getIntExtra("total",-1);
         number_Question = 0;
-        total.setText(""+type_Question);
+        total.setText("" + type_Question);
+
 
     }
 }
