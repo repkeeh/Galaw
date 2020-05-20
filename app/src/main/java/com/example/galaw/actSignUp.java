@@ -39,10 +39,7 @@ import java.util.Map;
 public class actSignUp extends AppCompatActivity {
 
     public static final String TAG = "TAG";
-    public static final int GOOGLE_SIGN_IN_CODE = 10005;
-    SignInButton signIn;
-    GoogleSignInOptions gso;
-    GoogleSignInClient signInClient;
+
 
     EditText mpassword;
     EditText memail;
@@ -60,28 +57,6 @@ public class actSignUp extends AppCompatActivity {
         setContentView(R.layout.activity_act_sign_up);
 
         fAuth = FirebaseAuth.getInstance();
-        signIn = findViewById(R.id.signIn);
-
-        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("227320776788-ko3jaibgaqvib87d2qsu7sqcobdvj94s.apps.googleusercontent.com")
-                .requestEmail()
-                .build();
-
-        signInClient = GoogleSignIn.getClient(this,gso);
-
-        GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(this);
-        if(signInAccount != null || fAuth.getCurrentUser() != null){
-            startActivity(new Intent(this,actHome.class));
-        }
-
-        signIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent sign = signInClient.getSignInIntent();
-                startActivityForResult(sign, GOOGLE_SIGN_IN_CODE);
-            }
-        });
-
 
         memail = findViewById(R.id.email);
         mpassword = findViewById(R.id.password);
@@ -188,36 +163,5 @@ public class actSignUp extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),actLogin.class));
             }
         });
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if(requestCode == GOOGLE_SIGN_IN_CODE){
-            Task<GoogleSignInAccount> signInTask = GoogleSignIn.getSignedInAccountFromIntent(data);
-            try {
-                GoogleSignInAccount signInAcc = signInTask.getResult(ApiException.class);
-                AuthCredential authCredential = GoogleAuthProvider.getCredential(signInAcc.getIdToken(),null);
-
-                fAuth.signInWithCredential(authCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        Toast.makeText(getApplicationContext(), "Your Account is Connected to Out Application", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(),actHome.class));
-
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-
-                    }
-                });
-
-
-            } catch (ApiException e) {
-                e.printStackTrace();
-            }
-        }
     }
 }

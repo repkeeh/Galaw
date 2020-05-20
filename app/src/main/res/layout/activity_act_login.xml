@@ -131,7 +131,12 @@
                         />
 
                 </RelativeLayout>
+                <com.google.android.gms.common.SignInButton
+                    android:id="@+id/signIn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
             </LinearLayout>
+
         </ScrollView>
     </LinearLayout>
 

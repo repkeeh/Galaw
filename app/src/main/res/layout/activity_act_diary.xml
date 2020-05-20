@@ -21,12 +21,13 @@
             android:text="Judul"
             android:textSize="15dp"
             />
+
         <EditText
+            android:id="@+id/diaryJudul"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/white"
-            />
+            android:background="@drawable/white" />
         <TextView
             android:layout_marginTop="60dp"
             android:layout_width="wrap_content"
@@ -34,14 +35,15 @@
             android:text="Isi"
             android:textSize="15dp"
             />
+
         <EditText
 
+            android:id="@+id/diaryIsi"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_marginTop="80dp"
             android:background="@drawable/white"
-            android:gravity="top"
-            />
+            android:gravity="top" />
         <Button
             android:id="@+id/savediary"
             android:layout_width="80dp"
