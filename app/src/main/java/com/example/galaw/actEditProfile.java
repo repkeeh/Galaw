@@ -18,6 +18,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -242,10 +244,21 @@ public class actEditProfile extends AppCompatActivity {
 
     }
 
-    public void logout (View view){
+    public void logout (final View view){
         FirebaseAuth.getInstance().signOut();//logout
+        GoogleSignIn.getClient(this, new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).build()).signOut().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                startActivity(new Intent(view.getContext(),actLogin.class ));
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(actEditProfile.this, "Signout Failed", Toast.LENGTH_SHORT).show();
+            }
+        });
         startActivity(new Intent(getApplicationContext(), actLogin.class));
-        finish();
+
     }
 
 }

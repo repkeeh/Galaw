@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -50,11 +51,16 @@ public class actHome extends AppCompatActivity  {
         profileImage = findViewById(R.id.profileImage);
 
         fAuth = FirebaseAuth.getInstance();
+
+        Log.d("tag", "onCreate: " + fAuth.getCurrentUser().getEmail() + fAuth.getCurrentUser().getDisplayName());
+
         fStore = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
 
         userID = fAuth.getCurrentUser().getUid();
         name = findViewById(R.id.nameProfile);
+
+
 
         DocumentReference documentReference = fStore.collection("Users").document(userID);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {

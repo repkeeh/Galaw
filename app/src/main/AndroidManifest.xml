@@ -18,7 +18,6 @@
         <activity android:name=".actAnxiety" />
         <activity android:name=".actResult" />
         <activity android:name=".actStress" />
-        <activity android:name=".actProfilePrivacy" />
         <activity android:name=".actQuotes2" />
         <activity android:name=".actQuizReport" />
         <activity android:name=".actQuiz" />
