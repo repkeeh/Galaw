@@ -15,7 +15,6 @@ public class actStressHeal2 extends AppCompatActivity {
 
     Button playBtn;
     SeekBar positionBar;
-    SeekBar volumeBar;
     TextView elapsedTimeLabel;
     TextView remainingTimeLabel;
     MediaPlayer mp;
@@ -32,7 +31,7 @@ public class actStressHeal2 extends AppCompatActivity {
         remainingTimeLabel = (TextView) findViewById(R.id.remainingTimeLabel);
 
         // Media Player
-        mp = MediaPlayer.create(this, R.raw.music);
+        mp = MediaPlayer.create(this, R.raw.relaksasi);
         mp.setLooping(true);
         mp.seekTo(0);
         mp.setVolume(0.5f, 0.5f);
@@ -62,27 +61,7 @@ public class actStressHeal2 extends AppCompatActivity {
                     }
                 }
         );
-        // Volume Bar
-        volumeBar = (SeekBar) findViewById(R.id.volumeBar);
-        volumeBar.setOnSeekBarChangeListener(
-                new SeekBar.OnSeekBarChangeListener() {
-                    @Override
-                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                        float volumeNum = progress / 100f;
-                        mp.setVolume(volumeNum, volumeNum);
-                    }
 
-                    @Override
-                    public void onStartTrackingTouch(SeekBar seekBar) {
-
-                    }
-
-                    @Override
-                    public void onStopTrackingTouch(SeekBar seekBar) {
-
-                    }
-                }
-        );
 
         // Thread (Update positionBar & timeLabel)
         new Thread(new Runnable() {

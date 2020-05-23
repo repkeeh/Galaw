@@ -27,7 +27,7 @@ public class fragHeal extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    Button Stress;
+    Button Stress, Anxiety;
 
 
     public fragHeal() {
@@ -73,6 +73,7 @@ public class fragHeal extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         Stress = view.findViewById(R.id.stress);
+        Anxiety = view.findViewById(R.id.anxiety);
 
         Stress.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,5 +82,14 @@ public class fragHeal extends Fragment {
                 startActivity(intent);
             }
         });
+
+        Anxiety.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( getActivity(), actStressHeal2.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
