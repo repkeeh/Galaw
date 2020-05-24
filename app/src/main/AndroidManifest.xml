@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".actStressHeal2"></activity>
+        <activity android:name=".actStressHeal3"></activity>
+        <activity android:name=".actStressHeal2" />
         <activity android:name=".actStressHeal1" />
         <activity android:name=".actMentalDef" />
         <activity android:name=".mentalHealthDef" />
