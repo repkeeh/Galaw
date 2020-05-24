@@ -41,7 +41,7 @@ public class actSignUp extends AppCompatActivity {
     public static final String TAG = "TAG";
 
 
-    EditText mpassword;
+    EditText mpassword, mgender;
     EditText memail;
     EditText mphone;
     EditText mname;
@@ -62,6 +62,7 @@ public class actSignUp extends AppCompatActivity {
         mpassword = findViewById(R.id.password);
         mname = findViewById(R.id.name);
         mphone = findViewById(R.id.phoneNumber);
+        mgender = findViewById(R.id.gender);
         msignup = findViewById(R.id.signup);
         mloginButton = findViewById(R.id.buttonLogin);
         fStore = FirebaseFirestore.getInstance();
@@ -78,9 +79,11 @@ public class actSignUp extends AppCompatActivity {
             public void onClick(View v) {
 
                 final String email = memail.getText().toString().trim();
-                String password = mpassword.getText().toString().trim();
+                final String password = mpassword.getText().toString().trim();
                 final String name = mname.getText().toString();
                 final String phoneNumber = mphone.getText().toString();
+                final String gender = mgender.getText().toString();
+
 
 
                 if (TextUtils.isEmpty(email)) {
@@ -132,6 +135,8 @@ public class actSignUp extends AppCompatActivity {
                             user.put("Name", name);
                             user.put("Email", email);
                             user.put("Phone", phoneNumber);
+                            user.put("Gender", gender);
+                            user.put("Password", password);
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {

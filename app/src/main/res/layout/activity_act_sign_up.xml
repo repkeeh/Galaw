@@ -105,6 +105,18 @@
                     android:padding="10dp" />
 
                 <EditText
+                    android:id="@+id/gender"
+                    android:layout_width="307dp"
+                    android:layout_height="46dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:autofillHints=""
+                    android:background="@drawable/etboxstroke"
+                    android:hint="Gender"
+                    android:inputType="text"
+                    android:padding="10dp" />
+
+                <EditText
                     android:id="@+id/email"
                     android:layout_width="307dp"
                     android:layout_height="46dp"

@@ -48,11 +48,11 @@ public class actDiary extends AppCompatActivity {
                 final String diaryisi = diaryIsi.getText().toString();
 
                 userID = fAuth.getCurrentUser().getUid();
-                final DocumentReference documentReference = fStore.collection("Users").document(userID);
+                final DocumentReference documentReference = fStore.collection("Diary").document(userID);
                 Map<String, Object> user = new HashMap<>();
                 user.put("Judul", diaryjudul);
-                user.put("Diary", diaryisi);
-                documentReference.update(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                user.put("Isi", diaryisi);
+                documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Toast.makeText(actDiary.this, "Diary has been Updated", Toast.LENGTH_SHORT).show();

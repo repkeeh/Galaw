@@ -193,15 +193,6 @@ public class actEditProfile extends AppCompatActivity {
             }
         });
 
-        backProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(actEditProfile.this, actHome.class);
-                startActivity(intent);
-            }
-        });
-
 
     }
 
