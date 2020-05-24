@@ -2,6 +2,7 @@ package com.example.galaw;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,7 +14,7 @@ import android.widget.TextView;
 
 public class actStressHeal2 extends AppCompatActivity {
 
-    Button playBtn;
+    Button playBtn, nextheal2;
     SeekBar positionBar;
     TextView elapsedTimeLabel;
     TextView remainingTimeLabel;
@@ -29,6 +30,15 @@ public class actStressHeal2 extends AppCompatActivity {
         playBtn = (Button) findViewById(R.id.playBtn);
         elapsedTimeLabel = (TextView) findViewById(R.id.elapsedTimeLabel);
         remainingTimeLabel = (TextView) findViewById(R.id.remainingTimeLabel);
+        nextheal2 = findViewById(R.id.nextheal2);
+
+        nextheal2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (actStressHeal2.this, actStressHeal3.class);
+                startActivity(intent);
+            }
+        });
 
         // Media Player
         mp = MediaPlayer.create(this, R.raw.relaksasi);

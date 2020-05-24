@@ -84,22 +84,22 @@ public class fragHeal extends Fragment {
             }
         });
 
-        Anxiety.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent( getActivity(), actStressHeal2.class);
-                startActivity(intent);
-            }
-        });
+//        Anxiety.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent( getActivity(), actStressHeal2.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
-        Depression.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent( getActivity(), actStressHeal3.class);
-                startActivity(intent);
-            }
-        });
+//        Depression.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent( getActivity(), actStressHeal3.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 
 }

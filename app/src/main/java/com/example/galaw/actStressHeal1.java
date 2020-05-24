@@ -2,6 +2,7 @@ package com.example.galaw;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,7 @@ public class actStressHeal1 extends AppCompatActivity {
     private TextView mSemangat;
     private Button mNextSmengat;
     private int mSemangatNumber = 0;
+
 
 
     @Override
@@ -36,6 +38,12 @@ public class actStressHeal1 extends AppCompatActivity {
     public void rndmText(){
         mSemangat.setText(StressTextArray[mSemangatNumber].getmSemangat());
         mSemangatNumber++;
+
+        if (mSemangatNumber >= 31){
+            Intent intent =new Intent(actStressHeal1.this , actStressHeal2.class);
+            startActivity(intent);
+        }
+
     }
 
     StressText S01 = new StressText("Selamat datang di Ruang Sandar, tempat yang bebas dari hiruk pikuk dan sibukmu setiap hari" );

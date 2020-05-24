@@ -11,7 +11,7 @@
         android:layout_height="30dp"
         android:background="@drawable/play"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="320dp"
         android:id="@+id/playVideo"
         android:onClick="videoplay"
         />
@@ -22,9 +22,23 @@
         android:layout_height="match_parent"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginBottom="300dp"
+        android:layout_marginBottom="370dp"
         android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
 
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nextheal3"
+        android:text="lanjut"
+        android:background="@drawable/custombutton"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
         />
 
 </RelativeLayout>

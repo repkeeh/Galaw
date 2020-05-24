@@ -2,6 +2,7 @@ package com.example.galaw;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +12,7 @@ import android.widget.VideoView;
 
 public class actStressHeal3 extends AppCompatActivity {
 
-    Button playvideo;
+    Button playvideo, nextheal3;
     VideoView videoGalaw;
     MediaController controller;
 
@@ -24,6 +25,16 @@ public class actStressHeal3 extends AppCompatActivity {
         playvideo = findViewById(R.id.playVideo);
         videoGalaw = findViewById(R.id.videoGalaw);
         controller = new MediaController(this);
+        nextheal3 = findViewById(R.id.nextheal3);
+
+        nextheal3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(actStressHeal3.this, actHome.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public void videoplay (View v){
