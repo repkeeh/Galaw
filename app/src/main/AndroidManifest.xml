@@ -14,7 +14,6 @@
         <activity android:name=".actEdit" >
         </activity>
         <activity android:name=".actDepression"></activity>
-        android:theme="@style/AppTheme">
         <activity android:name=".actStressHeal3"></activity>
         <activity android:name=".actStressHeal2" />
         <activity android:name=".actStressHeal1" />
