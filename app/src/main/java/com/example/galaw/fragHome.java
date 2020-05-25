@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import com.denzcoskun.imageslider.ImageSlider;
@@ -36,6 +37,7 @@ public class fragHome extends Fragment {
     private String mParam2;
     Button banner1, banner2, banner3;
     ViewFlipper flipperHome;
+    TextView healthDef;
 
     public fragHome() {
         // Required empty public constructor
@@ -91,6 +93,16 @@ public class fragHome extends Fragment {
         banner1 = view.findViewById(R.id.banner1);
         banner2 = view.findViewById(R.id.banner2);
         banner3 = view.findViewById(R.id.banner3);
+        healthDef = view.findViewById(R.id.healthDef);
+
+        healthDef.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), actMentalDef.class);
+                startActivity(intent);
+            }
+        });
+
 
         banner1.setOnClickListener(new View.OnClickListener() {
             @Override

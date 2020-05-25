@@ -11,10 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
 
+
         android:theme="@style/AppTheme" >
         <activity android:name=".actEdit" >
         </activity>
         <activity android:name=".actDepression"></activity>
+        <activity android:name=".actStressHeal3"/>
+        <activity android:name=".actStressHeal2" />
+        <activity android:name=".actStressHeal1" />
+        <activity android:name=".actMentalDef" />
+        <activity android:name=".actDepression" />
         <activity android:name=".actAnxiety" />
         <activity android:name=".actResult" />
         <activity android:name=".actStress" />
@@ -22,10 +28,10 @@
         <activity android:name=".actQuizReport" />
         <activity android:name=".actQuiz" />
         <activity android:name=".actEditProfile" />
-        <activity android:name=".actLogin" />
+        <activity android:name=".actSignUp" />
         <activity android:name=".actDiary" />
         <activity
-            android:name=".actSignUp"
+            android:name=".actLogin"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
