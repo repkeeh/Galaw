@@ -4,12 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class actQuiz extends AppCompatActivity {
+public class actQuizAnxiety extends AppCompatActivity {
 
     int [][] Answer = new int[3][14];
     TextView dass;
@@ -27,7 +26,7 @@ public class actQuiz extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_act_quiz);
+        setContentView(R.layout.activity_act_quiz_anxiety);
 
         type_Question = getIntent().getIntExtra("type_Question",-1);
         number_Question = 0;
@@ -78,7 +77,7 @@ public class actQuiz extends AppCompatActivity {
 
             }
 
-            Intent intent = new Intent(actQuiz.this, actResult.class);
+            Intent intent = new Intent(actQuizAnxiety.this, actResultAnxiety.class);
             intent.putExtra("total", temp);
             startActivity(intent);
         }else {

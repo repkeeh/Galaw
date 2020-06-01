@@ -48,6 +48,7 @@ public class actDiary extends AppCompatActivity {
                 final String diaryisi = diaryIsi.getText().toString();
 
                 userID = fAuth.getCurrentUser().getUid();
+
                 final DocumentReference documentReference = fStore.collection("Diary").document(userID);
                 Map<String, Object> user = new HashMap<>();
                 user.put("Judul", diaryjudul);

@@ -73,7 +73,7 @@ public class actStressHeal1 extends AppCompatActivity {
     StressText S25 = new StressText("Sepertinya aku juga yang harus balik ke duniaku sendiri");
     StressText S26 = new StressText("Tapi ini bukan terakhir kali kita bakalan bertemu");
     StressText S27 = new StressText("Jika kamu merasa dunia kembali tak terkendali dan membuatmu tertekan, balik aja kesini ya");
-    StressText S28 = new StressText( "Saya selalu disini kok kalau kamu butuh. baik kalau boleh aku kasih saran coba untuk mencari tahu keadaanmu, apa yang dapat menimbulkannya, dan lain-lain");
+    StressText S28 = new StressText( "Aku selalu disini kok kalau kamu butuh. baik kalau boleh aku kasih saran coba untuk mencari tahu keadaanmu, apa yang dapat menimbulkannya, dan lain-lain");
     StressText S29 = new StressText("oke, Nanti kalau butuh aku lagi, balik lagi aja ya");
     StressText S30 = new StressText("Sip, yaudah aku pamit dulu ya makasih ya sudah ada di ruang ini");
     StressText S31 = new StressText("Senang bisa bertemu-mu ya, sampai jumpa!");

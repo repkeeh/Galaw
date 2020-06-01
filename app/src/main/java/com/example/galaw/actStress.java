@@ -22,7 +22,7 @@ public class actStress extends AppCompatActivity {
         stressTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(actStress.this, actQuiz.class);
+                Intent intent = new Intent(actStress.this, actQuizStress.class);
                 intent.putExtra("type_Question" , 0);
                 startActivity(intent);
             }
