@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -47,6 +48,8 @@ public class actHome extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_home);
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         profileImage = findViewById(R.id.profileImage);
 
@@ -96,7 +99,7 @@ public class actHome extends AppCompatActivity  {
                 ft.replace(R.id.frameLayout, new fragHome());
                 ft.commit();
 
-                navigationButton[indexNav].setTextColor((Color.parseColor("#000000")));
+                navigationButton[indexNav].setTextColor((Color.parseColor("#7B5CFF")));
                 navigationButton[indexNav].setBackgroundColor((Color.parseColor("#FFFFFF")));
 
                 setting.setVisibility(View.GONE);
@@ -116,7 +119,7 @@ public class actHome extends AppCompatActivity  {
                 ft.replace(R.id.frameLayout, new fragPublic());
                 ft.commit();
 
-                navigationButton[indexNav].setTextColor((Color.parseColor("#000000")));
+                navigationButton[indexNav].setTextColor((Color.parseColor("#7B5CFF")));
                 navigationButton[indexNav].setBackgroundColor((Color.parseColor("#FFFFFF")));
 
                 setting.setVisibility(View.GONE);
@@ -135,7 +138,7 @@ public class actHome extends AppCompatActivity  {
                 ft.replace(R.id.frameLayout, new fragHeal());
                 ft.commit();
 
-                navigationButton[indexNav].setTextColor((Color.parseColor("#000000")));
+                navigationButton[indexNav].setTextColor((Color.parseColor("#7B5CFF")));
                 navigationButton[indexNav].setBackgroundColor((Color.parseColor("#FFFFFF")));
 
                 setting.setVisibility(View.GONE);
@@ -154,7 +157,7 @@ public class actHome extends AppCompatActivity  {
                 ft.replace(R.id.frameLayout, new fragProfile());
                 ft.commit();
 
-                navigationButton[indexNav].setTextColor((Color.parseColor("#000000")));
+                navigationButton[indexNav].setTextColor((Color.parseColor("#7B5CFF")));
                 navigationButton[indexNav].setBackgroundColor((Color.parseColor("#FFFFFF")));
 
                 setting.setVisibility(View.VISIBLE);

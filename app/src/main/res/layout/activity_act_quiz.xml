@@ -4,94 +4,110 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundhome"
+    android:background="@drawable/backgroundgrey"
     >
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="700dp">
+                android:layout_height="wrap_content">
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="210dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:id="@+id/imageV"
                     />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center"
-                    android:id="@+id/dass"
-                    android:textSize="18dp"
-                    android:textColor="#C062F5"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/whitebtn"
-                    android:gravity="center"
-                    />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/quizbg"
+                        >
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:background="@drawable/whitebtn"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:id="@+id/jwb0"
-                    android:text="Tidak Pernah"
-                    android:textSize="20dp"
-                    android:textColor="#C062F5"
-                    />
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:background="@drawable/whitebtn"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:id="@+id/jwb1"
-                    android:text="kadang-kadang"
-                    android:textSize="20dp"
-                    android:textColor="#C062F5"
-                    />
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:background="@drawable/whitebtn"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:id="@+id/jwb2"
-                    android:text="Lumayan sering"
-                    android:textSize="20dp"
-                    android:textColor="#C062F5"
-                    />
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:background="@drawable/whitebtn"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:id="@+id/jwb3"
-                    android:text="Sering sekali"
-                    android:textSize="20dp"
-                    android:textColor="#C062F5"
-                    />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:id="@+id/dass"
+                            android:textSize="18dp"
+                            android:textColor="#ffffff"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginLeft="20dp"
+                            android:gravity="center"
+                            />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/whitebtn"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/jwb0"
+                            android:text="Tidak Pernah"
+                            android:textSize="20dp"
+                            android:textColor="#C062F5"
+                            />
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/whitebtn"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/jwb1"
+                            android:text="kadang-kadang"
+                            android:textSize="20dp"
+                            android:textColor="#C062F5"
+                            />
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/whitebtn"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/jwb2"
+                            android:text="Lumayan sering"
+                            android:textSize="20dp"
+                            android:textColor="#C062F5"
+                            />
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/whitebtn"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:id="@+id/jwb3"
+                            android:text="Sering sekali"
+                            android:textSize="20dp"
+                            android:textColor="#C062F5"
+                            />
+
+                    </LinearLayout>
+
+
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
