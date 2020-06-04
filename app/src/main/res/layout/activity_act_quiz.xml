@@ -20,6 +20,17 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+                
+                <ProgressBar
+                   style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/progressBar"
+
+                    />
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -52,7 +63,7 @@
 
                         <Button
                             android:layout_width="match_parent"
-                            android:layout_height="55dp"
+                            android:layout_height="wrap_content"
                             android:background="@drawable/whitebtn"
                             android:layout_gravity="center"
                             android:layout_marginTop="20dp"
@@ -60,47 +71,47 @@
                             android:layout_marginRight="20dp"
                             android:id="@+id/jwb0"
                             android:text="Tidak Pernah"
-                            android:textSize="20dp"
+                            android:textSize="15dp"
                             android:textColor="#C062F5"
                             />
                         <Button
                             android:layout_width="match_parent"
-                            android:layout_height="55dp"
+                            android:layout_height="wrap_content"
                             android:background="@drawable/whitebtn"
                             android:layout_gravity="center"
-                            android:layout_marginTop="20dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="20dp"
                             android:id="@+id/jwb1"
                             android:text="kadang-kadang"
-                            android:textSize="20dp"
+                            android:textSize="15dp"
                             android:textColor="#C062F5"
                             />
                         <Button
                             android:layout_width="match_parent"
-                            android:layout_height="55dp"
+                            android:layout_height="wrap_content"
                             android:background="@drawable/whitebtn"
                             android:layout_gravity="center"
-                            android:layout_marginTop="20dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="20dp"
                             android:id="@+id/jwb2"
                             android:text="Lumayan sering"
-                            android:textSize="20dp"
+                            android:textSize="15dp"
                             android:textColor="#C062F5"
                             />
                         <Button
                             android:layout_width="match_parent"
-                            android:layout_height="55dp"
+                            android:layout_height="wrap_content"
                             android:background="@drawable/whitebtn"
                             android:layout_gravity="center"
-                            android:layout_marginTop="20dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="20dp"
                             android:layout_marginBottom="20dp"
                             android:id="@+id/jwb3"
                             android:text="Sering sekali"
-                            android:textSize="20dp"
+                            android:textSize="15dp"
                             android:textColor="#C062F5"
                             />
 

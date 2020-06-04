@@ -67,10 +67,11 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/whitebtn"
-
+                    android:background="@null"
                     android:text="click here"
-                    android:textSize="12dp" />
+                    android:textSize="15dp"
+                    android:textColor="#ffff"
+                    />
 
 
             </RelativeLayout>
@@ -98,10 +99,12 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/whitebtn"
+                    android:background="@null"
 
                     android:text="click here"
-                    android:textSize="12dp" />
+                    android:textSize="15dp"
+                    android:textColor="#ffff"
+                    />
             </RelativeLayout>
 
             <RelativeLayout
@@ -128,9 +131,11 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/whitebtn"
+                    android:background="@null"
                     android:text="click here"
-                    android:textSize="12dp" />
+                    android:textSize="15dp"
+                    android:textColor="#ffff"
+                    />
             </RelativeLayout>
 
         </RelativeLayout>

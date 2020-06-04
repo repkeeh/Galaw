@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class actQuiz extends AppCompatActivity {
@@ -22,6 +23,7 @@ public class actQuiz extends AppCompatActivity {
     int [][] Answer = new int[3][14];
     TextView dass;
     ImageView imageV;
+    ProgressBar progressBar;
 
     class Collection{
         String Quest = new String();
@@ -44,6 +46,7 @@ public class actQuiz extends AppCompatActivity {
         type_Question = getIntent().getIntExtra("type_Question",-1);
         number_Question = 0;
 
+
         for (int i=0; i< 3; i ++){
             for (int j=0; j< 14; j ++) {
 
@@ -52,7 +55,7 @@ public class actQuiz extends AppCompatActivity {
         }
 
         //AllQuestion[0][0].Quest = "Saya merasa bahwa diri saya menjadi marah karena hal-hal sepele";
-
+        progressBar = findViewById(R.id.progressBar);
         imageV = findViewById(R.id.imageV);
         dass = findViewById(R.id.dass);
         buttons[0] = findViewById(R.id.jwb0);
@@ -61,18 +64,22 @@ public class actQuiz extends AppCompatActivity {
         buttons[3] = findViewById(R.id.jwb3);
 
 
+
+
         SetCollection();
         dass.setText(""+ AllQuestion[type_Question][0].Quest);
         int id = getResources().getIdentifier("com.example.galaw:drawable/" +AllQuestion[type_Question][0].picture , null, null);
         imageV.setImageResource(id);
+
+
 
       for (int i =0 ; i< buttons.length ; i++){
             final int temp = i;
           buttons[i].setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View v) {
-
                   ChangeValue(temp);
+
               }
           });
       }
@@ -80,6 +87,8 @@ public class actQuiz extends AppCompatActivity {
 
 
     }
+
+
 
     void ChangeValue(int index){
 
