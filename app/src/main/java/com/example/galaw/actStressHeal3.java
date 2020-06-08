@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
+
 public class actStressHeal3 extends AppCompatActivity {
 
     Button playvideo, nextheal3;
@@ -41,6 +42,7 @@ public class actStressHeal3 extends AppCompatActivity {
     }
 
     public void videoplay (View v){
+
 
         String videopath = "android.resource://" + getPackageName() + "/" + R.raw.ruangsandar;
 
