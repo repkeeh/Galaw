@@ -1,20 +1,32 @@
 package com.example.galaw;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class actQuizAnxiety extends AppCompatActivity {
 
     int [][] Answer = new int[3][14];
     TextView dass;
+    ImageView imageV;
+    ProgressBar progressBar;
 
     class Collection{
         String Quest = new String();
+        String picture = new String();
     }
 
     Collection [][] AllQuestion = new Collection[3][14];
@@ -28,8 +40,11 @@ public class actQuizAnxiety extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_quiz_anxiety);
 
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
         type_Question = getIntent().getIntExtra("type_Question",-1);
         number_Question = 0;
+
 
         for (int i=0; i< 3; i ++){
             for (int j=0; j< 14; j ++) {
@@ -39,6 +54,8 @@ public class actQuizAnxiety extends AppCompatActivity {
         }
 
         //AllQuestion[0][0].Quest = "Saya merasa bahwa diri saya menjadi marah karena hal-hal sepele";
+        progressBar = findViewById(R.id.progressBar);
+        imageV = findViewById(R.id.imageV);
         dass = findViewById(R.id.dass);
         buttons[0] = findViewById(R.id.jwb0);
         buttons[1] = findViewById(R.id.jwb1);
@@ -46,16 +63,22 @@ public class actQuizAnxiety extends AppCompatActivity {
         buttons[3] = findViewById(R.id.jwb3);
 
 
+
+
         SetCollection();
         dass.setText(""+ AllQuestion[type_Question][0].Quest);
+        int id = getResources().getIdentifier("com.example.galaw:drawable/" +AllQuestion[type_Question][0].picture , null, null);
+        imageV.setImageResource(id);
+
+
 
       for (int i =0 ; i< buttons.length ; i++){
             final int temp = i;
           buttons[i].setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View v) {
-
                   ChangeValue(temp);
+
               }
           });
       }
@@ -63,6 +86,8 @@ public class actQuizAnxiety extends AppCompatActivity {
 
 
     }
+
+
 
     void ChangeValue(int index){
 
@@ -83,6 +108,8 @@ public class actQuizAnxiety extends AppCompatActivity {
         }else {
 
             dass.setText(""+ AllQuestion[type_Question][number_Question].Quest);
+            int id = getResources().getIdentifier("com.example.galaw:drawable/" +AllQuestion[type_Question][number_Question].picture , null, null);
+            imageV.setImageResource(id);
         }
     }
 
@@ -132,6 +159,36 @@ public class actQuizAnxiety extends AppCompatActivity {
         AllQuestion[2][11].Quest = "Saya melihat tidak ada harapan untuk masa depan.";
         AllQuestion[2][12].Quest = "Saya merasa bahwa hidup tidak berarti.";
         AllQuestion[2][13].Quest = "Saya merasa sulit untuk meningkatkan inisiatif dalam melakukan sesuatu.";
+
+        AllQuestion[0][0].picture = "satu";
+        AllQuestion[0][1].picture = "enam";
+        AllQuestion[0][2].picture = "delapan";
+        AllQuestion[0][3].picture = "satu"; //sebelas
+        AllQuestion[0][4].picture = "duabelas";
+        AllQuestion[0][5].picture = "empatbelas";
+        AllQuestion[0][6].picture = "satu";
+        AllQuestion[0][7].picture = "satu";
+        AllQuestion[0][8].picture = "satu";
+        AllQuestion[0][9].picture = "satu";
+        AllQuestion[0][10].picture = "satu";
+        AllQuestion[0][11].picture = "satu";
+        AllQuestion[0][12].picture = "satu";
+        AllQuestion[0][13].picture = "satu";
+
+        AllQuestion[1][0].picture = "empatbelas";
+        AllQuestion[1][1].picture = "empatbelas";
+        AllQuestion[1][2].picture = "empatbelas";
+        AllQuestion[1][3].picture = "empatbelas";
+        AllQuestion[1][4].picture = "empatbelas";
+        AllQuestion[1][5].picture = "empatbelas";
+        AllQuestion[1][6].picture = "empatbelas";
+        AllQuestion[1][7].picture = "empatbelas";
+        AllQuestion[1][8].picture = "empatbelas";
+        AllQuestion[1][9].picture = "empatbelas";
+        AllQuestion[1][10].picture = "empatbelas";
+        AllQuestion[1][11].picture = "empatbelas";
+        AllQuestion[1][12].picture = "empatbelas";
+        AllQuestion[1][13].picture = "empatbelas";
 
     }
 }

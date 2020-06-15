@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.MediaController;
 import android.widget.VideoView;
+
 
 public class actStressHeal3 extends AppCompatActivity {
 
@@ -21,6 +23,8 @@ public class actStressHeal3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_stress_heal3);
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         playvideo = findViewById(R.id.playVideo);
         videoGalaw = findViewById(R.id.videoGalaw);
@@ -38,6 +42,7 @@ public class actStressHeal3 extends AppCompatActivity {
     }
 
     public void videoplay (View v){
+
 
         String videopath = "android.resource://" + getPackageName() + "/" + R.raw.ruangsandar;
 

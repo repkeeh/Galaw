@@ -5,20 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".actEditProfile"
-    android:background="@drawable/backgroundgrey"
     >
 
-    <TextView
-        android:background="@drawable/whitebtn"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="match_parent"
+        android:id="@+id/bgquotes"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/semangat"
-        android:textSize="18dp"
+        android:textSize="20dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="300dp"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:textColor="#C062F5"
+        android:textColor="#ffffff"
         android:gravity="center"
         android:paddingTop="10dp"
         android:paddingLeft="10dp"
@@ -29,15 +33,22 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="lanjut"
-        android:background="@drawable/custombutton"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_height="match_parent"
+        android:background="@null"
         android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="100dp"
         android:id="@+id/nextSemangat"
+        />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tekan layar"
+        android:textSize="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="150dp"
+        android:textColor="#ffffff"
         />
 </RelativeLayout>

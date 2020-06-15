@@ -21,7 +21,7 @@
             android:textSize="15dp"
             android:textColor="#C062F5"
             android:text="Test dan hasil nya bersifat pribadi.
-jadi cuma kamu dan pshycologist yang tau"
+jadi cuma kamu dan psikolog yang tau"
             android:gravity="center_horizontal"
             android:layout_marginTop="250dp"
             />

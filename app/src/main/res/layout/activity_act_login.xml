@@ -54,6 +54,7 @@
                     android:layout_height="46dp"
                     android:layout_gravity="center"
                     android:padding="10dp"
+                    android:textSize="15dp"
                     />
 
                 <EditText
@@ -67,6 +68,7 @@
                     android:layout_gravity="center"
                     android:padding="10dp"
                     android:layout_marginTop="20dp"
+                    android:textSize="15dp"
                     />
 
                 <Button
@@ -82,6 +84,7 @@
                     tools:layout_editor_absoluteY="385dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
+                    android:textSize="15dp"
                     />
                 <TextView
                     android:id="@+id/forgotPassword"
@@ -94,15 +97,6 @@
                     android:textColor="#C062F5"
                     />
 
-                <Button
-                    android:background="@drawable/buttonstroke"
-                    android:layout_width="307dp"
-                    android:layout_height="39dp"
-                    android:id="@+id/buttonstroke"
-                    android:layout_gravity="center"
-                    android:text="log in with google"
-                    android:layout_marginTop="20dp"
-                    />
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -117,6 +111,8 @@
                         android:layout_height="wrap_content"
                         android:text="NEW HERE?"
                         android:textSize="12dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginLeft="10dp"
                         />
 
                     <Button
@@ -125,16 +121,23 @@
                         android:layout_height="20dp"
                         android:text="Click Here"
                         android:textSize="12dp"
-                        android:background="@drawable/white"
+                        android:background="@null"
                         android:layout_marginLeft="80dp"
                         android:textColor="#C062F5"
                         />
 
                 </RelativeLayout>
                 <com.google.android.gms.common.SignInButton
+                    android:background="@drawable/buttonstroke"
                     android:id="@+id/signIn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+
+                    />
             </LinearLayout>
 
         </ScrollView>
