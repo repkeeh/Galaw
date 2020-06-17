@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class actStressHeal1 extends AppCompatActivity {
@@ -16,6 +17,7 @@ public class actStressHeal1 extends AppCompatActivity {
     private TextView mSemangat;
     private Button mNextSmengat;
     private int mSemangatNumber = 0;
+    private ProgressBar proBar;
 
 
 
@@ -29,6 +31,7 @@ public class actStressHeal1 extends AppCompatActivity {
         bgquotes =  (ImageView)findViewById(R.id.bgquotes);
         mSemangat = (TextView)findViewById(R.id.semangat);
         mNextSmengat = (Button)findViewById(R.id.nextSemangat);
+
 
         rndmText();
 
