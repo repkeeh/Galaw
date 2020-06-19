@@ -18,18 +18,45 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="DIARY"
+            android:textColor="#C062F5"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tanggal"
+            android:layout_marginTop="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="date"
+            android:layout_marginTop="50dp"
+            android:textSize="15dp"
+            android:textColor="#C062F5"
+            android:id="@+id/tanggal"
+
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Judul"
             android:textSize="15dp"
+            android:layout_marginTop="80dp"
             />
 
         <EditText
             android:id="@+id/diaryJudul"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="100dp"
             android:background="@drawable/white" />
         <TextView
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="140dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Isi"
@@ -41,7 +68,7 @@
             android:id="@+id/diaryIsi"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="170dp"
             android:background="@drawable/white"
             android:gravity="top" />
         <Button
@@ -52,7 +79,7 @@
             android:text="Save"
             android:textColor="#ffffff"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="400dp"
+            android:layout_marginTop="490dp"
             />
 <!--        <RadioGroup-->
 <!--            android:layout_width="match_parent"-->
