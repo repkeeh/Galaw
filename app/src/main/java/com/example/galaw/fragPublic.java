@@ -76,7 +76,7 @@ public class fragPublic extends Fragment {
         askButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), actDiary.class);
+                Intent intent = new Intent(getActivity(), actAsk.class);
                 startActivity(intent);
             }
         });
