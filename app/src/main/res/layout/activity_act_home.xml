@@ -87,7 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Public"
+            android:text="ask"
             android:background="@drawable/white"
             android:textColor="#7B5CFF"
             android:textSize="15dp"

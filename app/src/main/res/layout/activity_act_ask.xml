@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragQuotes"
+    android:background="@drawable/backgroundgrey"
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="ASK"
+            android:textColor="#C062F5"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tanggal"
+            android:layout_marginTop="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="date"
+            android:layout_marginTop="50dp"
+            android:textSize="15dp"
+            android:textColor="#C062F5"
+            android:id="@+id/tanggal"
+
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pertanyaan"
+            android:textSize="15dp"
+            android:layout_marginTop="80dp"
+            />
+
+        <EditText
+            android:id="@+id/diaryJudul"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/white" />
+        <TextView
+            android:layout_marginTop="140dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Penjelasan"
+            android:textSize="15dp"
+            />
+
+        <EditText
+
+            android:id="@+id/diaryIsi"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="170dp"
+            android:background="@drawable/white"
+            android:gravity="top" />
+        <Button
+            android:id="@+id/savediary"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:background="@drawable/custombutton"
+            android:text="Save"
+            android:textColor="#ffffff"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="490dp"
+            />
+        <!--        <RadioGroup-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+
+        <!--        <TextView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="405dp"-->
+        <!--            android:text="Pilih metode simpan:"-->
+        <!--            />-->
+        <!--        <RadioButton-->
+        <!--            android:layout_width="30dp"-->
+        <!--            android:layout_height="30dp"-->
+        <!--            android:layout_marginTop="430dp"-->
+        <!--            />-->
+        <!--        <TextView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="435dp"-->
+        <!--            android:layout_marginLeft="40dp"-->
+        <!--            android:text="hanya kamu"-->
+        <!--            />-->
+        <!--        />-->
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+</RelativeLayout>
