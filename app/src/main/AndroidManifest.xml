@@ -11,8 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".actAsk"></activity>
-        <activity android:name=".actEdit"></activity>
+        <activity android:name=".actStartTest"></activity>
+        <activity android:name=".actAllTest" />
+        <activity android:name=".actAsk" />
+        <activity android:name=".actEdit" />
         <activity android:name=".actDepression" />
         <activity android:name=".actStressHeal3" />
         <activity android:name=".actStressHeal2" />
