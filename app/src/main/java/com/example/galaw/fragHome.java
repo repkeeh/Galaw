@@ -1,6 +1,7 @@
 package com.example.galaw;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -38,6 +39,7 @@ public class fragHome extends Fragment {
     Button banner1, banner2, banner3;
     ViewFlipper flipperHome;
     TextView healthDef;
+
 
     public fragHome() {
         // Required empty public constructor
@@ -95,6 +97,8 @@ public class fragHome extends Fragment {
         banner3 = view.findViewById(R.id.banner3);
         healthDef = view.findViewById(R.id.healthDef);
 
+
+
         healthDef.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,8 +111,10 @@ public class fragHome extends Fragment {
         banner1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), actStress.class);
+                Intent intent = new Intent(getActivity(), actAllTest.class);
                 startActivity(intent);
+
+
             }
         });
 

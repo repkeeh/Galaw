@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".actResultStress"></activity>
         <activity android:name=".actResultDepresi" />
         <activity android:name=".actQuizStress" />
@@ -18,6 +19,12 @@
         <activity android:name=".actDepresiHeal1" />
         <activity android:name=".actEdit" />
         <activity android:name=".actMentalDef" />
+
+        <activity android:name=".actStartTest"></activity>
+        <activity android:name=".actAllTest" />
+        <activity android:name=".actAsk" />
+        <activity android:name=".actEdit" />
+
         <activity android:name=".actDepression" />
         <activity android:name=".actStressHeal3" />
         <activity android:name=".actStressHeal2" />
