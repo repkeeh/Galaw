@@ -105,6 +105,7 @@ public class actQuiz extends AppCompatActivity {
 
             Intent intent = new Intent(actQuiz.this, actResult.class);
             intent.putExtra("total", temp);
+            intent.putExtra("quiz",getIntent().getIntExtra("quiz",-1));
             startActivity(intent);
         }else {
 

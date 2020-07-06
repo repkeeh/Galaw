@@ -34,7 +34,7 @@ public class actResult extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent( actResult.this, actHome.class );
-
+                intent.putExtra("quiz",getIntent().getIntExtra("quiz",-1));
                 startActivity(intent);
             }
         });
