@@ -25,7 +25,6 @@ public class actResult extends AppCompatActivity {
 
         total = findViewById(R.id.total);
         simpanData = findViewById(R.id.simpanData);
-
         type_Question = getIntent().getIntExtra("total",-1);
         number_Question = 0;
         total.setText("" + type_Question);
