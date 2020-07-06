@@ -30,6 +30,7 @@
         <activity android:name=".actQuotes2" />
         <activity android:name=".actResult" />
         <activity android:name=".actResultDepresi" />
+        <activity android:name=".actResultStress" />
         <activity android:name=".actStress" />
         <activity android:name=".actStressHeal1" />
         <activity android:name=".actStressHeal2" />
