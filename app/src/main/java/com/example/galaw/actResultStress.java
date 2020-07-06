@@ -3,7 +3,11 @@ package com.example.galaw;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,42 +25,57 @@ public class actResultStress extends AppCompatActivity {
     int type_Question;
     int number_Question;
     TextView Total;
+    Button simpanData;
     FirebaseFirestore fStore;
     FirebaseAuth fAuth;
     String userID;
+
 
     Integer result;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_act_result);
+        setContentView(R.layout.activity_act_result_stress);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
         Total = findViewById(R.id.total);
+        simpanData = findViewById(R.id.simpanData);
 
         type_Question = getIntent().getIntExtra("total",-1);
         number_Question = 0;
         Total.setText("" + type_Question);
 
-        final String totalQuiz = Total.getText().toString();
+        simpanData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        userID = fAuth.getCurrentUser().getUid();
-        final DocumentReference documentReference = fStore.collection("Quiz").document(userID);
-        Map<String, Object> user = new HashMap<>();
-        user.put("Stress Score", totalQuiz);
-        documentReference.update(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                Toast.makeText(actResultStress.this, "Score has been Updated", Toast.LENGTH_SHORT).show();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(actResultStress.this, "Update Failed", Toast.LENGTH_SHORT).show();
+                final String totalQuiz = Total.getText().toString();
+
+
+                userID = fAuth.getCurrentUser().getUid();
+                final DocumentReference documentReference = fStore.collection("Quiz").document(userID);
+                Map<String, Object> user = new HashMap<>();
+                user.put("Stress Score", totalQuiz);
+                documentReference.update(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(actResultStress.this, "Score has been Updated", Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(actResultStress.this, "Update Failed", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                Intent intent = new Intent( actResultStress.this, actAllTest.class );
+
+                startActivity(intent);
             }
         });
+
+
 
     }
 }

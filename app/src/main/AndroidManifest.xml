@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".actWebView"></activity>
+        <activity android:name=".actResultAnxiety"></activity>
+        <activity android:name=".actAllTest" />
+        <activity android:name=".actWebView" />
         <activity android:name=".actAnxiety" />
         <activity android:name=".actAsk" />
         <activity android:name=".actDepresiHeal1" />
@@ -27,9 +29,7 @@
         <activity android:name=".actQuizStress" />
         <activity android:name=".actQuotes2" />
         <activity android:name=".actResult" />
-        <activity android:name=".actResultAnxiety" />
         <activity android:name=".actResultDepresi" />
-        <activity android:name=".actResultStress" />
         <activity android:name=".actStress" />
         <activity android:name=".actStressHeal1" />
         <activity android:name=".actStressHeal2" />

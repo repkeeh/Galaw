@@ -14,6 +14,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -42,14 +43,14 @@ public class actSignUp extends AppCompatActivity {
     public static final String TAG = "TAG";
 
 
-    EditText mpassword, mgender;
+    EditText mpassword;
     EditText memail;
     EditText mphone;
     EditText mname;
     Button msignup, mloginButton;
+    RadioButton male, female;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
-    ProgressBar progressBar;
     String userID;
 
     @Override
@@ -57,7 +58,7 @@ public class actSignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_sign_up);
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         fAuth = FirebaseAuth.getInstance();
 
@@ -65,11 +66,12 @@ public class actSignUp extends AppCompatActivity {
         mpassword = findViewById(R.id.password);
         mname = findViewById(R.id.name);
         mphone = findViewById(R.id.phoneNumber);
-        mgender = findViewById(R.id.gender);
+        male = findViewById(R.id.male);
+        female = findViewById(R.id.female);
         msignup = findViewById(R.id.signup);
         mloginButton = findViewById(R.id.buttonLogin);
         fStore = FirebaseFirestore.getInstance();
-        progressBar = findViewById(R.id.progressBar);
+
 
         if(fAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(),actHome.class));
@@ -85,7 +87,8 @@ public class actSignUp extends AppCompatActivity {
                 final String password = mpassword.getText().toString().trim();
                 final String name = mname.getText().toString();
                 final String phoneNumber = mphone.getText().toString();
-                final String gender = mgender.getText().toString();
+                final String m1 = male.getText().toString();
+                final String m2 = female.getText().toString();
 
 
 
@@ -103,7 +106,7 @@ public class actSignUp extends AppCompatActivity {
                     return;
                 }
 
-                progressBar.setVisibility(View.VISIBLE);
+
 
                 // register the user in firebase
 
@@ -138,7 +141,15 @@ public class actSignUp extends AppCompatActivity {
                             user.put("Name", name);
                             user.put("Email", email);
                             user.put("Phone", phoneNumber);
-                            user.put("Gender", gender);
+
+                            if (male.isChecked()) {
+                                user.put("Gender", m1);
+                           } else {
+                               user.put("Gender", m2);
+                                }
+
+
+
                             user.put("Password", password);
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
@@ -156,7 +167,6 @@ public class actSignUp extends AppCompatActivity {
 
                         }else{
                             Toast.makeText(actSignUp.this, "Error !" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            progressBar.setVisibility(View.GONE);
 
                         }
                     }

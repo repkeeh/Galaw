@@ -13,7 +13,8 @@ public class actAllTest extends AppCompatActivity {
 
     Button level1, level2, level3, lock1, lock2;
     int editklik;
-    SharedPreferences preferences;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,18 +27,15 @@ public class actAllTest extends AppCompatActivity {
         lock1 = (Button) findViewById(R.id.lock1);
         lock2 = (Button) findViewById(R.id.lock2);
 
-        preferences = getSharedPreferences("myPref", MODE_PRIVATE);
+
 
 
         level1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                SharedPreferences.Editor edit =preferences.edit();
 
-                edit.putInt("editklik", editklik);
 
-                edit.commit();
 
                 Intent intent = new Intent(actAllTest.this, actStress.class);
                 startActivity(intent);
@@ -51,12 +49,13 @@ public class actAllTest extends AppCompatActivity {
             }
         });
 
+
         level2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
-                Intent intent = new Intent(actAllTest.this, actStress.class);
+                Intent intent = new Intent(actAllTest.this, actAnxiety.class);
                 startActivity(intent);
 
                 level1.setVisibility(View.VISIBLE);
@@ -68,6 +67,22 @@ public class actAllTest extends AppCompatActivity {
             }
         });
 
+        level3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent = new Intent(actAllTest.this, actDepression.class);
+                startActivity(intent);
+
+                level1.setVisibility(View.VISIBLE);
+                level2.setVisibility(View.VISIBLE);
+                level3.setVisibility(View.VISIBLE);
+                lock1.setVisibility(View.INVISIBLE);
+                lock2.setVisibility(View.INVISIBLE);
+
+            }
+        });
     }
 
 }

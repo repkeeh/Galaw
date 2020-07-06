@@ -3,6 +3,7 @@ package com.example.galaw;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -16,6 +17,8 @@ public class actResult extends AppCompatActivity {
     TextView total;
     Button simpanData;
     Integer result;
+    SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +36,20 @@ public class actResult extends AppCompatActivity {
         simpanData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( actResult.this, actHome.class );
+
+                String nilai = total.getText().toString();
+
+                sharedPreferences = getApplicationContext().getSharedPreferences("My Pref", 0);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                editor.putString("Point", nilai);
+                editor.commit();
+
+                sharedPreferences.getInt("Point", -1);
+
+
+
+                Intent intent = new Intent( actResult.this, actAllTest.class );
 
                 startActivity(intent);
             }
