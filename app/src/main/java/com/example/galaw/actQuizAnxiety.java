@@ -104,6 +104,7 @@ public class actQuizAnxiety extends AppCompatActivity {
 
             Intent intent = new Intent(actQuizAnxiety.this, actResultAnxiety.class);
             intent.putExtra("total", temp);
+            intent.putExtra("quiz",getIntent().getIntExtra("quiz",-1));
             startActivity(intent);
         }else {
 

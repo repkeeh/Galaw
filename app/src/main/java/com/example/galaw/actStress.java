@@ -27,6 +27,7 @@ public class actStress extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(actStress.this, actQuizStress.class);
                 intent.putExtra("type_Question" , 0);
+                intent.putExtra("quiz",getIntent().getIntExtra("quiz",-1));
                 startActivity(intent);
             }
         });
@@ -35,7 +36,7 @@ public class actStress extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(actStress.this, actHome.class);
-
+                intent.putExtra("quiz",getIntent().getIntExtra("quiz",-1));
                 startActivity(intent);
             }
         });
