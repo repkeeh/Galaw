@@ -70,7 +70,7 @@ public class actAllTest extends AppCompatActivity {
                 edit.putInt("editklik", 2);
                 edit.commit();
 
-                Intent intent = new Intent(actAllTest.this, actStress.class);
+                Intent intent = new Intent(actAllTest.this, actAnxiety.class);
                 intent.putExtra("quiz",2);
                 startActivity(intent);
 
