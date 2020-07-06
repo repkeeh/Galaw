@@ -25,7 +25,6 @@ public class actResult extends AppCompatActivity {
 
         total = findViewById(R.id.total);
         simpanData = findViewById(R.id.simpanData);
-
         type_Question = getIntent().getIntExtra("total",-1);
         number_Question = 0;
         total.setText("" + type_Question);
@@ -34,7 +33,7 @@ public class actResult extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent( actResult.this, actHome.class );
-
+                intent.putExtra("quiz",getIntent().getIntExtra("quiz",-1));
                 startActivity(intent);
             }
         });

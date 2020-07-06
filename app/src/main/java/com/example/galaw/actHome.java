@@ -101,9 +101,7 @@ public class actHome extends AppCompatActivity  {
 
                 navigationButton[indexNav].setTextColor((Color.parseColor("#7B5CFF")));
                 navigationButton[indexNav].setBackgroundColor((Color.parseColor("#FFFFFF")));
-
                 setting.setVisibility(View.GONE);
-
                 indexNav = 0;
 
                 navigationButton[indexNav].setTextColor((Color.parseColor("#ffffff")));
@@ -178,7 +176,11 @@ public class actHome extends AppCompatActivity  {
 
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.frameLayout, new fragHome());
+        fragHome fragment = new fragHome();
+        Bundle bd = new Bundle();
+        bd.putInt("quiz",getIntent().getIntExtra("quiz",-1));
+        fragment.setArguments(bd);
+        ft.replace(R.id.frameLayout, fragment);
         ft.commit();
     }
 
