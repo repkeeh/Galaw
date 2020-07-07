@@ -10,7 +10,10 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -19,16 +22,15 @@ public class actStressHeal2 extends AppCompatActivity {
     Button playBtn, nextheal2, prevheal2;
     SeekBar positionBar;
     TextView elapsedTimeLabel;
-    TextView remainingTimeLabel, katabaik;
+    TextView remainingTimeLabel;
     MediaPlayer mp;
+    ImageView vinyl;
     int totalTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_stress_heal2);
-        katabaik = (TextView) findViewById(R.id.katabaik);
-        katabaik.setSelected(true);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
@@ -37,6 +39,7 @@ public class actStressHeal2 extends AppCompatActivity {
         remainingTimeLabel = (TextView) findViewById(R.id.remainingTimeLabel);
         nextheal2 = findViewById(R.id.nextheal2);
         prevheal2 = findViewById(R.id.prevheal2);
+        vinyl = findViewById(R.id.vinyl);
 
         nextheal2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,10 +138,15 @@ public class actStressHeal2 extends AppCompatActivity {
 
     public void playBtnClick(View view) {
 
+        Animation rotate = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate);
+        vinyl.startAnimation(rotate);
+
+
         if (!mp.isPlaying()) {
             // Stopping
             mp.start();
             playBtn.setBackgroundResource(R.drawable.stop);
+
 
         } else {
             // Playing
