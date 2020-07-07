@@ -16,10 +16,10 @@ import android.widget.TextView;
 
 public class actStressHeal2 extends AppCompatActivity {
 
-    Button playBtn, nextheal2;
+    Button playBtn, nextheal2, prevheal2;
     SeekBar positionBar;
     TextView elapsedTimeLabel;
-    TextView remainingTimeLabel;
+    TextView remainingTimeLabel, katabaik;
     MediaPlayer mp;
     int totalTime;
 
@@ -27,6 +27,8 @@ public class actStressHeal2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_stress_heal2);
+        katabaik = (TextView) findViewById(R.id.katabaik);
+        katabaik.setSelected(true);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
@@ -34,11 +36,20 @@ public class actStressHeal2 extends AppCompatActivity {
         elapsedTimeLabel = (TextView) findViewById(R.id.elapsedTimeLabel);
         remainingTimeLabel = (TextView) findViewById(R.id.remainingTimeLabel);
         nextheal2 = findViewById(R.id.nextheal2);
+        prevheal2 = findViewById(R.id.prevheal2);
 
         nextheal2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent (actStressHeal2.this, actWebView.class);
+                startActivity(intent);
+            }
+        });
+
+        prevheal2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (actStressHeal2.this, actStressHeal1.class);
                 startActivity(intent);
             }
         });

@@ -3,23 +3,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundgrey"
-    android:orientation="horizontal">
+    android:background="@drawable/bgblack"
+    android:orientation="horizontal"
+    >
+
+
+
     <ImageView
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:src="@drawable/songcover"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:background="@drawable/songcover"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
+
         />
 
+
+
     <SeekBar
+        android:background="@drawable/backgroundgrey"
         android:id="@+id/positionBar"
-        android:layout_marginRight="60dp"
-        android:layout_marginLeft="60dp"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="480dp"
+        android:layout_marginTop="340dp"
         android:layout_centerHorizontal="true"
         />
 
@@ -27,46 +33,81 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="480dp"
+        android:layout_marginTop="370dp"
         >
         <TextView
             android:id="@+id/elapsedTimeLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0:11"
-            android:layout_marginLeft="30dp"/>
+            android:layout_marginLeft="10dp"
+            android:textColor="#ffffff"
+            />
         <TextView
             android:id="@+id/remainingTimeLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="-1:49"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="30dp"
-
+            android:layout_marginRight="10dp"
+            android:textColor="#ffffff"
             />
     </RelativeLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stress Heal 2"
+        android:textColor="#ffffff"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="400dp"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yakinlah, semua akan menjadi lebih baik"
+        android:textColor="#ffffff"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="420dp"
+        android:id="@+id/katabaik"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:padding="30dp"
+        android:singleLine="true" />
+
     <Button
         android:id="@+id/playBtn"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:background="@drawable/play"
-        android:layout_marginTop="520dp"
+        android:layout_marginTop="500dp"
         android:onClick="playBtnClick"
         android:layout_centerHorizontal="true"
         />
 
+
+
     <Button
         android:id="@+id/nextheal2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="lanjut"
-        android:background="@drawable/custombutton"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:textColor="#ffffff"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="70dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/next"
+        android:layout_marginTop="530dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="100dp"
+        />
+
+    <Button
+        android:id="@+id/prevheal2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/prev"
+        android:layout_marginTop="530dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="100dp"
         />
 
 </RelativeLayout>

@@ -83,6 +83,26 @@ public class actAllTest extends AppCompatActivity {
             }
         });
 
+        level3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor edit = preferences.edit();
+                edit.putInt("editklik", 3);
+                edit.commit();
+
+                Intent intent = new Intent(actAllTest.this, actStress.class);
+                intent.putExtra("quiz",3);
+                startActivity(intent);
+
+                //level1.setVisibility(View.VISIBLE);
+                //level2.setVisibility(View.VISIBLE);
+                //level3.setVisibility(View.VISIBLE);
+                //lock1.setVisibility(View.INVISIBLE);
+                //lock2.setVisibility(View.INVISIBLE);
+
+            }
+        });
+
     }
 
 }
