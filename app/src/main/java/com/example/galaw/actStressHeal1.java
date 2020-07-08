@@ -44,15 +44,23 @@ public class actStressHeal1 extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mSemangatNumber = 0;
+    }
+
     public void rndmText(){
         bgquotes.setImageResource(StressTextArray[mSemangatNumber].getmImage());
         mSemangat.setText(StressTextArray[mSemangatNumber].getmSemangat());
         mSemangatNumber++;
-
+        //System.out.println(mSemangatNumber);
         if (mSemangatNumber >= 31){
             Intent intent =new Intent(actStressHeal1.this , actStressHeal2.class);
             startActivity(intent);
         }
+
+        //if()
 
     }
 

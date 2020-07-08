@@ -156,6 +156,13 @@ public class actStressHeal2 extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
 
-
+        if(mp.isPlaying()){
+            mp.stop();
+            mp = null;
+        }
+        super.onBackPressed();
+    }
 }

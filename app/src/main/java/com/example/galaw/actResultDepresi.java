@@ -45,6 +45,8 @@ public class actResultDepresi extends AppCompatActivity {
 
         type_Question = getIntent().getIntExtra("total",-1);
         number_Question = 0;
+
+        Total.setText(setTingkatDepresiOrang(type_Question));
         Total.setText("" + type_Question);
 
         simpanData.setOnClickListener(new View.OnClickListener() {
@@ -78,4 +80,25 @@ public class actResultDepresi extends AppCompatActivity {
 
 
     }
+
+    private String setTingkatDepresiOrang(int type_question) {
+        String tingkatstress = "";
+        if(type_question >= 0 && type_question <= 9){
+            tingkatstress = "Normal";
+        }
+        else if(type_question >= 10 && type_question <= 13){
+            tingkatstress = "Mild";
+        }
+        else if(type_question >= 14 && type_question <= 20){
+            tingkatstress = "Moderate";
+        }
+        else if(type_question >= 21 && type_question <= 27){
+            tingkatstress = "Severe";
+        }
+        else if(type_question >= 28){
+            tingkatstress = "Extremely Severe";
+        }
+        return tingkatstress;
+    }
+
 }

@@ -1,20 +1,32 @@
 package com.example.galaw;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class actQuizStress extends AppCompatActivity {
 
     int [][] Answer = new int[3][14];
     TextView dass;
+    ImageView imageV;
+    ProgressBar progressBar;
 
     class Collection{
         String Quest = new String();
+        String picture = new String();
     }
 
     Collection [][] AllQuestion = new Collection[3][14];
@@ -28,8 +40,11 @@ public class actQuizStress extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_quiz_anxiety);
 
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
         type_Question = getIntent().getIntExtra("type_Question",-1);
         number_Question = 0;
+
 
         for (int i=0; i< 3; i ++){
             for (int j=0; j< 14; j ++) {
@@ -39,6 +54,8 @@ public class actQuizStress extends AppCompatActivity {
         }
 
         //AllQuestion[0][0].Quest = "Saya merasa bahwa diri saya menjadi marah karena hal-hal sepele";
+        progressBar = findViewById(R.id.progressBar);
+        imageV = findViewById(R.id.imageV);
         dass = findViewById(R.id.dass);
         buttons[0] = findViewById(R.id.jwb0);
         buttons[1] = findViewById(R.id.jwb1);
@@ -46,16 +63,22 @@ public class actQuizStress extends AppCompatActivity {
         buttons[3] = findViewById(R.id.jwb3);
 
 
+
+
         SetCollection();
         dass.setText(""+ AllQuestion[type_Question][0].Quest);
+        int id = getResources().getIdentifier("com.example.galaw:drawable/" +AllQuestion[type_Question][0].picture , null, null);
+        imageV.setImageResource(id);
+
+
 
         for (int i =0 ; i< buttons.length ; i++){
             final int temp = i;
             buttons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     ChangeValue(temp);
+
                 }
             });
         }
@@ -63,6 +86,8 @@ public class actQuizStress extends AppCompatActivity {
 
 
     }
+
+
 
     void ChangeValue(int index){
 
@@ -79,10 +104,13 @@ public class actQuizStress extends AppCompatActivity {
 
             Intent intent = new Intent(actQuizStress.this, actResultStress.class);
             intent.putExtra("total", temp);
+            intent.putExtra("quiz",getIntent().getIntExtra("quiz",-1));
             startActivity(intent);
         }else {
 
             dass.setText(""+ AllQuestion[type_Question][number_Question].Quest);
+            int id = getResources().getIdentifier("com.example.galaw:drawable/" +AllQuestion[type_Question][number_Question].picture , null, null);
+            imageV.setImageResource(id);
         }
     }
 
@@ -132,6 +160,51 @@ public class actQuizStress extends AppCompatActivity {
         AllQuestion[2][11].Quest = "Saya melihat tidak ada harapan untuk masa depan.";
         AllQuestion[2][12].Quest = "Saya merasa bahwa hidup tidak berarti.";
         AllQuestion[2][13].Quest = "Saya merasa sulit untuk meningkatkan inisiatif dalam melakukan sesuatu.";
+
+        AllQuestion[0][0].picture = "satu";
+        AllQuestion[0][1].picture = "enam";
+        AllQuestion[0][2].picture = "delapan";
+        AllQuestion[0][3].picture = "satu";
+        AllQuestion[0][4].picture = "duabelas";
+        AllQuestion[0][5].picture = "empatbelas";
+        AllQuestion[0][6].picture = "delapanbelas33";
+        AllQuestion[0][7].picture = "duadua";
+        AllQuestion[0][8].picture = "satu";//27
+        AllQuestion[0][9].picture = "satu";//29
+        AllQuestion[0][10].picture = "tigadua";
+        AllQuestion[0][11].picture = "delapanbelas33";
+        AllQuestion[0][12].picture = "tigalima";
+        AllQuestion[0][13].picture = "tigasembilan";
+
+        AllQuestion[1][0].picture = "dua";
+        AllQuestion[1][1].picture = "empat";
+        AllQuestion[1][2].picture = "tujuh";
+        AllQuestion[1][3].picture = "sembilan";
+        AllQuestion[1][4].picture = "limabelas";
+        AllQuestion[1][5].picture = "sembilanbelas";
+        AllQuestion[1][6].picture = "duapuluh";
+        AllQuestion[1][7].picture = "duatiga";
+        AllQuestion[1][8].picture = "dualima";
+        AllQuestion[1][9].picture = "duadelapan";
+        AllQuestion[1][10].picture = "tigapuluh";
+        AllQuestion[1][11].picture = "empatbelas";//gausah diganti
+        AllQuestion[1][12].picture = "empatbelas";//gausah diganti
+        AllQuestion[1][13].picture = "empatsatu";
+
+        AllQuestion[2][0].picture = "tiga";
+        AllQuestion[2][1].picture = "lima";
+        AllQuestion[2][2].picture = "sepuluh37";
+        AllQuestion[2][3].picture = "tigabelas38";
+        AllQuestion[2][4].picture = "enambelas42";
+        AllQuestion[2][5].picture = "tujuhbelas";
+        AllQuestion[2][6].picture = "duasatuu";
+        AllQuestion[2][7].picture = "duaempat";
+        AllQuestion[2][8].picture = "duaenam";
+        AllQuestion[2][9].picture = "tigasatu";
+        AllQuestion[2][10].picture = "tigaempat";
+        AllQuestion[2][11].picture = "sepuluh37";
+        AllQuestion[2][12].picture = "tigabelas38";
+        AllQuestion[2][13].picture = "enambelas42";
 
     }
 }
