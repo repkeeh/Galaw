@@ -146,6 +146,7 @@ public class actStressHeal2 extends AppCompatActivity {
             // Stopping
             mp.start();
             playBtn.setBackgroundResource(R.drawable.stop);
+            vinyl.setBackgroundResource(R.drawable.vinyl);
 
 
         } else {
