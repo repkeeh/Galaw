@@ -83,8 +83,6 @@ public class fragHome extends Fragment {
         imageSlider.setImageList(slideModels, true);
 
         banner1 = view.findViewById(R.id.banner1);
-        banner2 = view.findViewById(R.id.banner2);
-        banner3 = view.findViewById(R.id.banner3);
         healthDef = view.findViewById(R.id.healthDef);
 
 
@@ -109,22 +107,7 @@ public class fragHome extends Fragment {
             }
         });
 
-        banner2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), actAnxiety.class);
-                intent.putExtra("quiz",levelquiz);
-                startActivity(intent);
-            }
-        });
 
-        banner3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), actDepression.class);
-                startActivity(intent);
-            }
-        });
 
     }
 }

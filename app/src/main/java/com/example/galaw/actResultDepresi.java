@@ -71,7 +71,7 @@ public class actResultDepresi extends AppCompatActivity {
                         Toast.makeText(actResultDepresi.this, "Update Failed", Toast.LENGTH_SHORT).show();
                     }
                 });
-                Intent intent = new Intent( actResultDepresi.this, actAllTest.class );
+                Intent intent = new Intent( actResultDepresi.this, actHome.class );
 
                 startActivity(intent);
             }

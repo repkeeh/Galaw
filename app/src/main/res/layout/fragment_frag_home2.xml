@@ -68,7 +68,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp"
                     android:background="@null"
-                    android:text="click here"
+                    android:text="klik disini untuk mulai"
                     android:textSize="15dp"
                     android:textColor="#ffff"
                     />
@@ -76,67 +76,7 @@
 
             </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="210dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="470dp"
-                android:layout_marginRight="20dp"
-                android:background="#FEBB83"
-                >
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="160dp"
-                    android:background="@drawable/quizanxiety"
-                    />
-
-                <Button
-                    android:id="@+id/banner2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="28dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@null"
-
-                    android:text="click here"
-                    android:textSize="15dp"
-                    android:textColor="#ffff"
-                    />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="210dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="730dp"
-                android:layout_marginRight="20dp"
-                android:background="#FC5D71"
-                android:layout_marginBottom="20dp"
-                >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="160dp"
-                    android:background="@drawable/quizdepresi"
-                    />
-
-                <Button
-                    android:id="@+id/banner3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="28dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@null"
-                    android:text="click here"
-                    android:textSize="15dp"
-                    android:textColor="#ffff"
-                    />
-            </RelativeLayout>
 
         </RelativeLayout>
     </ScrollView>

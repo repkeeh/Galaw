@@ -107,7 +107,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:background="@drawable/white"
-                    android:text="Phone Number"
+                    android:text="nomor telefon"
                     android:textSize="12dp"
                     android:layout_marginTop="10dp"
                     android:textColor="#7B5CFF"
@@ -129,7 +129,7 @@
                     android:background="@drawable/whitebtn"
                     android:layout_gravity="center"
                     android:layout_marginTop="30dp"
-                    android:text="Change password"
+                    android:text="ganti kata sandi"
                     android:textSize="15dp"
                     android:textColor="#C062F5"
                     />
@@ -140,7 +140,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
-                    android:text=" Email Not Verified !"
+                    android:text=" Email tidak terverifikasi"
                     android:textColor="#F40E0E"
                     android:textSize="15dp"
                     android:visibility="gone"
@@ -154,7 +154,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/whitebtn"
-                    android:text="VERIFY NOW"
+                    android:text="VERIFIKASI SEKARANG"
                     android:visibility="gone" />
 
                 <Button
@@ -164,7 +164,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:onClick="logout"
-                    android:text="Log out"
+                    android:text="KELUAR"
                     android:textColor="#C062F5"
                     android:background="@drawable/whitebtn"
                     android:textSize="15dp"

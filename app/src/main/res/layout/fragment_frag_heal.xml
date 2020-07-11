@@ -38,7 +38,7 @@
             android:layout_marginRight="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="anxiety"
+            android:text="kecemasan"
             android:textSize="15dp"
             android:textColor="#9C9C9C"
             />

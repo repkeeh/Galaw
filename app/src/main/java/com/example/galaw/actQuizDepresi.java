@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class actQuizDepresi extends AppCompatActivity {
 
@@ -62,6 +63,11 @@ public class actQuizDepresi extends AppCompatActivity {
 
 
 
+    }
+
+
+    public void onBackPressed(){
+        Toast.makeText(actQuizDepresi.this, "selesaikan dulu ya", Toast.LENGTH_LONG).show();
     }
 
     void ChangeValue(int index){

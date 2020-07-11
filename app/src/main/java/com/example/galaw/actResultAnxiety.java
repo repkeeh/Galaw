@@ -70,7 +70,7 @@ public class actResultAnxiety extends AppCompatActivity {
                         Toast.makeText(actResultAnxiety.this, "Update Failed", Toast.LENGTH_SHORT).show();
                     }
                 });
-                Intent intent = new Intent( actResultAnxiety.this, actAllTest.class );
+                Intent intent = new Intent( actResultAnxiety.this, actHome.class );
 
                 startActivity(intent);
             }

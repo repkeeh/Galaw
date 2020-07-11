@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class actAllTest extends AppCompatActivity {
 
@@ -100,6 +101,20 @@ public class actAllTest extends AppCompatActivity {
                 //lock1.setVisibility(View.INVISIBLE);
                 //lock2.setVisibility(View.INVISIBLE);
 
+            }
+        });
+
+        lock1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(actAllTest.this, "Selesaikan level 1 dulu ya", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        lock2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(actAllTest.this, "Selesaikan level 2 dulu ya", Toast.LENGTH_LONG).show();
             }
         });
 

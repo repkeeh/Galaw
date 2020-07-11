@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class actQuizStress extends AppCompatActivity {
 
@@ -87,7 +88,9 @@ public class actQuizStress extends AppCompatActivity {
 
     }
 
-
+    public void onBackPressed(){
+        Toast.makeText(actQuizStress.this, "selesaikan dulu ya", Toast.LENGTH_LONG).show();
+    }
 
     void ChangeValue(int index){
 
@@ -113,6 +116,8 @@ public class actQuizStress extends AppCompatActivity {
             imageV.setImageResource(id);
         }
     }
+
+
 
     void SetCollection(){
 // Stress question

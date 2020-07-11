@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class actQuizAnxiety extends AppCompatActivity {
 
@@ -87,7 +88,9 @@ public class actQuizAnxiety extends AppCompatActivity {
 
     }
 
-
+    public void onBackPressed(){
+        Toast.makeText(actQuizAnxiety.this, "selesaikan dulu ya", Toast.LENGTH_LONG).show();
+    }
 
     void ChangeValue(int index){
 

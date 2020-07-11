@@ -69,7 +69,7 @@ public class actResultStress extends AppCompatActivity {
                         Toast.makeText(actResultStress.this, "Update Failed", Toast.LENGTH_SHORT).show();
                     }
                 });
-                Intent intent = new Intent( actResultStress.this, actAllTest.class );
+                Intent intent = new Intent( actResultStress.this, actHome.class );
 
                 startActivity(intent);
             }

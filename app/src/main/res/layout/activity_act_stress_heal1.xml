@@ -20,7 +20,7 @@
         android:id="@+id/semangat"
         android:textSize="20dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="150dp"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
         android:textColor="#ffffff"
@@ -41,6 +41,15 @@
         android:id="@+id/nextSemangat"
         />
 
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/giphy"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"
+        />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,7 +57,7 @@
         android:textSize="15dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="50dp"
         android:textColor="#ffffff"
         />
 </RelativeLayout>
