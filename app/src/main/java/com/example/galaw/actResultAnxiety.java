@@ -85,16 +85,16 @@ public class actResultAnxiety extends AppCompatActivity {
             tingkatstress = "Normal";
         }
         else if(type_question >= 15 && type_question <= 18){
-            tingkatstress = "Mild";
+            tingkatstress = "Ringan";
         }
         else if(type_question >= 19 && type_question <= 25){
-            tingkatstress = "Moderate";
+            tingkatstress = "Sedang";
         }
         else if(type_question >= 26 && type_question <= 33){
-            tingkatstress = "Severe";
+            tingkatstress = "Berat";
         }
         else if(type_question >= 34){
-            tingkatstress = "Extremely Severe";
+            tingkatstress = "Sangat Berat";
         }
         return tingkatstress;
     }

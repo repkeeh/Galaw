@@ -87,16 +87,16 @@ public class actResultDepresi extends AppCompatActivity {
             tingkatstress = "Normal";
         }
         else if(type_question >= 10 && type_question <= 13){
-            tingkatstress = "Mild";
+            tingkatstress = "Ringan";
         }
         else if(type_question >= 14 && type_question <= 20){
-            tingkatstress = "Moderate";
+            tingkatstress = "Sedang";
         }
         else if(type_question >= 21 && type_question <= 27){
-            tingkatstress = "Severe";
+            tingkatstress = "Berat";
         }
         else if(type_question >= 28){
-            tingkatstress = "Extremely Severe";
+            tingkatstress = "Sangat Berat";
         }
         return tingkatstress;
     }
