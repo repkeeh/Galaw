@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".actResultAnxiety"></activity>
+        <activity android:name=".actLogin"></activity>
+        <activity android:name=".actResultAnxiety" />
         <activity android:name=".actAllTest" />
         <activity android:name=".actWebView" />
         <activity android:name=".actAnxiety" />
@@ -21,7 +22,6 @@
         <activity android:name=".actDiary" />
         <activity android:name=".actEdit" />
         <activity android:name=".actEditProfile" />
-        <activity android:name=".actLogin" />
         <activity android:name=".actMentalDef" />
         <activity android:name=".actQuizAnxiety" />
         <activity android:name=".actQuizDepresi" />
@@ -35,15 +35,6 @@
         <activity android:name=".actStressHeal1" />
         <activity android:name=".actStressHeal2" />
         <activity android:name=".actStressHeal3" />
-        <activity
-            android:name=".actSignUp"
-            android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".actHome" />
 
         <meta-data

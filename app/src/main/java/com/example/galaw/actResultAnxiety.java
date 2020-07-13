@@ -58,7 +58,7 @@ public class actResultAnxiety extends AppCompatActivity {
                 userID = fAuth.getCurrentUser().getUid();
                 final DocumentReference documentReference = fStore.collection("Quiz").document(userID);
                 Map<String, Object> user = new HashMap<>();
-                user.put("Anxiety Score", totalQuiz);
+                user.put("AnxietyScore", totalQuiz);
                 documentReference.update(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {

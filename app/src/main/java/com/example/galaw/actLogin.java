@@ -111,13 +111,13 @@ public class actLogin extends AppCompatActivity {
                 fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                     if (task.isSuccessful()){
-                         Toast.makeText(actLogin.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
-                         startActivity(new Intent(getApplicationContext(),actHome.class));
-                     }else{
-                         Toast.makeText(actLogin.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                         progressBar.setVisibility(View.GONE);
-                     }
+                        if (task.isSuccessful()){
+                            Toast.makeText(actLogin.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(),actHome.class));
+                        }else{
+                            Toast.makeText(actLogin.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.GONE);
+                        }
 
                     }
                 });

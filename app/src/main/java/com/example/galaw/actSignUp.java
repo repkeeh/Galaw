@@ -58,7 +58,7 @@ public class actSignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_sign_up);
 
-         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         fAuth = FirebaseAuth.getInstance();
 
@@ -144,9 +144,9 @@ public class actSignUp extends AppCompatActivity {
 
                             if (male.isChecked()) {
                                 user.put("Gender", m1);
-                           } else {
-                               user.put("Gender", m2);
-                                }
+                            } else {
+                                user.put("Gender", m2);
+                            }
 
 
 
