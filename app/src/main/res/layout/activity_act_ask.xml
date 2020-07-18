@@ -50,7 +50,7 @@
             />
 
         <EditText
-            android:id="@+id/diaryJudul"
+            android:id="@+id/askJudul"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginTop="100dp"
@@ -65,14 +65,14 @@
 
         <EditText
 
-            android:id="@+id/diaryIsi"
+            android:id="@+id/askIsi"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_marginTop="170dp"
             android:background="@drawable/white"
             android:gravity="top" />
         <Button
-            android:id="@+id/savediary"
+            android:id="@+id/saveAsk"
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:background="@drawable/custombutton"

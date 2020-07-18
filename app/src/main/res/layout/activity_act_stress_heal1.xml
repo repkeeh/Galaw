@@ -20,7 +20,7 @@
         android:id="@+id/semangat"
         android:textSize="20dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="170dp"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
         android:textColor="#ffffff"
