@@ -7,6 +7,7 @@ package com.example.galaw;
         import android.content.SharedPreferences;
         import android.os.Bundle;
         import android.view.View;
+        import android.view.WindowManager;
         import android.widget.Button;
         import android.widget.TextView;
         import android.widget.Toast;
@@ -36,6 +37,8 @@ public class actResultAnxiety extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_result_anxiety);
 
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
@@ -46,7 +49,6 @@ public class actResultAnxiety extends AppCompatActivity {
         number_Question = 0;
 
         Total.setText(setTingkatAnxietyOrang(type_Question));
-        Total.setText("" + type_Question);
 
         simpanData.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,19 +83,19 @@ public class actResultAnxiety extends AppCompatActivity {
 
     private String setTingkatAnxietyOrang(int type_question) {
         String tingkatstress = "";
-        if(type_question >= 0 && type_question <= 14){
+        if(type_question >= 0 && type_question <= 7){
             tingkatstress = "Normal";
         }
-        else if(type_question >= 15 && type_question <= 18){
+        else if(type_question >= 8 && type_question <= 9){
             tingkatstress = "Ringan";
         }
-        else if(type_question >= 19 && type_question <= 25){
+        else if(type_question >= 10 && type_question <= 14){
             tingkatstress = "Sedang";
         }
-        else if(type_question >= 26 && type_question <= 33){
+        else if(type_question >= 15 && type_question <= 19){
             tingkatstress = "Berat";
         }
-        else if(type_question >= 34){
+        else if(type_question >= 20){
             tingkatstress = "Sangat Berat";
         }
         return tingkatstress;

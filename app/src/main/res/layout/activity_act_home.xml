@@ -14,7 +14,7 @@
         android:orientation="horizontal"
         android:background="@drawable/backgroundhome"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
+        android:layout_height="170dp"
         >
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -23,13 +23,13 @@
             android:layout_height="65dp"
             android:layout_marginLeft="20dp"
             android:src="@drawable/profileicon"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="60dp"
             android:layout_marginLeft="100dp"
             android:textSize="15dp"
             android:text="Hai"
@@ -38,7 +38,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="85dp"
             android:layout_marginLeft="100dp"
             android:textSize="15dp"
             android:text="Bagaimana kabarmu hari ini?"
@@ -49,7 +49,7 @@
             android:id="@+id/nameProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="60dp"
             android:layout_marginLeft="130dp"
             android:textSize="15dp"
             android:textColor="#ffffff"
@@ -59,9 +59,8 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
             android:layout_marginRight="10dp"
-            android:layout_marginBottom="70dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/settingicon"
             android:id="@+id/setting"
             />
@@ -71,7 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:weightSum="4"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="140dp"
         >
 
         <TextView
@@ -118,7 +117,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:weightSum="4"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="160dp"
         android:background="@drawable/backgroundgrey"
         >
         <Button
@@ -172,7 +171,7 @@
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="210dp"
         />
 
 </RelativeLayout>
