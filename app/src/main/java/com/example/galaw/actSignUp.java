@@ -136,6 +136,14 @@ public class actSignUp extends AppCompatActivity {
 
                             Toast.makeText(actSignUp.this, "User Created", Toast.LENGTH_SHORT).show();
                             userID = fAuth.getCurrentUser().getUid();
+                            DocumentReference docref = fStore.collection("Quiz").document(userID);
+                            Map<String, Object> user1 = new HashMap<>();
+                            user1.put("StressScore", null);
+                            user1.put("AnxietyScore", null);
+                            user1.put("DepressionScore", null);
+                            docref.set(user1);
+
+
                             DocumentReference documentReference = fStore.collection("Users").document(userID);
                             Map<String, Object> user = new HashMap<>();
                             user.put("Name", name);

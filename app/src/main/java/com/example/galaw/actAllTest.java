@@ -10,16 +10,38 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import javax.annotation.Nullable;
+
 public class actAllTest extends AppCompatActivity {
 
     Button level1, level2, level3, lock1, lock2;
     int editklik;
-    SharedPreferences preferences;
+    FirebaseFirestore fStore;
+    FirebaseAuth fAuth;
+    String userID;
+    Task<QuerySnapshot> check;
+    Task<QuerySnapshot> check2;
+    Task<QuerySnapshot> check3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_all_test);
+
+        fStore = FirebaseFirestore.getInstance();
+        fAuth = FirebaseAuth.getInstance();
+        userID = fAuth.getCurrentUser().getUid();
+
         int levelquiz = getIntent().getIntExtra("quiz",-1);
         level1 = (Button) findViewById(R.id.level1);
         level2 = (Button) findViewById(R.id.level2);
@@ -27,30 +49,38 @@ public class actAllTest extends AppCompatActivity {
         lock1 = (Button) findViewById(R.id.lock1);
         lock2 = (Button) findViewById(R.id.lock2);
 
-        preferences = this.getSharedPreferences("myPref", MODE_PRIVATE);
-        if(preferences.getInt("editklik",-1) == -1){
-            level1.setVisibility(View.VISIBLE);
-            level2.setVisibility(View.INVISIBLE);
-            level3.setVisibility(View.INVISIBLE);
-        }
-        else if(preferences.getInt("editklik",-1) == 1){
-            level1.setVisibility(View.VISIBLE);
-            level2.setVisibility(View.VISIBLE);
-            level3.setVisibility(View.INVISIBLE);
-        }
-        else if(preferences.getInt("editklik",-1) == 2){
-            level1.setVisibility(View.VISIBLE);
-            level2.setVisibility(View.VISIBLE);
-            level3.setVisibility(View.VISIBLE);
-        }
+        DocumentReference documentReference = fStore.collection("Quiz").document(userID);
+        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                if (documentSnapshot.getString("StressScore") == null) {
+                    level1.setVisibility(View.VISIBLE);
+                    level2.setVisibility(View.INVISIBLE);
+                    level3.setVisibility(View.INVISIBLE);
+
+                } else if (documentSnapshot.getString("AnxietyScore") == null) {
+                    level1.setVisibility(View.VISIBLE);
+                    level2.setVisibility(View.VISIBLE);
+                    level3.setVisibility(View.INVISIBLE);
+
+                } else if (documentSnapshot.getString("DepressionScore") == null) {
+                    level1.setVisibility(View.VISIBLE);
+                    level2.setVisibility(View.VISIBLE);
+                    level3.setVisibility(View.VISIBLE);
+
+                } else if (documentSnapshot.getString("DepressionScore") != null) {
+                    level1.setVisibility(View.VISIBLE);
+                    level2.setVisibility(View.VISIBLE);
+                    level3.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
 
         level1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                SharedPreferences.Editor edit =preferences.edit();
-                edit.putInt("editklik", 1);
-                edit.commit();
                 Intent intent = new Intent(actAllTest.this, actStress.class);
                 intent.putExtra("quiz",1);
                 startActivity(intent);
@@ -67,9 +97,6 @@ public class actAllTest extends AppCompatActivity {
         level2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences.Editor edit = preferences.edit();
-                edit.putInt("editklik", 2);
-                edit.commit();
 
                 Intent intent = new Intent(actAllTest.this, actAnxiety.class);
                 intent.putExtra("quiz",2);
@@ -87,9 +114,6 @@ public class actAllTest extends AppCompatActivity {
         level3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences.Editor edit = preferences.edit();
-                edit.putInt("editklik", 3);
-                edit.commit();
 
                 Intent intent = new Intent(actAllTest.this, actDepression.class);
                 intent.putExtra("quiz",3);

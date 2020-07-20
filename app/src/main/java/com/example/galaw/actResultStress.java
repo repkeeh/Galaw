@@ -61,7 +61,7 @@ public class actResultStress extends AppCompatActivity {
                 final DocumentReference documentReference = fStore.collection("Quiz").document(userID);
                 Map<String, Object> user = new HashMap<>();
                 user.put("StressScore", totalQuiz);
-                documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                documentReference.update(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Toast.makeText(actResultStress.this, "Score has been Updated", Toast.LENGTH_SHORT).show();
