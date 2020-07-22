@@ -13,10 +13,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="20dp"
                 >
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -24,94 +25,88 @@
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
                     >
+
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="650dp"
+                        android:overScrollMode="never"
+                        android:clipToPadding="false"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jenis-jenis kecemasan :"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="#ffffff"
+                        android:textSize="17dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gejala kecemasan memiliki banyak efek samping, kabar baiknya gangguan kecemasan dapat diobati tenpa memandang usia "
+                        android:layout_marginTop="300dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:textColor="#ffffff"
+                        android:textSize="17dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Melawan gangguan kesehatan memerlukan keberanian dan komitmen tetapi banyak orang yang berhasil"
+                        android:layout_marginTop="380dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:textColor="#ffffff"
+                        android:textSize="17dp"
+                        />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Gejala kecemasan : "
-                        android:textColor="#C062F5"
+                        android:textColor="#ffffff"
+                        android:layout_marginTop="440dp"
                         android:textSize="17dp"
                         />
                     <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/pikiran"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="470dp"
                         />
                     <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/fisik"
-                        android:layout_marginTop="60dp"
+                        android:layout_marginTop="500dp"
                         />
                     <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/perilaku"
-                        android:layout_marginTop="100dp"
+                        android:layout_marginTop="530dp"
                         />
 
-                </RelativeLayout>
-
-                    <TextView
+                    <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Jenis-jenis kecemasan :"
-                        android:layout_marginTop="150dp"
-                        android:layout_marginLeft="20dp"
+                        android:text="selanjutnya"
                         android:textColor="#C062F5"
-                        android:textSize="17dp"
+                        android:background="@drawable/whitebtn"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="560dp"
+                        android:id="@+id/nextHealCemas"
+                        android:padding="5dp"
                         />
+                </RelativeLayout>
 
-                    <androidx.viewpager.widget.ViewPager
-                        android:id="@+id/viewPager"
-                        android:layout_width="match_parent"
-                        android:layout_height="650dp"
-                        android:layout_marginTop="200dp"
-                        android:overScrollMode="never"
-                        android:clipToPadding="false"
-                        />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Jenis-jenis kecemasan :"
-                    android:layout_marginTop="520dp"
-                    android:layout_marginLeft="20dp"
-                    android:textColor="#ffffff"
-                    android:textSize="17dp"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Gejala kecemasan memiliki banyak efek samping, kabar baiknya gangguan kecemasan dapat diobati tenpa memandang usia "
-                    android:layout_marginTop="550dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:textColor="#ffffff"
-                    android:textSize="17dp"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Melawan gangguan kesehatan memerlukan keberanian dan komitmen tetapi banyak orang yang berhasil"
-                    android:layout_marginTop="640dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:textColor="#ffffff"
-                    android:textSize="17dp"
-                    />
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="selanjutnya"
-                    android:textColor="#C062F5"
-                    android:background="@drawable/whitebtn"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="720dp"
-                    android:id="@+id/nextHealCemas"
-                    android:padding="5dp"
-                    />
+
 
             </RelativeLayout>
 

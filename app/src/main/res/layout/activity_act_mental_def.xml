@@ -7,6 +7,17 @@
     tools:context=".actEditProfile"
     android:background="@drawable/backgroundgrey"
 >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="15dp"
+        android:text="EDUKASI"
+        android:textColor="#ffffff"
+        android:background="@drawable/backgroundhome"
+        android:textAlignment="center"
+        android:paddingTop="15dp"
+        />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,23 +25,17 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="60dp"
             >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="INFOGRAFIS"
-                android:layout_marginTop="20dp"
-                android:layout_centerHorizontal="true"
-                android:textColor="#C062F5"
-                />
+
 
             <ImageView
                 android:layout_width="370dp"
                 android:layout_height="140dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginTop="40dp"
+
                 android:background="@drawable/bannermental"
                 />
 

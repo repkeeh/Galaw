@@ -44,11 +44,22 @@
                     app:period="1000" />
             </RelativeLayout>
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[Kecemasan] Apasih kecemasan?...."
+                android:background="#ffff"
+                android:layout_marginTop="210dp"
+                android:textAlignment="textStart"
+                android:paddingLeft="20dp"
+                android:textColor=""
+                />
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="210dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="220dp"
+                android:layout_marginTop="450dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="50dp"
                 android:background="@drawable/backgroundhome"
@@ -76,8 +87,6 @@
 
 
             </RelativeLayout>
-
-
 
         </RelativeLayout>
     </ScrollView>
