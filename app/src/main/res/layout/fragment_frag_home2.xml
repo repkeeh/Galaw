@@ -22,7 +22,7 @@
                 >
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:id="@+id/healthDef"
                     android:text="Klik disini untuk membaca..."
@@ -44,15 +44,44 @@
                     app:period="1000" />
             </RelativeLayout>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#C062F5"
+                android:text="Hot Article"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="200dp"
+                />
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="[Kecemasan] Apasih kecemasan?...."
-                android:background="#ffff"
-                android:layout_marginTop="210dp"
+                android:background="#ffffff"
+                android:text="[stress] bisa disembuhkan loh?...."
                 android:textAlignment="textStart"
                 android:paddingLeft="20dp"
-                android:textColor=""
+                android:layout_marginTop="230dp"
+                android:textColor="#C062F5"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:text="[kecemasan] apasih kecemasan itu?...."
+                android:textAlignment="textStart"
+                android:paddingLeft="20dp"
+                android:layout_marginTop="290dp"
+                android:textColor="#FCC78E"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:text="[depresi] depresi bisa disembuhkan?...."
+                android:textAlignment="textStart"
+                android:paddingLeft="20dp"
+                android:layout_marginTop="350dp"
+                android:textColor="#FF7070"
                 />
 
             <RelativeLayout

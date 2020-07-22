@@ -84,19 +84,19 @@ public class actResultAnxiety extends AppCompatActivity {
     private String setTingkatAnxietyOrang(int type_question) {
         String tingkatstress = "";
         if(type_question >= 0 && type_question <= 7){
-            tingkatstress = "wah bagus, tingkat mu normal";
+            tingkatstress = "KAMU NORMAL NIH, SELAMAT YA!";
         }
         else if(type_question >= 8 && type_question <= 9){
-            tingkatstress = "sedang ada yang dipikirkan ya?";
+            tingkatstress = "KELIHATANNYA KAMU AGAK CEMAS NIH..";
         }
         else if(type_question >= 10 && type_question <= 14){
-            tingkatstress = "jangan terlalu tegang ya";
+            tingkatstress = "KAMU TERLIHAT CUKUP CEMAS NIH";
         }
         else if(type_question >= 15 && type_question <= 19){
-            tingkatstress = "galau ya? semua orang pernah kok.";
+            tingkatstress = "NAMPAKNYA KAMU SEDANG BANYAK YANG DIPIKIRKAN YAA";
         }
         else if(type_question >= 20){
-            tingkatstress = "kamu nampaknya sedang sedih.";
+            tingkatstress = "COBA UNTUK KONSULTASI YUK";
         }
         return tingkatstress;
     }

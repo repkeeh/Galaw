@@ -22,8 +22,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="20dp"
+
                     >
 
 
@@ -33,12 +32,14 @@
                         android:layout_height="650dp"
                         android:overScrollMode="never"
                         android:clipToPadding="false"
+                        android:background="#000000"
                         />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Jenis-jenis kecemasan :"
+                        android:layout_marginRight="20dp"
                         android:layout_marginLeft="20dp"
                         android:textColor="#ffffff"
                         android:textSize="17dp"
@@ -69,26 +70,34 @@
                         android:layout_height="wrap_content"
                         android:text="Gejala kecemasan : "
                         android:textColor="#ffffff"
-                        android:layout_marginTop="440dp"
+                        android:layout_marginTop="450dp"
                         android:textSize="17dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
                         />
                     <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/pikiran"
                         android:layout_marginTop="470dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
                         />
                     <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/fisik"
                         android:layout_marginTop="500dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
                         />
                     <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/perilaku"
                         android:layout_marginTop="530dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
                         />
 
                     <Button

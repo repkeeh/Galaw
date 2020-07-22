@@ -85,19 +85,19 @@ public class actResultStress extends AppCompatActivity {
     private String setTingkatStressOrang(int type_question) {
         String tingkatstress = "";
         if(type_question >= 0 && type_question <= 14){
-            tingkatstress = "Normal";
+            tingkatstress = "KAMU NORMAL NIH, SELAMAT YA!";
         }
         else if(type_question >= 15 && type_question <= 18){
-            tingkatstress = "Ringan";
+            tingkatstress = "WAH, KAMU SEDANG ADA PIKIRAN YA?";
         }
         else if(type_question >= 19 && type_question <= 25){
-            tingkatstress = "Sedang";
+            tingkatstress = "SEPERTINYA KAMU SEDANG SEDIH YA..";
         }
         else if(type_question >= 26 && type_question <= 33){
-            tingkatstress = "Berat";
+            tingkatstress = "WAH, SEPERTINYA KAMU SEDANG BANYAK PIKIRAN..";
         }
         else if(type_question >= 34){
-            tingkatstress = "Sangat Berat";
+            tingkatstress = "COBA UNTUK TERAPI YUK..";
         }
         return tingkatstress;
     }

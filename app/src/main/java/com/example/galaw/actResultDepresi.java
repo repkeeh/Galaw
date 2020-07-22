@@ -85,19 +85,19 @@ public class actResultDepresi extends AppCompatActivity {
     private String setTingkatDepresiOrang(int type_question) {
         String tingkatstress = "";
         if(type_question >= 0 && type_question <= 9){
-            tingkatstress = "wah bagus, tingkat mu normal";//normal
+            tingkatstress = "KAMU NORMAL NIH, SELAMAT YAA!";//normal
         }
         else if(type_question >= 10 && type_question <= 13){
-            tingkatstress = "sedang ada yang dipikirkan ya?";//ringan
+            tingkatstress = "KAMU TERLIHAT SEDANG KURANG SEHAT NIH..";//ringan
         }
         else if(type_question >= 14 && type_question <= 20){
-            tingkatstress = "jangan terlalu tegang ya"; // sedang
+            tingkatstress = "KAMU SEDANG BANYAK PIKIRAN YA?"; // sedang
         }
         else if(type_question >= 21 && type_question <= 27){
-            tingkatstress = "galau ya? semua orang pernah kok.";//
+            tingkatstress = "YUK COBA LAKUKAN YANG LEBIH POSITIF..";//
         }
         else if(type_question >= 28){
-            tingkatstress = "kamu nampaknya sedang sedih. ";
+            tingkatstress = "YUK COBA KONSULTASI DENGAN AHLINYA..";
         }
         return tingkatstress;
     }
