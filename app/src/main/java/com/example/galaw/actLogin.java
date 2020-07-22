@@ -31,6 +31,12 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 
 public class actLogin extends AppCompatActivity {
 
@@ -43,8 +49,8 @@ public class actLogin extends AppCompatActivity {
     EditText mpassword;
     Button mloginButton, msignup;
     TextView signup, forgotTextLink;
-    ProgressBar progressBar;
     FirebaseAuth fAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,11 +63,12 @@ public class actLogin extends AppCompatActivity {
         memail = findViewById(R.id.email);
         mpassword = findViewById(R.id.password);
         mloginButton = findViewById(R.id.loginButton);
-        progressBar = findViewById(R.id.progressBar);
         msignup = findViewById(R.id.buttonSignup);
         forgotTextLink = findViewById(R.id.forgotPassword);
         fAuth = FirebaseAuth.getInstance();
         signIn = findViewById(R.id.signIn);
+
+
 
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken("227320776788-ko3jaibgaqvib87d2qsu7sqcobdvj94s.apps.googleusercontent.com")
@@ -104,20 +111,20 @@ public class actLogin extends AppCompatActivity {
                     return;
                 }
 
-                progressBar.setVisibility(View.VISIBLE);
+
 
                 // Authenticate the user
 
                 fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                     if (task.isSuccessful()){
-                         Toast.makeText(actLogin.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
-                         startActivity(new Intent(getApplicationContext(),actHome.class));
-                     }else{
-                         Toast.makeText(actLogin.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                         progressBar.setVisibility(View.GONE);
-                     }
+                        if (task.isSuccessful()){
+                            Toast.makeText(actLogin.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(),actHome.class));
+
+                        }else{
+                            Toast.makeText(actLogin.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
 
                     }
                 });
@@ -188,7 +195,7 @@ public class actLogin extends AppCompatActivity {
                 fAuth.signInWithCredential(authCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Toast.makeText(getApplicationContext(), "Your Account is Connected to Our Application", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Your Google Account is Connected to Our Application", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(),actHome.class));
 
                     }

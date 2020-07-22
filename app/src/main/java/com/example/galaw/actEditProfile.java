@@ -46,7 +46,7 @@ import android.widget.Button;
 public class actEditProfile extends AppCompatActivity {
     public static final String TAG = "Tag";
     TextView name, email, phone, verifyMsg;
-    Button resendCode, changeUserData, resetPass;
+    Button resendCode, changeUserData, resetPass, logout;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userID;
@@ -67,6 +67,9 @@ public class actEditProfile extends AppCompatActivity {
         email = findViewById(R.id.emailProfile);
         phone = findViewById(R.id.phoneProfile);
         resetPass = findViewById(R.id.resetPassword);
+        logout = findViewById(R.id.logout);
+
+
 
         profileImage = findViewById(R.id.profileImage);
         changeUserData = findViewById(R.id.editProfile);
@@ -195,6 +198,7 @@ public class actEditProfile extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
 
     }
