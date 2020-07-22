@@ -3,4 +3,25 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <string-array name="pikiran">
+        <item>pikiran yang tidak membantu : </item>
+        <item>khawatir tentang beberapa hal</item>
+        <item>pikiran negatif tentang masa depan</item>
+    </string-array>
+    <string-array name="fisik">
+        <item>gejala fisik : </item>
+        <item>detak jantung cepat</item>
+        <item>berkeringat </item>
+        <item>gemetar</item>
+        <item>sakit perut </item>
+        <item>ketegangan pada otot</item>
+        <item>sakit kepala</item>
+        <item>merasa kesal</item>
+    </string-array>
+    <string-array name="perilaku">
+        <item>perilaku yang tidak membantu : </item>
+        <item>menghindari hal pemicu kecemasan</item>
+        <item>Hanya pergi jika ditemani orang lain</item>
+    </string-array>
 </resources>

@@ -1,25 +1,25 @@
 package com.example.galaw;
 
-        import androidx.annotation.NonNull;
-        import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
-        import android.content.Intent;
-        import android.content.SharedPreferences;
-        import android.os.Bundle;
-        import android.view.View;
-        import android.view.WindowManager;
-        import android.widget.Button;
-        import android.widget.TextView;
-        import android.widget.Toast;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
-        import com.google.android.gms.tasks.OnFailureListener;
-        import com.google.android.gms.tasks.OnSuccessListener;
-        import com.google.firebase.auth.FirebaseAuth;
-        import com.google.firebase.firestore.DocumentReference;
-        import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
-        import java.util.HashMap;
-        import java.util.Map;
+import java.util.HashMap;
+import java.util.Map;
 
 public class actResultAnxiety extends AppCompatActivity {
     int type_Question;
