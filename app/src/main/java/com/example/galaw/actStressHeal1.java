@@ -9,11 +9,12 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class actStressHeal1 extends AppCompatActivity {
 
-    private ImageView bgquotes;
+    private RelativeLayout bgquotes;
     private TextView mSemangat;
     private Button mNextSmengat;
     private int mSemangatNumber = 0;
@@ -28,7 +29,7 @@ public class actStressHeal1 extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
-        bgquotes =  (ImageView)findViewById(R.id.bgquotes);
+        bgquotes =  (RelativeLayout)findViewById(R.id.bgquotes);
         mSemangat = (TextView)findViewById(R.id.semangat);
         mNextSmengat = (Button)findViewById(R.id.nextSemangat);
 
@@ -51,7 +52,7 @@ public class actStressHeal1 extends AppCompatActivity {
     }
 
     public void rndmText(){
-        bgquotes.setImageResource(StressTextArray[mSemangatNumber].getmImage());
+        bgquotes.setBackground( getResources().getDrawable(StressTextArray[mSemangatNumber].getmImage()));
         mSemangat.setText(StressTextArray[mSemangatNumber].getmSemangat());
         mSemangatNumber++;
         //System.out.println(mSemangatNumber);

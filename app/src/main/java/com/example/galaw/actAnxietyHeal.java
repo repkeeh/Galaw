@@ -8,21 +8,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.jgabrielfreitas.core.BlurImageView;
+import java.net.URI;
 
-public class actDepresiHeal1 extends AppCompatActivity {
+public class actAnxietyHeal extends AppCompatActivity {
 
-    Button callKlinikD, backTestD;
+    Button callKlinik, backTest;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_act_depresi_heal1);
+        setContentView(R.layout.activity_act_anxiety_heal);
 
-        callKlinikD = findViewById(R.id.callKlinikD);
-        backTestD = findViewById(R.id.backTestD);
+        callKlinik = findViewById(R.id.callKlinik);
+        backTest = findViewById(R.id.backTest);
 
-        callKlinikD.setOnClickListener(new View.OnClickListener() {
+        callKlinik.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_DIAL);
@@ -31,12 +32,13 @@ public class actDepresiHeal1 extends AppCompatActivity {
             }
         });
 
-        backTestD.setOnClickListener(new View.OnClickListener() {
+        backTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(actDepresiHeal1.this, actQuizDepresi.class);
+                Intent intent = new Intent(actAnxietyHeal.this, actQuizAnxiety.class);
                 startActivity(intent);
             }
         });
+
     }
 }

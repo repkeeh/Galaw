@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".actAnxietyHeal"
     android:background="@drawable/backgroundgrey"
     >
 
@@ -83,7 +84,7 @@
                 android:textSize="12dp"
                 />
             <Button
-                android:id="@+id/callKlinikD"
+                android:id="@+id/callKlinik"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="980dp"
@@ -95,7 +96,7 @@
                 android:textColor="#ffff"
                 />
             <Button
-                android:id="@+id/backTestD"
+                android:id="@+id/backTest"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1050dp"
