@@ -5,36 +5,20 @@
     android:layout_height="match_parent"
     tools:context=".fragProfile"
     android:background="@drawable/backgroundgrey"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     >
 
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
-
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        >
-
 
         <Button
             android:id="@+id/diaryButton"
-            android:layout_width="500px"
-            android:layout_height="130px"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/askbt"
             android:text="ask"
             android:textColor="#ffffff"
+            android:layout_gravity="center_horizontal"
             />
-
-    </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="160dp"
-        />
 
 </LinearLayout>

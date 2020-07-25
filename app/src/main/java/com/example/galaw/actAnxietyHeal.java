@@ -35,7 +35,7 @@ public class actAnxietyHeal extends AppCompatActivity {
         backTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(actAnxietyHeal.this, actQuizAnxiety.class);
+                Intent intent = new Intent(actAnxietyHeal.this, actAnxiety.class);
                 startActivity(intent);
             }
         });
