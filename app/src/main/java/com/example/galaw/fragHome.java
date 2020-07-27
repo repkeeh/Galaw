@@ -32,7 +32,7 @@ public class fragHome extends Fragment {
     // TODO: Rename and change types of parameters
     //private String mParam1;
     //private String mParam2;
-    Button banner1, banner2, banner3;
+    Button banner1, banner2, banner3, anxietyMore;
     ViewFlipper flipperHome;
     TextView healthDef;
     private int levelquiz;
@@ -84,7 +84,15 @@ public class fragHome extends Fragment {
 
         banner1 = view.findViewById(R.id.banner1);
         healthDef = view.findViewById(R.id.healthDef);
+        anxietyMore = view.findViewById(R.id.anxietyMore);
 
+        anxietyMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), actEduAnxiety.class);
+                startActivity(intent);
+            }
+        });
 
 
         healthDef.setOnClickListener(new View.OnClickListener() {
