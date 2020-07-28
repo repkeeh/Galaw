@@ -16,9 +16,11 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -39,11 +41,11 @@ public class actDiary extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
-        Calendar calendar = Calendar.getInstance();
-        String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+        DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy, HH:mm:ss a");
+        String date = df.format(Calendar.getInstance().getTime());
 
-        TextView textViewDate = findViewById(R.id.tanggal);
-        textViewDate.setText(currentDate);
+        final TextView textViewDate = findViewById(R.id.tanggal);
+        textViewDate.setText(date);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -59,14 +61,16 @@ public class actDiary extends AppCompatActivity {
 
                 final String diaryjudul = diaryJudul.getText().toString();
                 final String diaryisi = diaryIsi.getText().toString();
+                final String tanggal = textViewDate.getText().toString();
 
                 userID = fAuth.getCurrentUser().getUid();
 
                 final DocumentReference documentReference = fStore.collection("Diary").document(userID);
                 Map<String, Object> user = new HashMap<>();
-                user.put("Judul", diaryjudul);
-                user.put("Isi", diaryisi);
-                documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                user.put("Judul", FieldValue.arrayUnion(diaryjudul));
+                user.put("Isi", FieldValue.arrayUnion(diaryisi));
+                user.put("Tanggal", FieldValue.arrayUnion(tanggal));
+                documentReference.update(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Toast.makeText(actDiary.this, "Diary has been Updated", Toast.LENGTH_SHORT).show();
