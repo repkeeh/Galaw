@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.animation.ArgbEvaluator;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
@@ -20,6 +23,7 @@ public class actEduAnxiety extends AppCompatActivity {
     List<Model> models;
     Integer [] colors = null;
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
+    Button nextHealCemas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,17 @@ public class actEduAnxiety extends AppCompatActivity {
         Spinner spinner1  = findViewById(R.id.pikiran);
         Spinner spinner2  = findViewById(R.id.fisik);
         Spinner spinner3  = findViewById(R.id.perilaku);
+        nextHealCemas = findViewById(R.id.nextHealCemas);
+
+        nextHealCemas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(actEduAnxiety.this, actAnxietyHeal.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.pikiran, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -56,7 +71,7 @@ public class actEduAnxiety extends AppCompatActivity {
         viewPager.setAdapter(adapterr);
         viewPager.setPadding(130, 0, 130, 0);
 
-        Integer[] colors_temp = {getResources().getColor(R.color.color1), getResources().getColor(R.color.color2), getResources().getColor(R.color.color3), getResources().getColor(R.color.color4)};
+        Integer[] colors_temp = {getResources().getColor(R.color.color1), getResources().getColor(R.color.color2), getResources().getColor(R.color.color3), getResources().getColor(R.color.color4), getResources().getColor(R.color.color5)};
 
         colors = colors_temp;
 

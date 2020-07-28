@@ -17,7 +17,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 >
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -29,10 +28,11 @@
                     <androidx.viewpager.widget.ViewPager
                         android:id="@+id/viewPager"
                         android:layout_width="match_parent"
-                        android:layout_height="650dp"
+                        android:layout_height="750dp"
                         android:overScrollMode="never"
                         android:clipToPadding="false"
                         android:background="#000000"
+                        android:paddingTop="50dp"
                         />
 
                     <TextView
@@ -48,7 +48,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Gejala kecemasan memiliki banyak efek samping, kabar baiknya gangguan kecemasan dapat diobati tenpa memandang usia "
-                        android:layout_marginTop="300dp"
+                        android:layout_marginTop="330dp"
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
                         android:textColor="#ffffff"
@@ -58,7 +58,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Melawan gangguan kesehatan memerlukan keberanian dan komitmen tetapi banyak orang yang berhasil"
-                        android:layout_marginTop="380dp"
+                        android:layout_marginTop="410dp"
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
                         android:textColor="#ffffff"
@@ -70,7 +70,7 @@
                         android:layout_height="wrap_content"
                         android:text="Gejala kecemasan : "
                         android:textColor="#ffffff"
-                        android:layout_marginTop="450dp"
+                        android:layout_marginTop="500dp"
                         android:textSize="17dp"
                         android:layout_marginRight="20dp"
                         android:layout_marginLeft="20dp"
@@ -79,37 +79,42 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/pikiran"
-                        android:layout_marginTop="470dp"
+                        android:layout_marginTop="540dp"
                         android:layout_marginRight="20dp"
                         android:layout_marginLeft="20dp"
+                        android:background="@drawable/spinner_custom"
                         />
                     <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/fisik"
-                        android:layout_marginTop="500dp"
+                        android:layout_marginTop="570dp"
                         android:layout_marginRight="20dp"
                         android:layout_marginLeft="20dp"
+                        android:background="@drawable/spinner_custom"
                         />
                     <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/perilaku"
-                        android:layout_marginTop="530dp"
+                        android:layout_marginTop="600dp"
                         android:layout_marginRight="20dp"
                         android:layout_marginLeft="20dp"
+                        android:background="@drawable/spinner_custom"
                         />
 
                     <Button
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="selanjutnya"
                         android:textColor="#C062F5"
                         android:background="@drawable/whitebtn"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="560dp"
+                        android:layout_marginTop="640dp"
                         android:id="@+id/nextHealCemas"
                         android:padding="5dp"
+                        android:layout_marginBottom="50dp"
                         />
                 </RelativeLayout>
 

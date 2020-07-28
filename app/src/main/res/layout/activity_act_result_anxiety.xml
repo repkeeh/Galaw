@@ -13,14 +13,6 @@
         android:layout_marginTop="100dp"
         >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tingkat kecemasan mu "
-            android:textSize="25dp"
-            android:textColor="#ffff"
-            android:layout_centerHorizontal="true"
-            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -28,9 +20,10 @@
             android:layout_marginTop="90dp"
             android:id="@+id/total"
             android:textColor="#ffff"
-            android:textSize="50dp"
+            android:textSize="25dp"
             android:layout_centerHorizontal="true"
-
+            android:textAlignment="center"
+            android:text="kayanya kamu sedih nih buosss"
             />
 
 
