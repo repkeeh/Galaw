@@ -104,8 +104,10 @@ public class actResultAnxiety extends AppCompatActivity {
             tingkatstress = "NAMPAKNYA KAMU SEDANG BANYAK YANG DIPIKIRKAN YAA";
         }
         else if(type_question >= 20){
-            tingkatstress = "COBA UNTUK KONSULTASI YUK";
+            tingkatstress = "SEPERTINYA KAMU SEDANG ADA MASALAH, BACA DULU YUK TENTANG KESEHATAN MENTAL";
         }
         return tingkatstress;
     }
+
+
 }
