@@ -22,8 +22,9 @@
             android:textColor="#ffff"
             android:textSize="25dp"
             android:layout_centerHorizontal="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:textAlignment="center"
-            android:text="kayanya kamu sedih nih buosss"
             />
 
 

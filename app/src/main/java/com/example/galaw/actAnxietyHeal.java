@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 
 import java.net.URI;
@@ -20,14 +21,15 @@ public class actAnxietyHeal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_anxiety_heal);
 
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
         callKlinik = findViewById(R.id.callKlinik);
         backTest = findViewById(R.id.backTest);
 
         callKlinik.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData((Uri.parse("tel: 0214223138")));
+                Intent intent = new Intent(actAnxietyHeal.this, klinikYarsi.class);
                 startActivity(intent);
             }
         });
