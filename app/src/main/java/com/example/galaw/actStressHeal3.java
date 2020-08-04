@@ -53,4 +53,9 @@ public class actStressHeal3 extends AppCompatActivity {
         videoGalaw.start();
 
     }
+
+    public void onBackPressed(){
+        Intent intent = new Intent(actStressHeal3.this, actHome.class);
+        startActivity(intent);
+    }
 }
