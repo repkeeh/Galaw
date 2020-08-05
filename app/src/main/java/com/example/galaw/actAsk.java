@@ -31,12 +31,25 @@ public class actAsk extends AppCompatActivity {
     EditText askJudul, askIsi;
     Button saveAsk;
     TextView mailTo;
+    FirebaseFirestore fStore;
+    FirebaseAuth fAuth;
+    String userID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_ask);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
+        DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy, HH:mm:ss a");
+        String date = df.format(Calendar.getInstance().getTime());
+
+        final TextView textViewDate = findViewById(R.id.tanggal);
+        textViewDate.setText(date);
+
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
 
 
 
