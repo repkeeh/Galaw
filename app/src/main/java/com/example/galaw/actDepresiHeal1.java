@@ -41,4 +41,9 @@ public class actDepresiHeal1 extends AppCompatActivity {
             }
         });
     }
+
+    public void onBackPressed() {
+        Intent intent = new Intent(actDepresiHeal1.this, actHome.class);
+        startActivity(intent);
+    }
 }

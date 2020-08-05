@@ -27,16 +27,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="untuk:"
             android:layout_marginTop="20dp"
             android:text="Tanggal" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="date"
+            android:text="galawproject@gmail.com"
             android:layout_marginTop="50dp"
             android:textSize="15dp"
             android:textColor="#C062F5"
-            android:id="@+id/tanggal"
+            android:id="@+id/mailTo"
 
 
             />

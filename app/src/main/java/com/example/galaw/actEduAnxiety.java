@@ -101,4 +101,10 @@ public class actEduAnxiety extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(actEduAnxiety.this, actHome.class);
+        startActivity(intent);
+    }
 }
