@@ -25,22 +25,21 @@
             />
 
         <TextView
+            android:id="@+id/mailTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="galawproject@gmail.com"
+            android:textColor="#C062F5"
+            android:textSize="15dp" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="untuk:"
             android:layout_marginTop="20dp"
-            android:text="Tanggal" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="galawproject@gmail.com"
-            android:layout_marginTop="50dp"
-            android:textSize="15dp"
-            android:textColor="#C062F5"
-            android:id="@+id/mailTo"
+             />
 
-
-            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -55,6 +54,7 @@
             android:layout_height="30dp"
             android:layout_marginTop="100dp"
             android:background="@drawable/white" />
+
         <TextView
             android:layout_marginTop="140dp"
             android:layout_width="wrap_content"
