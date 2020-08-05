@@ -43,4 +43,9 @@ public class actAnxietyHeal extends AppCompatActivity {
         });
 
     }
+
+    public void onBackPressed() {
+        Intent intent = new Intent(actAnxietyHeal.this, actHome.class);
+        startActivity(intent);
+    }
 }

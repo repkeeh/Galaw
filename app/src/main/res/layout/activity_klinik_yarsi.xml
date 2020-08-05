@@ -15,13 +15,16 @@
         />
     <Button
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:id="@+id/noKlinikYarsi"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
-        android:background="@null"
+        android:background="@drawable/custombutton"
+        android:text="konsultasi via telepon"
+        android:textSize="20dp"
+        android:textColor="#ffff"
         />
 
 </RelativeLayout>

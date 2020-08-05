@@ -3,6 +3,7 @@ package com.example.galaw;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
@@ -98,5 +99,10 @@ public class actWebView extends AppCompatActivity {
             ((FrameLayout)getWindow().getDecorView()).addView(this.mCustomView, new FrameLayout.LayoutParams(-1, -1));
             getWindow().getDecorView().setSystemUiVisibility(3846 | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
         }
+    }
+
+    public void onBackPressed(){
+        Intent intent = new Intent(actWebView.this, actHome.class);
+        startActivity(intent);
     }
 }
