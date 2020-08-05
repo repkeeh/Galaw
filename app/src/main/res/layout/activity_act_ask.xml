@@ -27,9 +27,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:text="untuk:"
+=======
+>>>>>>> 58c1190f62e2958d8ae897bdcfccca53ff405164
             android:layout_marginTop="20dp"
-            />
+            android:text="Tanggal" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

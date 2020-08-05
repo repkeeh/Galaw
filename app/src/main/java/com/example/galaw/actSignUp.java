@@ -143,6 +143,20 @@ public class actSignUp extends AppCompatActivity {
                             user1.put("DepressionScore", null);
                             docref.set(user1);
 
+                            DocumentReference docref1 = fStore.collection("Diary").document(userID);
+                            Map<String, Object> user2 = new HashMap<>();
+                            user2.put("Judul", null);
+                            user2.put("Isi", null);
+                            user2.put("Tanggal", null);
+                            docref1.set(user2);
+
+                            DocumentReference docref2 = fStore.collection("Ask").document(userID);
+                            Map<String, Object> user3 = new HashMap<>();
+                            user3.put("Pertanyaan", null);
+                            user3.put("Penjelasan", null);
+                            user3.put("Tanggal", null);
+                            docref2.set(user3);
+
 
                             DocumentReference documentReference = fStore.collection("Users").document(userID);
                             Map<String, Object> user = new HashMap<>();

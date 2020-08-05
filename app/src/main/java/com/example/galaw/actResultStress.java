@@ -72,9 +72,15 @@ public class actResultStress extends AppCompatActivity {
                         Toast.makeText(actResultStress.this, "Update Failed", Toast.LENGTH_SHORT).show();
                     }
                 });
-                Intent intent = new Intent( actResultStress.this, actHome.class );
 
+                if(totalQuiz == "KAMU NORMAL NIH, SELAMAT YA!"){
+                Intent intent = new Intent( actResultStress.this, actHome.class );
                 startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent( actResultStress.this, actStressHeal1.class );
+                    startActivity(intent);
+                }
             }
         });
 

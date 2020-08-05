@@ -72,10 +72,18 @@ public class actResultAnxiety extends AppCompatActivity {
                         Toast.makeText(actResultAnxiety.this, "Update Failed", Toast.LENGTH_SHORT).show();
                     }
                 });
-                Intent intent = new Intent( actResultAnxiety.this, actHome.class );
 
-                startActivity(intent);
+                if(totalQuiz == "KAMU NORMAL NIH, SELAMAT YA!"){
+                    Intent intent = new Intent( actResultAnxiety.this, actHome.class );
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent( actResultAnxiety.this, actEduAnxiety.class );
+                    startActivity(intent);
+                }
+
             }
+
         });
 
 
@@ -96,8 +104,10 @@ public class actResultAnxiety extends AppCompatActivity {
             tingkatstress = "NAMPAKNYA KAMU SEDANG BANYAK YANG DIPIKIRKAN YAA";
         }
         else if(type_question >= 20){
-            tingkatstress = "COBA UNTUK KONSULTASI YUK";
+            tingkatstress = "SEPERTINYA KAMU SEDANG ADA MASALAH, BACA DULU YUK TENTANG KESEHATAN MENTAL";
         }
         return tingkatstress;
     }
+
+
 }
