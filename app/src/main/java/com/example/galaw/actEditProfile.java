@@ -53,7 +53,6 @@ public class actEditProfile extends AppCompatActivity {
     FirebaseUser user;
     ImageView profileImage;
     StorageReference storageReference;
-
     Button backProfile;
 
     @Override
