@@ -141,6 +141,7 @@ public class actSignUp extends AppCompatActivity {
                             user1.put("StressScore", null);
                             user1.put("AnxietyScore", null);
                             user1.put("DepressionScore", null);
+                            user1.put("Name", name);
                             docref.set(user1);
 
                             DocumentReference docref1 = fStore.collection("Diary").document(userID);
@@ -148,14 +149,8 @@ public class actSignUp extends AppCompatActivity {
                             user2.put("Judul", null);
                             user2.put("Isi", null);
                             user2.put("Tanggal", null);
+                            user2.put("Name", name);
                             docref1.set(user2);
-
-                            DocumentReference docref2 = fStore.collection("Ask").document(userID);
-                            Map<String, Object> user3 = new HashMap<>();
-                            user3.put("Pertanyaan", null);
-                            user3.put("Penjelasan", null);
-                            user3.put("Tanggal", null);
-                            docref2.set(user3);
 
 
                             DocumentReference documentReference = fStore.collection("Users").document(userID);
