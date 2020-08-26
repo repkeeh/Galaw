@@ -19,7 +19,6 @@
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="SUDAH PUNYA AKUN?"
-                  android:textSize="17dp"
                   android:layout_marginTop="605dp"
                   android:layout_marginLeft="80dp"
                   android:textColor="#4C4E4D"
@@ -31,10 +30,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="29dp"
                     android:layout_marginTop="600dp"
-                    android:layout_marginLeft="245dp"
+                    android:layout_marginLeft="215dp"
                     android:background="@null"
                     android:text=" masuk"
-                    android:textSize="17dp"
                     android:textColor="#C062F5"
                      />
 
@@ -162,7 +160,7 @@
                             app:layout_constraintHorizontal_bias="0.532"
                             app:layout_constraintStart_toStartOf="parent"
                             tools:layout_editor_absoluteY="385dp"
-                            android:layout_marginBottom="20dp"
+                            android:layout_marginBottom="100dp"
                             android:textSize="15dp"
                             />
                     </LinearLayout>

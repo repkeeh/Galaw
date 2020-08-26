@@ -3,8 +3,10 @@ package com.example.galaw;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
@@ -35,7 +37,7 @@ public class actHome extends AppCompatActivity  {
 
 
     TextView name;
-    Button setting;
+    Button setting,close;
     ImageView profileImage;
     StorageReference storageReference;
     FirebaseAuth fAuth;
@@ -55,10 +57,13 @@ public class actHome extends AppCompatActivity  {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
-        myDialog = new Dialog(this);
 
-        myDialog.setContentView(R.drawable.dialog);
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        boolean firstStart = prefs.getBoolean("firstStart", true);
 
+        if (firstStart) {
+            showStartDialog();
+        }
 
         profileImage = findViewById(R.id.profileImage);
 
@@ -193,5 +198,24 @@ public class actHome extends AppCompatActivity  {
         ft.commit();
     }
 
+        private void showStartDialog(){
+            myDialog = new Dialog(this);
+            myDialog.setContentView(R.layout.dialog);
 
+            close = myDialog.findViewById(R.id.close);
+
+            close.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    myDialog.cancel();
+                }
+            });
+
+            myDialog.show();
+
+            SharedPreferences prefs = getSharedPreferences("prefs",MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putBoolean("firstStart", false);
+            editor.apply();
+        }
 }
