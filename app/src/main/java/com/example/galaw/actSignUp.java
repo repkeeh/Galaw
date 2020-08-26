@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -15,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -35,8 +37,12 @@ import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.security.MessageDigest;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.crypto.Cipher;
+import javax.crypto.spec.SecretKeySpec;
 
 public class actSignUp extends AppCompatActivity {
 
@@ -51,7 +57,9 @@ public class actSignUp extends AppCompatActivity {
     RadioButton male, female;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
-    String userID;
+    String userID, outputString;
+    String AES = "AES";
+    RadioGroup gender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +78,7 @@ public class actSignUp extends AppCompatActivity {
         female = findViewById(R.id.female);
         msignup = findViewById(R.id.signup);
         mloginButton = findViewById(R.id.buttonLogin);
+        gender = findViewById(R.id.gender);
         fStore = FirebaseFirestore.getInstance();
 
 
@@ -90,14 +99,48 @@ public class actSignUp extends AppCompatActivity {
                 final String m1 = male.getText().toString();
                 final String m2 = female.getText().toString();
 
+                String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
+
+
+                if (gender.getCheckedRadioButtonId() == -1 ){
+                    female.setError("Gender is Required");
+                    return;
+                }
+
 
 
                 if (TextUtils.isEmpty(email)) {
                     memail.setError("Email is Required");
                     return;
                 }
+                if (email.matches(emailPattern)){
+                    Toast.makeText(getApplicationContext(),"Valid email address", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(),"Invalid email address", Toast.LENGTH_SHORT).show();
+                }
+
                 if (TextUtils.isEmpty(password)) {
                     mpassword.setError("Password is Required");
+                    return;
+                }
+                if (TextUtils.isEmpty(name)) {
+                    mname.setError("Name is Required");
+                    return;
+                }
+                if (TextUtils.isEmpty(phoneNumber)) {
+                    mphone.setError("Phone Number is Required");
+                    return;
+                }
+
+                if (phoneNumber.length() < 10) {
+                    mphone.setError("Phone Number harus lebih dari 9 karakter");
+                    return;
+                }
+                if (phoneNumber.length() > 13) {
+                    mphone.setError("Phone Number harus kurang dari 14 karakter");
                     return;
                 }
 
@@ -105,7 +148,11 @@ public class actSignUp extends AppCompatActivity {
                     mpassword.setError("Password harus lebih dari 6 karakter");
                     return;
                 }
-
+                try {
+                    outputString = encrypt(password);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
 
                 // register the user in firebase
@@ -141,6 +188,7 @@ public class actSignUp extends AppCompatActivity {
                             user1.put("StressScore", null);
                             user1.put("AnxietyScore", null);
                             user1.put("DepressionScore", null);
+                            user1.put("Name", name);
                             docref.set(user1);
 
                             DocumentReference docref1 = fStore.collection("Diary").document(userID);
@@ -148,14 +196,8 @@ public class actSignUp extends AppCompatActivity {
                             user2.put("Judul", null);
                             user2.put("Isi", null);
                             user2.put("Tanggal", null);
+                            user2.put("Name", name);
                             docref1.set(user2);
-
-                            DocumentReference docref2 = fStore.collection("Ask").document(userID);
-                            Map<String, Object> user3 = new HashMap<>();
-                            user3.put("Pertanyaan", null);
-                            user3.put("Penjelasan", null);
-                            user3.put("Tanggal", null);
-                            docref2.set(user3);
 
 
                             DocumentReference documentReference = fStore.collection("Users").document(userID);
@@ -172,7 +214,7 @@ public class actSignUp extends AppCompatActivity {
 
 
 
-                            user.put("Password", password);
+                            user.put("Password", outputString);
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
@@ -203,5 +245,23 @@ public class actSignUp extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),actLogin.class));
             }
         });
+    }
+
+    private String encrypt(String password) throws Exception {
+        SecretKeySpec key = generateKey(password);
+        Cipher c = Cipher.getInstance(AES);
+        c.init(Cipher.ENCRYPT_MODE, key);
+        byte[] encVal = c.doFinal(password.getBytes());
+        String encryptedValue = Base64.encodeToString(encVal, Base64.DEFAULT);
+        return encryptedValue;
+    }
+
+    private SecretKeySpec generateKey(String password) throws Exception {
+        final MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        byte[] bytes = password.getBytes("UTF-8");
+        digest.update(bytes, 0, bytes.length);
+        byte[] key = digest.digest();
+        SecretKeySpec secretKeySpec = new SecretKeySpec(key, "AES");
+        return secretKeySpec;
     }
 }
