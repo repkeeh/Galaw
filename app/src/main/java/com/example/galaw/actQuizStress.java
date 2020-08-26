@@ -21,9 +21,9 @@ import android.widget.Toast;
 public class actQuizStress extends AppCompatActivity {
 
     int [][] Answer = new int[3][14];
-    TextView dass;
+    TextView dass,proBar;
     ImageView imageV;
-    ProgressBar progressBar;
+    int counter;
 
     class Collection{
         String Quest = new String();
@@ -55,7 +55,7 @@ public class actQuizStress extends AppCompatActivity {
         }
 
         //AllQuestion[0][0].Quest = "Saya merasa bahwa diri saya menjadi marah karena hal-hal sepele";
-        progressBar = findViewById(R.id.progressBar);
+        proBar = findViewById(R.id.proBar);
         imageV = findViewById(R.id.imageV);
         dass = findViewById(R.id.dass);
         buttons[0] = findViewById(R.id.jwb0);
@@ -79,7 +79,8 @@ public class actQuizStress extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ChangeValue(temp);
-
+                    counter ++;
+                    proBar.setText(Integer.toString(1 + counter));
                 }
             });
         }
@@ -88,9 +89,6 @@ public class actQuizStress extends AppCompatActivity {
 
     }
 
-    public void onBackPressed(){
-        Toast.makeText(actQuizStress.this, "selesaikan dulu ya", Toast.LENGTH_LONG).show();
-    }
 
     void ChangeValue(int index){
 

@@ -29,7 +29,7 @@
                     <androidx.viewpager.widget.ViewPager
                         android:id="@+id/viewPager"
                         android:layout_width="match_parent"
-                        android:layout_height="830dp"
+                        android:layout_height="1030dp"
                         android:overScrollMode="never"
                         android:clipToPadding="false"
                         android:background="#000000"
@@ -104,37 +104,122 @@
                         android:layout_height="wrap_content"
                         android:text="Perilaku yang tidak membantu:"
                         android:textColor="#ffffff"
-                        android:layout_marginTop="670dp"
+                        android:layout_marginTop="800dp"
                         android:textSize="17dp"
                         android:layout_marginRight="20dp"
                         android:layout_marginLeft="20dp"
                         />
-                    <Spinner
-                        android:layout_width="match_parent"
+
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/pikiran"
-                        android:layout_marginTop="560dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginLeft="20dp"
-                        android:background="@drawable/spinner_custom"
+                        android:text="-Khawatir tentang beberapa hal."
+                        android:textSize="17dp"
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="550dp"
+                        android:background="#80000000"
                         />
-                    <Spinner
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/fisik"
-                        android:layout_marginTop="630dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginLeft="20dp"
-                        android:background="@drawable/spinner_custom"
+                        android:text="-Pikiran negatif tentang masa depan."
+                        android:textSize="17dp"
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="575dp"
+                        android:background="#80000000"
                         />
-                    <Spinner
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/perilaku"
+                        android:text="-Detak jantung cepat."
+                        android:textSize="17dp"
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="625dp"
+                        android:background="#80000000"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-Berkeringat."
+                        android:textSize="17dp"
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="650dp"
+                        android:background="#80000000"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-Gemetar."
+                        android:textSize="17dp"
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="675dp"
+                        android:background="#80000000"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-Sakit perut."
+                        android:textSize="17dp"
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="40dp"
                         android:layout_marginTop="700dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginLeft="20dp"
-                        android:background="@drawable/spinner_custom"
+                        android:background="#80000000"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-Ketegangan pada otot."
+                        android:textSize="17dp"
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="725dp"
+                        android:background="#80000000"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-Sakit kepala."
+                        android:textSize="17dp"
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="750dp"
+                        android:background="#80000000"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-Merasa kesal"
+                        android:textSize="17dp"
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="775dp"
+                        android:background="#80000000"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-Menghindari hal pemicu kecemasan."
+                        android:textSize="17dp"
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="825dp"
+                        android:background="#80000000"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-Hanya pergi jika ditemani orang lain."
+                        android:textSize="17dp"
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="850dp"
+                        android:background="#80000000"
                         />
 
                     <Button
@@ -145,7 +230,7 @@
                         android:textColor="#C062F5"
                         android:background="@drawable/whitebtn"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="770dp"
+                        android:layout_marginTop="950dp"
                         android:id="@+id/nextHealCemas"
                         android:padding="5dp"
                         android:layout_marginBottom="10dp"

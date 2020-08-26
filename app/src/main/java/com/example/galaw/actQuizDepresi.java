@@ -14,8 +14,9 @@ import android.widget.Toast;
 public class actQuizDepresi extends AppCompatActivity {
 
     int [][] Answer = new int[3][14];
-    TextView dass;
+    TextView dass,proBar;
     ImageView imageV;
+    int counter;
 
     class Collection{
         String Quest = new String();
@@ -46,6 +47,7 @@ public class actQuizDepresi extends AppCompatActivity {
         }
 
         //AllQuestion[0][0].Quest = "Saya merasa bahwa diri saya menjadi marah karena hal-hal sepele";
+        proBar = findViewById(R.id.proBar);
         dass = findViewById(R.id.dass);
         imageV = findViewById(R.id.imageV);
         buttons[0] = findViewById(R.id.jwb0);
@@ -66,6 +68,9 @@ public class actQuizDepresi extends AppCompatActivity {
                 public void onClick(View v) {
 
                     ChangeValue(temp);
+
+                    counter ++;
+                    proBar.setText(Integer.toString(1 + counter));
                 }
             });
         }
@@ -74,10 +79,6 @@ public class actQuizDepresi extends AppCompatActivity {
 
     }
 
-
-    public void onBackPressed(){
-        Toast.makeText(actQuizDepresi.this, "selesaikan dulu ya", Toast.LENGTH_LONG).show();
-    }
 
     void ChangeValue(int index){
 

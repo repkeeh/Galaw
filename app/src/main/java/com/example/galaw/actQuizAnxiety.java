@@ -2,6 +2,7 @@ package com.example.galaw;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,8 +11,11 @@ import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -21,9 +25,10 @@ import android.widget.Toast;
 public class actQuizAnxiety extends AppCompatActivity {
 
     int [][] Answer = new int[3][14];
-    TextView dass;
+    TextView dass,proBar;
     ImageView imageV;
-    ProgressBar progressBar;
+    int counter;
+    Animation scaleUp,scaleDown;
 
     class Collection{
         String Quest = new String();
@@ -43,6 +48,7 @@ public class actQuizAnxiety extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
+
         type_Question = getIntent().getIntExtra("type_Question",-1);
         number_Question = 0;
 
@@ -55,19 +61,20 @@ public class actQuizAnxiety extends AppCompatActivity {
         }
 
         //AllQuestion[0][0].Quest = "Saya merasa bahwa diri saya menjadi marah karena hal-hal sepele";
-        progressBar = findViewById(R.id.progressBar);
+        proBar = findViewById(R.id.proBar);
         imageV = findViewById(R.id.imageV);
         dass = findViewById(R.id.dass);
         buttons[0] = findViewById(R.id.jwb0);
         buttons[1] = findViewById(R.id.jwb1);
         buttons[2] = findViewById(R.id.jwb2);
         buttons[3] = findViewById(R.id.jwb3);
-
+        scaleUp = AnimationUtils.loadAnimation(this,R.anim.scale_up);
+        scaleDown = AnimationUtils.loadAnimation(this,R.anim.scale_down);
 
 
 
         SetCollection();
-        dass.setText(""+ AllQuestion[type_Question][0].Quest);
+        dass.setText(""+ AllQuestion[type_Question][0].Quest);/////////////////////
         int id = getResources().getIdentifier("com.example.galaw:drawable/" +AllQuestion[type_Question][0].picture , null, null);
         imageV.setImageResource(id);
 
@@ -79,23 +86,24 @@ public class actQuizAnxiety extends AppCompatActivity {
               @Override
               public void onClick(View v) {
                   ChangeValue(temp);
+                  counter ++;
+                  proBar.setText(Integer.toString(1 + counter));
 
               }
           });
+
       }
 
 
 
     }
 
-    public void onBackPressed(){
-        Toast.makeText(actQuizAnxiety.this, "selesaikan dulu ya", Toast.LENGTH_LONG).show();
-    }
 
     void ChangeValue(int index){
 
         Answer[type_Question][number_Question] = index;
         number_Question ++ ;
+
 
 
         if (number_Question >= 14 ){
@@ -111,7 +119,7 @@ public class actQuizAnxiety extends AppCompatActivity {
             startActivity(intent);
         }else {
 
-            dass.setText(""+ AllQuestion[type_Question][number_Question].Quest);
+            dass.setText(""+ AllQuestion[type_Question][number_Question].Quest);//////////////////////
             int id = getResources().getIdentifier("com.example.galaw:drawable/" +AllQuestion[type_Question][number_Question].picture , null, null);
             imageV.setImageResource(id);
         }

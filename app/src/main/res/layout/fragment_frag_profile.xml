@@ -16,7 +16,7 @@
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:background="@drawable/quotesbt"
-            android:text="diary"
+            android:text="CATATAN"
             android:textColor="#ffffff"
             android:textSize="15dp"
             android:layout_gravity="center_horizontal"

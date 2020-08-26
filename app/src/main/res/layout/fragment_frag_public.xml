@@ -17,7 +17,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/askbt"
-        android:text="ask"
+        android:text="TANYA"
         android:textColor="#ffffff"
         android:layout_gravity="center_horizontal"
         />

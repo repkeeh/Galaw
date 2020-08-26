@@ -17,7 +17,6 @@ import java.util.List;
 
 public class actEduAnxiety extends AppCompatActivity {
 
-    Spinner spinner1, spinner2, spinner3;
 
     ViewPager viewPager;
     Adapter adapterr;
@@ -33,9 +32,6 @@ public class actEduAnxiety extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
-        Spinner spinner1  = findViewById(R.id.pikiran);
-        Spinner spinner2  = findViewById(R.id.fisik);
-        Spinner spinner3  = findViewById(R.id.perilaku);
         nextHealCemas = findViewById(R.id.nextHealCemas);
 
         nextHealCemas.setOnClickListener(new View.OnClickListener() {
@@ -45,20 +41,6 @@ public class actEduAnxiety extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
-        final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.pikiran, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner1.setAdapter(adapter);
-
-        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.fisik, android.R.layout.simple_spinner_item);
-        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner2.setAdapter(adapter2);
-
-        ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this, R.array.perilaku, android.R.layout.simple_spinner_item);
-        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner3.setAdapter(adapter3);
 
 
         models = new ArrayList<>();
