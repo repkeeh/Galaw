@@ -28,6 +28,12 @@
             android:id="@+id/mailTo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Untuk:"
+            android:layout_marginTop="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:text="galawproject@gmail.com"
             android:textColor="#C062F5"
