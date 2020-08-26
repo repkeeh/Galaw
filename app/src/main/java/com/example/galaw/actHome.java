@@ -3,8 +3,10 @@ package com.example.galaw;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,17 +41,24 @@ public class actHome extends AppCompatActivity  {
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userID;
-
+    Dialog myDialog;
 
 
     Button[] navigationButton = new Button[4];
     int indexNav;
     @Override
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_home);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
+        myDialog = new Dialog(this);
+
+        myDialog.setContentView(R.drawable.dialog);
+
 
         profileImage = findViewById(R.id.profileImage);
 
