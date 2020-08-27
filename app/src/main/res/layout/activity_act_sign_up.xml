@@ -18,8 +18,7 @@
               <TextView
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="Already Registered?"
-                  android:textSize="17dp"
+                  android:text="SUDAH PUNYA AKUN?"
                   android:layout_marginTop="605dp"
                   android:layout_marginLeft="80dp"
                   android:textColor="#4C4E4D"
@@ -31,10 +30,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="29dp"
                     android:layout_marginTop="600dp"
-                    android:layout_marginLeft="240dp"
+                    android:layout_marginLeft="215dp"
                     android:background="@null"
-                    android:text="login"
-                    android:textSize="17dp"
+                    android:text=" masuk"
                     android:textColor="#C062F5"
                      />
 
@@ -68,7 +66,7 @@
                             android:layout_marginTop="10dp"
                             android:autofillHints=""
                             android:background="@drawable/etboxstroke"
-                            android:hint="Name"
+                            android:hint="Nama"
                             android:inputType="textPersonName"
                             android:textSize="15dp"
                             android:padding="10dp" />
@@ -81,7 +79,7 @@
                             android:layout_marginTop="10dp"
                             android:autofillHints=""
                             android:background="@drawable/etboxstroke"
-                            android:hint="Phone Number"
+                            android:hint="Nomor Telepon"
                             android:inputType="phone"
                             android:digits="0123456789+"
                             android:padding="10dp"
@@ -98,13 +96,13 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:padding="10dp"
-                                android:text="Gender" />
+                                android:text="Jenis Kelamin" />
 
                             <RadioButton
                                 android:id="@+id/male"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Male"
+                                android:text="laki-laki"
                                 android:textColor="#4C4E4D"
                                 />
 
@@ -112,7 +110,7 @@
                                 android:id="@+id/female"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Female"
+                                android:text="Perempuan"
                                 android:textColor="#4C4E4D"
                                 />
 
@@ -131,6 +129,11 @@
                             android:textSize="15dp"
                             android:padding="10dp" />
 
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:endIconMode="password_toggle"
+                            >
                         <EditText
                             android:id="@+id/password"
                             android:layout_width="307dp"
@@ -139,11 +142,11 @@
                             android:layout_marginTop="10dp"
                             android:autofillHints=""
                             android:background="@drawable/etboxstroke"
-                            android:hint="Password"
+                            android:hint="Kata Sandi"
                             android:inputType="textPassword"
                             android:padding="10dp"
                             android:textSize="15dp" />
-
+                        </com.google.android.material.textfield.TextInputLayout>
                         <Button
                             android:id="@+id/signup"
                             android:layout_width="307dp"
@@ -157,7 +160,7 @@
                             app:layout_constraintHorizontal_bias="0.532"
                             app:layout_constraintStart_toStartOf="parent"
                             tools:layout_editor_absoluteY="385dp"
-                            android:layout_marginBottom="20dp"
+                            android:layout_marginBottom="100dp"
                             android:textSize="15dp"
                             />
                     </LinearLayout>

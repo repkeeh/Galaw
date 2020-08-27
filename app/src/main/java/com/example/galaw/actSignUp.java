@@ -81,6 +81,24 @@ public class actSignUp extends AppCompatActivity {
         gender = findViewById(R.id.gender);
         fStore = FirebaseFirestore.getInstance();
 
+        mpassword.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(!hasFocus){
+                    Toast.makeText(getApplicationContext(), mpassword.getText().toString(), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        memail.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(!hasFocus){
+                    Toast.makeText(getApplicationContext(), memail.getText().toString(), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
 
         if(fAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(),actHome.class));

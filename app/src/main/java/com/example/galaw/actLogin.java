@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.BounceInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -68,6 +69,14 @@ public class actLogin extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         signIn = findViewById(R.id.signIn);
 
+        mpassword.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(!hasFocus){
+                    Toast.makeText(getApplicationContext(), mpassword.getText().toString(), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
 
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)

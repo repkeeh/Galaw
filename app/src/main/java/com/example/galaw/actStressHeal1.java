@@ -81,7 +81,7 @@ public class actStressHeal1 extends AppCompatActivity {
     StressText S08 = new StressText(R.drawable.b8,"Tugas demi tugas yang datang silih berganti");
     StressText S09 = new StressText(R.drawable.b9,"Teman yang membuatmu gelisah");
     StressText S10 = new StressText(R.drawable.b10,"Perkatakaan yang tidak mengenakan dihati");
-    StressText S11 = new StressText(R.drawable.b11,"Dijauhi orang tersayangg");
+    StressText S11 = new StressText(R.drawable.b11,"Dijauhi orang tersayang");
     StressText S12 = new StressText(R.drawable.b12,"Tuntutan yang diberikan orang tuamu yang terlalu berat bagimu");
     StressText S13 = new StressText(R.drawable.b13,"Kamu telah melakukan yang terbaik untuk melakukan itu semua");
     StressText S14 = new StressText(R.drawable.b14,"Kemauan dunia, yang dapat membuat hari menjadi sendu");
@@ -100,7 +100,7 @@ public class actStressHeal1 extends AppCompatActivity {
     StressText S27 = new StressText(R.drawable.b12,"Jika kamu merasa dunia kembali tidak terkendali dan membuatmu tertekan, tolong kembali kesini");
     StressText S28 = new StressText(R.drawable.b13, "Aku selalu disini jika kalau kamu butuh. aku ingin memberi saran. Coba untuk mencari tahu keadaanmu, apa yang dapat menimbulkannya, dan lain-lain");
     StressText S29 = new StressText(R.drawable.b14,"Nanti kalau butuh aku lagi, tolong kesini ya");
-    StressText S30 = new StressText(R.drawable.b15,"Baik aku pamit dulu. terima makasih sudah ada di ruang ini");
+    StressText S30 = new StressText(R.drawable.b15,"Baik aku pamit dulu. terima kasih sudah ada di ruang ini");
     StressText S31 = new StressText(R.drawable.b1,"Senang bisa bertemu, sampai jumpa!");
 
     StressText [] StressTextArray = new StressText[]{

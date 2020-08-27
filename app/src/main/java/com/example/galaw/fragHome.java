@@ -1,7 +1,10 @@
 package com.example.galaw;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -36,6 +39,7 @@ public class fragHome extends Fragment {
     ViewFlipper flipperHome;
     TextView healthDef;
     private int levelquiz;
+    Dialog myDialog;
 
     public fragHome() {
         // Required empty public constructor
@@ -74,6 +78,7 @@ public class fragHome extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
 
         ImageSlider imageSlider = view.findViewById(R.id.SliderBanner);
         List<SlideModel> slideModels = new ArrayList<>();
