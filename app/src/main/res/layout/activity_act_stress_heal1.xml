@@ -35,7 +35,8 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:textAlignment="center"
-        android:lineHeight="10dp"
+        android:lineHeight="45dp"
+        android:text="fossskasjkajskajskasjkaasjkasjkasjjskajskasjkaksjkasjkasj"
         android:layout_centerVertical="@+id/blackBar"
         />
 
