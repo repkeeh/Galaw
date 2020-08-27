@@ -19,7 +19,7 @@ public class actEduAnxiety extends AppCompatActivity {
 
 
     ViewPager viewPager;
-    Adapter adapterr;
+    Adapterx adapterr;
     List<Model> models;
     Integer [] colors = null;
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
@@ -50,7 +50,7 @@ public class actEduAnxiety extends AppCompatActivity {
         models.add(new Model("OCD", "Saya memikirkan hal yang menjengkelkan dan merasa perlu melakukan hal-hal tertentu sehingga tidak ada hal buruk yang terjadi."));
         models.add(new Model("PTSD", "Saya benar-benar marah dan kesal setiap kali saya memikirkan apa yang terjadi pada saya."));
 
-        adapterr = new Adapter(models, this);
+        adapterr = new Adapterx(models, this);
 
         viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(adapterr);

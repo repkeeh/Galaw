@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -32,6 +33,7 @@ public class actDiary extends AppCompatActivity {
     Button savediary;
     FirebaseFirestore fStore;
     FirebaseAuth fAuth;
+    FirebaseUser user;
     String userID;
 
     @Override
@@ -55,6 +57,8 @@ public class actDiary extends AppCompatActivity {
 
         savediary = findViewById(R.id.savediary);
 
+        user = FirebaseAuth.getInstance().getCurrentUser();
+
         savediary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,12 +69,12 @@ public class actDiary extends AppCompatActivity {
 
                 userID = fAuth.getCurrentUser().getUid();
 
-                final DocumentReference documentReference = fStore.collection("Diary").document(userID);
+                final DocumentReference documentReference = fStore.collection("Diary").document(user.getUid()).collection("myNotes").document();
                 Map<String, Object> user = new HashMap<>();
-                user.put("Judul", FieldValue.arrayUnion(diaryjudul));
-                user.put("Isi", FieldValue.arrayUnion(diaryisi));
-                user.put("Tanggal", FieldValue.arrayUnion(tanggal));
-                documentReference.update(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                user.put("title", diaryjudul);
+                user.put("content", diaryisi);
+                user.put("Tanggal", tanggal);
+                documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Toast.makeText(actDiary.this, "Diary has been Updated", Toast.LENGTH_SHORT).show();
