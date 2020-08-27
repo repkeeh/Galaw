@@ -5,26 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".klinikYarsi"
-    android:background="@drawable/backgroundgrey"
+    android:background="@drawable/klinikyarsi"
     >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/klinikyarsi"
-        />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:id="@+id/noKlinikYarsi"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/custombutton"
-        android:text="konsultasi via telepon"
-        android:textSize="20dp"
-        android:textColor="#ffff"
-        />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/noKlinikYarsi"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="570dp"
+                android:background="@drawable/custombutton"
+                android:text="konsultasi via telepon"
+                android:textSize="20dp"
+                android:textColor="#ffff"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/chatKlinik"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="650dp"
+                android:background="@drawable/whitebtn"
+                android:text="konsultasi"
+                android:textSize="20dp"
+                android:textColor="@color/color2"
+                />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
 
 </RelativeLayout>

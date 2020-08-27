@@ -11,7 +11,7 @@ import android.widget.Button;
 
 public class klinikYarsi extends AppCompatActivity {
 
-    Button noKlinikYarsi;
+    Button noKlinikYarsi, chatKlinik;
 
 
     @Override
@@ -22,12 +22,20 @@ public class klinikYarsi extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         noKlinikYarsi = findViewById(R.id.noKlinikYarsi);
-
+        chatKlinik = findViewById(R.id.chatKlinik);
         noKlinikYarsi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData((Uri.parse("tel: 0214223138")));
+                startActivity(intent);
+            }
+        });
+
+        chatKlinik.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(klinikYarsi.this, actAsk.class);
                 startActivity(intent);
             }
         });

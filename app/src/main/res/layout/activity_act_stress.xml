@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragQuotes"
     android:background="@drawable/backgroundgrey">
 
 
@@ -20,8 +19,8 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:textColor="#C062F5"
-            android:text="Test dan hasil nya bersifat pribadi.
-jadi hanya kamu dan psikolog yang tau"
+            android:text="Tes dan hasilnya bersifat pribadi.
+jadi hanya kamu dan psikolog yang tahu"
             android:gravity="center_horizontal"
             android:layout_marginTop="250dp"
             />

@@ -14,69 +14,59 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginBottom="100dp"
             >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="hal hal yang mungkin bisa membantu:"
-                android:textSize="15dp"
-                android:layout_marginLeft="20dp"
-                android:textColor="#C062F5"
-                />
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="140dp"
                 android:background="@drawable/anx1"
-                android:layout_marginTop="40dp"
                 />
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="140dp"
                 android:background="@drawable/anx2"
-                android:layout_marginTop="150dp"
+                android:layout_marginTop="140dp"
                 />
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="140dp"
                 android:background="@drawable/anx3"
-                android:layout_marginTop="260dp"
+                android:layout_marginTop="280dp"
                 />
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="140dp"
                 android:background="@drawable/anx4"
-                android:layout_marginTop="370dp"
+                android:layout_marginTop="420dp"
                 />
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="140dp"
                 android:background="@drawable/anx5"
-                android:layout_marginTop="480dp"
+                android:layout_marginTop="560dp"
                 />
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="140dp"
                 android:background="@drawable/anx6"
-                android:layout_marginTop="590dp"
+                android:layout_marginTop="700dp"
                 />
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="140dp"
                 android:background="@drawable/anx7"
-                android:layout_marginTop="700dp"
+                android:layout_marginTop="840dp"
                 />
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="110dp"
                 android:background="@drawable/anx8"
-                android:layout_marginTop="810dp"
+                android:layout_marginTop="980dp"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="950dp"
+                android:layout_marginTop="1150dp"
                 android:text="ingin konsul dengan psikolog?sila klik tombol dibawah"
                 android:layout_centerHorizontal="true"
                 android:textColor="#C062F5"
@@ -86,8 +76,8 @@
                 android:id="@+id/callKlinikD"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="980dp"
-                android:text="konsultasi psikologi"
+                android:layout_marginTop="1180dp"
+                android:text="klinik psikologi yarsi"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
                 android:background="@drawable/custombutton"
@@ -98,8 +88,8 @@
                 android:id="@+id/backTestD"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1050dp"
-                android:text="lanjut test depresi"
+                android:layout_marginTop="1250dp"
+                android:text="lanjut test Depresi"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
                 android:background="#ffff"
