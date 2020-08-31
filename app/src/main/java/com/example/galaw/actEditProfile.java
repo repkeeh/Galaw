@@ -137,7 +137,7 @@ public class actEditProfile extends AppCompatActivity {
                 final EditText resetPassword = new EditText(v.getContext());
                 AlertDialog.Builder passwordResetDialong = new AlertDialog.Builder(v.getContext());
                 passwordResetDialong.setTitle("Reset Password");
-                passwordResetDialong.setMessage("Enter New Password > 6 Characters long");
+                passwordResetDialong.setMessage("Enter Your Email To Received Reset Link");
                 passwordResetDialong.setView(resetPassword);
 
                 passwordResetDialong.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -145,17 +145,18 @@ public class actEditProfile extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         //extract the email and send reset link
                         String newPassword = resetPassword.getText().toString();
-                        user.updatePassword(newPassword).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        fAuth.sendPasswordResetEmail(newPassword).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Toast.makeText(actEditProfile.this, "Password Reset Successfully", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(actEditProfile.this, "Reset Link Sent To Your Email", Toast.LENGTH_SHORT).show();
+
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(actEditProfile.this, "Password Reset Failed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(actEditProfile.this, "Error ! Reset Link is Not Sent" + e.getMessage(), Toast.LENGTH_SHORT).show();
                             }
-                        });
+                        }) ;
 
 
                     }

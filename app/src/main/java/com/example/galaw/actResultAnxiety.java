@@ -73,7 +73,7 @@ public class actResultAnxiety extends AppCompatActivity {
                     }
                 });
 
-                if(totalQuiz == "KAMU NORMAL NIH, SELAMAT YA!"){
+                if(totalQuiz == "KAMU BAIK BAIK SAJA"){
                     Intent intent = new Intent( actResultAnxiety.this, actHome.class );
                     startActivity(intent);
                 }
@@ -92,19 +92,19 @@ public class actResultAnxiety extends AppCompatActivity {
     private String setTingkatAnxietyOrang(int type_question) {
         String tingkatstress = "";
         if(type_question >= 0 && type_question <= 7){
-            tingkatstress = "KAMU NORMAL NIH, SELAMAT YA!";
+            tingkatstress = "KAMU BAIK BAIK SAJA"; // NORMAL
         }
         else if(type_question >= 8 && type_question <= 9){
-            tingkatstress = "KELIHATANNYA KAMU AGAK CEMAS NIH..";
+            tingkatstress = "ADA HAL YANG MEMBUATMU CEMAS TAPI KAMU CUKUP DAPAT MENGATASINYA"; // RINGAN
         }
         else if(type_question >= 10 && type_question <= 14){
-            tingkatstress = "KAMU TERLIHAT CUKUP CEMAS NIH";
+            tingkatstress = "KAMU TAMPAKNYA MENGALAMI KECEMASAN"; // SEDANG
         }
         else if(type_question >= 15 && type_question <= 19){
-            tingkatstress = "NAMPAKNYA KAMU SEDANG BANYAK YANG DIPIKIRKAN YAA";
+            tingkatstress = "TAMPAKNYA BANYAK HAL YANG KAMU CEMASKAN SAAT INI DAN KAMU MERASA SULIT UNTUK MENGHADAPINYA"; // BERAT
         }
         else if(type_question >= 20){
-            tingkatstress = "SEPERTINYA KAMU SEDANG ADA MASALAH, BACA DULU YUK TENTANG KESEHATAN MENTAL";
+            tingkatstress = "SEPERTINYA KAMU SEDANG ADA MASALAH, BACA DULU YUK TENTANG KESEHATAN MENTAL"; // SANGAT BERAT
         }
         return tingkatstress;
     }
