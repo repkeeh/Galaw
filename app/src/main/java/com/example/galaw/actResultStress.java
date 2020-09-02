@@ -73,7 +73,7 @@ public class actResultStress extends AppCompatActivity {
                     }
                 });
 
-                if(totalQuiz == "KAMU NORMAL NIH, SELAMAT YA!"){
+                if(totalQuiz == "TAMPAKNYA KAMU BAIK BAIK SAJA"){
                 Intent intent = new Intent( actResultStress.this, actHome.class );
                 startActivity(intent);
                 }
@@ -91,19 +91,19 @@ public class actResultStress extends AppCompatActivity {
     private String setTingkatStressOrang(int type_question) {
         String tingkatstress = "";
         if(type_question >= 0 && type_question <= 14){
-            tingkatstress = "KAMU NORMAL NIH, SELAMAT YA!";
+            tingkatstress = "TAMPAKNYA KAMU BAIK BAIK SAJA";
         }
         else if(type_question >= 15 && type_question <= 18){
-            tingkatstress = "WAH, KAMU SEDANG ADA PIKIRAN YA?";
+            tingkatstress = "ADAKAH YANG SEDANG MEMBUAT KAMU RESAH PADA SAAT INI?";
         }
         else if(type_question >= 19 && type_question <= 25){
-            tingkatstress = "SEPERTINYA KAMU SEDANG SEDIH YA..";
+            tingkatstress = "SEPERTINYA KAMU SEDANG MERASA TERTEKAN ";
         }
         else if(type_question >= 26 && type_question <= 33){
-            tingkatstress = "WAH, SEPERTINYA KAMU SEDANG BANYAK PIKIRAN..";
+            tingkatstress = "KAMU MERASAKAN BEBAN HIDUP YANG SANGAT BESAR DAN SULIT UNTUK MENGHADAPINYA";
         }
         else if(type_question >= 34){
-            tingkatstress = "COBA UNTUK TERAPI YUK..";
+            tingkatstress = "MARI LEPASKAN SEJENAK KEKHAWATIRANMU DENGAN MELAKUKAN RELAKSASI";
         }
         return tingkatstress;
     }

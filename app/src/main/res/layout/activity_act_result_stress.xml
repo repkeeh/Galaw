@@ -34,7 +34,7 @@
             android:background="@drawable/buttonstroke"
             android:layout_width="270dp"
             android:layout_height="50dp"
-            android:text="selanjutnya"
+            android:text="SELANJUTNYA "
             android:layout_centerHorizontal="true"
             android:id="@+id/simpanData"
             android:textColor="#C062F5"

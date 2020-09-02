@@ -72,7 +72,7 @@ public class actResultDepresi extends AppCompatActivity {
                         Toast.makeText(actResultDepresi.this, "Update Failed", Toast.LENGTH_SHORT).show();
                     }
                 });
-                if(totalQuiz == "KAMU NORMAL NIH, SELAMAT YA!"){
+                if(totalQuiz == "SELAMAT. KAMU BAIK BAIK SAJA"){
                     Intent intent = new Intent( actResultDepresi.this, actHome.class );
                     startActivity(intent);
                 }
@@ -90,19 +90,19 @@ public class actResultDepresi extends AppCompatActivity {
     private String setTingkatDepresiOrang(int type_question) {
         String tingkatstress = "";
         if(type_question >= 0 && type_question <= 9){
-            tingkatstress = "KAMU NORMAL NIH, SELAMAT YAA!";//normal
+            tingkatstress = "SELAMAT. KAMU BAIK BAIK SAJA";//normal
         }
         else if(type_question >= 10 && type_question <= 13){
-            tingkatstress = "KAMU TERLIHAT SEDANG KURANG SEHAT NIH..";//ringan
+            tingkatstress = "APAKAH KAMU MERASA SULIT MENGHADAPI MASALAH SEHARI HARI ?";//ringan
         }
         else if(type_question >= 14 && type_question <= 20){
-            tingkatstress = "KAMU SEDANG BANYAK PIKIRAN YA?"; // sedang
+            tingkatstress = "KAMU INGIN MENYENDIRI JAUH DARI SEGALA MASALAH "; // sedang
         }
         else if(type_question >= 21 && type_question <= 27){
-            tingkatstress = "YUK COBA LAKUKAN YANG LEBIH POSITIF..";//
+            tingkatstress = "KAMU MERASA SANGAT TIDAK BERDAYA. SEGERA HUBUNGI BANTUAN PROFESIONAL DI KLINIK PSIKOLOGI YARSI";//berat
         }
         else if(type_question >= 28){
-            tingkatstress = "YUK COBA KONSULTASI DENGAN AHLINYA..";
+            tingkatstress = "KAMU MERASA SANGAT TIDAK BERDAYA. SEGERA HUBUNGI BANTUAN PROFESIONAL DI KLINIK PSIKOLOGI YARSI"; // sangat berat
         }
         return tingkatstress;
     }
