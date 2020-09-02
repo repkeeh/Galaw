@@ -34,7 +34,7 @@ public class actStressHeal3 extends AppCompatActivity {
         nextheal3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(actStressHeal3.this, actHome.class);
+                Intent intent = new Intent(actStressHeal3.this, actStressHeal4.class);
                 startActivity(intent);
             }
         });
@@ -50,6 +50,7 @@ public class actStressHeal3 extends AppCompatActivity {
         videoGalaw.setVideoURI(uri);
         videoGalaw.setMediaController(controller);
         controller.setAnchorView(videoGalaw);
+        playvideo.setVisibility(View.INVISIBLE);
         videoGalaw.start();
 
     }

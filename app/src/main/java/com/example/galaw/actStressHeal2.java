@@ -45,7 +45,7 @@ public class actStressHeal2 extends AppCompatActivity {
         nextYoutube.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (actStressHeal2.this, actWebView.class);
+                Intent intent = new Intent (actStressHeal2.this, actStressHeal3.class);
                 mp.pause();
                 playBtn.setBackgroundResource(R.drawable.play);
                 startActivity(intent);
@@ -55,7 +55,7 @@ public class actStressHeal2 extends AppCompatActivity {
         nextheal2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (actStressHeal2.this, actWebView.class);
+                Intent intent = new Intent (actStressHeal2.this, actStressHeal3.class);
                 mp.pause();
                 playBtn.setBackgroundResource(R.drawable.play);
                 startActivity(intent);

@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".DiaryHome"></activity>
+        <activity android:name=".actStressHeal4"></activity>
+        <activity android:name=".DiaryHome" />
         <activity android:name=".klinikYarsi" />
         <activity android:name=".actAnxietyHeal" />
         <activity android:name=".actEduAnxiety" />
