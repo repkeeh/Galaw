@@ -13,6 +13,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.galaw.EditNote;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import com.example.galaw.R;
@@ -44,19 +45,6 @@ public class NoteDetails extends AppCompatActivity {
             content.setBackgroundColor(getResources().getColor(data.getIntExtra("code",0),null));
         }
 
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent i = new Intent(view.getContext(),EditNote.class);
-                i.putExtra("title",data.getStringExtra("title"));
-                i.putExtra("content",data.getStringExtra("content"));
-                i.putExtra("noteId",data.getStringExtra("noteId"));
-                startActivity(i);
-            }
-        });
     }
 
 

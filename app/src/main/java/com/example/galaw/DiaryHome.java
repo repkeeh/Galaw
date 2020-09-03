@@ -41,7 +41,6 @@ import com.google.firebase.firestore.Query;
 
 import com.example.galaw.model.Note;
 import com.example.galaw.note.AddNote;
-import com.example.galaw.note.EditNote;
 import com.example.galaw.note.NoteDetails;
 
 import java.util.ArrayList;

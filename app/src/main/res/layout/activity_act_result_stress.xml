@@ -6,40 +6,49 @@
     android:layout_height="match_parent"
     android:background="@drawable/backgroundhome"
     >
+
     <RelativeLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        >
+        android:orientation="vertical">
 
 
         <TextView
+            android:id="@+id/total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="90dp"
-            android:id="@+id/total"
-            android:textColor="#ffff"
-            android:textSize="25dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="90dp"
+            android:layout_marginRight="20dp"
             android:textAlignment="center"
-            />
-
+            android:textColor="#ffff"
+            android:textSize="25dp" />
 
 
         <Button
+            android:id="@+id/simpanData"
+            android:layout_width="270dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="250dp"
             android:background="@drawable/buttonstroke"
-            android:layout_width="270dp"
-            android:layout_height="50dp"
-            android:text="SELANJUTNYA "
-            android:layout_centerHorizontal="true"
-            android:id="@+id/simpanData"
             android:textColor="#C062F5"
 
 
             />
+
+        <TextView
+            android:id="@+id/tesHasil"
+            android:layout_width="270dp"
+            android:layout_height="70dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="260dp"
+            android:elevation="3dp"
+            android:gravity="center_horizontal"
+            android:text="TextView"
+            android:textColor="#C062F5"
+            android:textSize="18sp" />
     </RelativeLayout>
 </RelativeLayout>

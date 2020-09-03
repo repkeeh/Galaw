@@ -25,7 +25,7 @@ public class actResultDepresi extends AppCompatActivity {
 
     int type_Question;
     int number_Question;
-    TextView Total;
+    TextView Total, tesHasil;
     Button simpanData;
     FirebaseFirestore fStore;
     FirebaseAuth fAuth;
@@ -45,10 +45,21 @@ public class actResultDepresi extends AppCompatActivity {
 
         Total = findViewById(R.id.total);
         simpanData = findViewById(R.id.simpanData);
+        tesHasil = findViewById(R.id.tesHasil);
 
         type_Question = getIntent().getIntExtra("total",-1);
         number_Question = 0;
         Total.setText(setTingkatDepresiOrang(type_Question));
+
+        String hasilTes = Total.getText().toString();
+
+        if (hasilTes == "SELAMAT. KAMU BAIK BAIK SAJA"){
+            tesHasil.setText("Kamu tidak mengalami depresi. Kembali ke beranda.");
+        } else if(hasilTes == "KAMU MERASA SANGAT TIDAK BERDAYA. SEGERA HUBUNGI BANTUAN PROFESIONAL DI KLINIK PSIKOLOGI YARSI"){
+            tesHasil.setText("Yuk, konsultasi dengan pakarnya.");
+        } else {
+            tesHasil.setText("Yuk, cari tau informasi untuk meredakan masalahmu. ");
+        }
 
         simpanData.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,8 +86,10 @@ public class actResultDepresi extends AppCompatActivity {
                 if(totalQuiz == "SELAMAT. KAMU BAIK BAIK SAJA"){
                     Intent intent = new Intent( actResultDepresi.this, actHome.class );
                     startActivity(intent);
-                }
-                else {
+                }else if(totalQuiz == "KAMU MERASA SANGAT TIDAK BERDAYA. SEGERA HUBUNGI BANTUAN PROFESIONAL DI KLINIK PSIKOLOGI YARSI" ){
+                    Intent intent = new Intent( actResultDepresi.this, klinikYarsi.class );
+                    startActivity(intent);
+                } else  {
                     Intent intent = new Intent( actResultDepresi.this, actDepresiHeal1.class );
                     startActivity(intent);
                 }

@@ -24,7 +24,7 @@ import java.util.Map;
 public class actResultAnxiety extends AppCompatActivity {
     int type_Question;
     int number_Question;
-    TextView Total;
+    TextView Total, tesHasil;
     Button simpanData;
     FirebaseFirestore fStore;
     FirebaseAuth fAuth;
@@ -44,11 +44,22 @@ public class actResultAnxiety extends AppCompatActivity {
 
         Total = findViewById(R.id.total);
         simpanData = findViewById(R.id.simpanData);
+        tesHasil = findViewById(R.id.tesHasil);
 
         type_Question = getIntent().getIntExtra("total",-1);
         number_Question = 0;
 
         Total.setText(setTingkatAnxietyOrang(type_Question));
+
+        String hasilTes = Total.getText().toString();
+
+        if (hasilTes == "KAMU BAIK BAIK SAJA"){
+            tesHasil.setText("Kamu mampu mengatasi kecemasan. Kembali ke beranda.");
+        } else if(hasilTes == "SEPERTINYA KAMU SEDANG ADA MASALAH") {
+            tesHasil.setText("Yuk, konsultasi dengan pakarnya. ");
+        }else{
+            tesHasil.setText("Baca dulu yuk tentang kesehatan mental.");
+        }
 
         simpanData.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +86,10 @@ public class actResultAnxiety extends AppCompatActivity {
 
                 if(totalQuiz == "KAMU BAIK BAIK SAJA"){
                     Intent intent = new Intent( actResultAnxiety.this, actHome.class );
+                    startActivity(intent);
+                }
+                else if(totalQuiz == "SEPERTINYA KAMU SEDANG ADA MASALAH") {
+                    Intent intent = new Intent( actResultAnxiety.this, klinikYarsi.class );
                     startActivity(intent);
                 }
                 else {
@@ -104,7 +119,7 @@ public class actResultAnxiety extends AppCompatActivity {
             tingkatstress = "TAMPAKNYA BANYAK HAL YANG KAMU CEMASKAN SAAT INI DAN KAMU MERASA SULIT UNTUK MENGHADAPINYA"; // BERAT
         }
         else if(type_question >= 20){
-            tingkatstress = "SEPERTINYA KAMU SEDANG ADA MASALAH, BACA DULU YUK TENTANG KESEHATAN MENTAL"; // SANGAT BERAT
+            tingkatstress = "SEPERTINYA KAMU SEDANG ADA MASALAH"; // SANGAT BERAT
         }
         return tingkatstress;
     }

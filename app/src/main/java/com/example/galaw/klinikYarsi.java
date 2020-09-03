@@ -27,7 +27,7 @@ public class klinikYarsi extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData((Uri.parse("tel: 0214223138")));
+                intent.setData((Uri.parse("tel: 081908136299")));
                 startActivity(intent);
             }
         });

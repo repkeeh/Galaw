@@ -63,15 +63,15 @@
                 android:background="@drawable/anx8"
                 android:layout_marginTop="980dp"
                 />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1150dp"
-                android:text="ingin konsul dengan psikolog?sila klik tombol dibawah"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="1150dp"
+                android:text="Ingin konsul dengan psikolog? sila klik tombol di bawah"
                 android:textColor="#C062F5"
-                android:textSize="12dp"
-                />
+                android:textSize="12dp" />
             <Button
                 android:id="@+id/callKlinikD"
                 android:layout_width="match_parent"
@@ -84,19 +84,19 @@
                 android:textSize="15dp"
                 android:textColor="#ffff"
                 />
+
             <Button
                 android:id="@+id/backTestD"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1250dp"
-                android:text="lanjut test Depresi"
-                android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:background="#ffff"
-                android:textSize="15dp"
-                android:textColor="#C062F5"
+                android:layout_marginTop="1250dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginBottom="50dp"
-                />
+                android:background="#ffff"
+                android:text="lanjut Mengukur Depresi"
+                android:textColor="#C062F5"
+                android:textSize="15dp" />
         </RelativeLayout>
 
     </ScrollView>

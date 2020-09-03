@@ -27,10 +27,9 @@
                 >
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="160dp"
-                    android:background="@drawable/quizstress"
-                    />
+                    android:layout_width="match_parent"
+                    android:layout_height="171dp"
+                    android:background="@drawable/cekkesehatan" />
 
                 <Button
                     android:id="@+id/banner1"

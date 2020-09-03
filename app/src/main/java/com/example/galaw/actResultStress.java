@@ -25,7 +25,7 @@ public class actResultStress extends AppCompatActivity {
 
     int type_Question;
     int number_Question;
-    TextView Total;
+    TextView Total, tesHasil;
     Button simpanData;
     FirebaseFirestore fStore;
     FirebaseAuth fAuth;
@@ -45,10 +45,19 @@ public class actResultStress extends AppCompatActivity {
 
         Total = findViewById(R.id.total);
         simpanData = findViewById(R.id.simpanData);
+        tesHasil = findViewById(R.id.tesHasil);
 
         type_Question = getIntent().getIntExtra("total",-1);
         number_Question = 0;
         Total.setText(setTingkatStressOrang(type_Question));
+
+        String hasilTes = Total.getText().toString();
+
+        if (hasilTes == "TAMPAKNYA KAMU BAIK BAIK SAJA"){
+            tesHasil.setText("Kamu mampu mengatasi stress. Kembali ke beranda. ");
+        } else {
+            tesHasil.setText("Mari lanjutkan ke Ruang Sandar. ");
+        }
 
         simpanData.setOnClickListener(new View.OnClickListener() {
             @Override

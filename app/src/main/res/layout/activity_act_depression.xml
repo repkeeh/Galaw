@@ -18,13 +18,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:textColor="#C062F5"
-            android:text="Test dan hasil nya bersifat pribadi.
-jadi hanya kamu dan psikolog yang tau"
-            android:gravity="center_horizontal"
             android:layout_marginTop="250dp"
-            />
+            android:gravity="center_horizontal"
+            android:text="Tes dan hasilnya bersifat pribadi, jadi hanya kamu dan psikolog yang tahu"
+            android:textColor="#C062F5"
+            android:textSize="15dp" />
         <Button
             android:background="@drawable/custombutton"
             android:layout_width="match_parent"

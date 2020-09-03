@@ -7,10 +7,7 @@
     tools:context=".klinikYarsi"
     android:background="@drawable/klinikyarsi"
     >
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,34 +18,34 @@
                 android:layout_height="match_parent"
 
                 />
+
             <Button
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
                 android:id="@+id/noKlinikYarsi"
-                android:layout_marginRight="40dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="570dp"
-                android:background="@drawable/custombutton"
-                android:text="konsultasi via telepon"
-                android:textSize="20dp"
-                android:textColor="#ffff"
-                />
-            <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:id="@+id/chatKlinik"
-                android:layout_marginRight="40dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="650dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/custombutton"
+                android:text="konsultasi via telepon"
+                android:textColor="#ffff"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/chatKlinik"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="720dp"
+                android:layout_marginRight="40dp"
                 android:background="@drawable/whitebtn"
                 android:text="konsultasi"
-                android:textSize="20dp"
                 android:textColor="@color/color2"
-                />
+                android:textSize="20dp" />
 
 
         </RelativeLayout>
-    </ScrollView>
+
 
 
 </RelativeLayout>
