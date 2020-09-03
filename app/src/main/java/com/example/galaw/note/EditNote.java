@@ -6,12 +6,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.galaw.DiaryHome;
+import com.example.galaw.fragProfile;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -29,18 +31,17 @@ public class EditNote extends AppCompatActivity {
     Intent data;
     EditText editNoteTitle,editNoteContent;
     FirebaseFirestore fStore;
-    ProgressBar spinner;
     FirebaseUser user;
+    Button saveEdit;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_note);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
 
         fStore = FirebaseFirestore.getInstance();
-        spinner = findViewById(R.id.progressBar2);
         user = FirebaseAuth.getInstance().getCurrentUser();
 
         data = getIntent();
@@ -55,8 +56,8 @@ public class EditNote extends AppCompatActivity {
         editNoteTitle.setText(noteTitle);
         editNoteContent.setText(noteContent);
 
-        FloatingActionButton fab = findViewById(R.id.saveEditedNote);
-        fab.setOnClickListener(new View.OnClickListener() {
+        saveEdit = findViewById(R.id.saveEditedNote);
+        saveEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -68,11 +69,11 @@ public class EditNote extends AppCompatActivity {
                     return;
                 }
 
-                spinner.setVisibility(View.VISIBLE);
+
 
                 // save note
 
-                DocumentReference docref = fStore.collection("notes").document(user.getUid()).collection("myNotes").document(data.getStringExtra("noteId"));
+                DocumentReference docref = fStore.collection("Diary").document(user.getUid()).collection("myNotes").document(data.getStringExtra("noteId"));
 
                 Map<String, Object> note = new HashMap<>();
                 note.put("title",nTitle);
@@ -82,14 +83,14 @@ public class EditNote extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Toast.makeText(EditNote.this, "Note Saved.", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), DiaryHome.class));
+                        startActivity(new Intent(getApplicationContext(), fragProfile.class));
 
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Toast.makeText(EditNote.this, "Error, Try again.", Toast.LENGTH_SHORT).show();
-                        spinner.setVisibility(View.VISIBLE);
+
                     }
                 });
 

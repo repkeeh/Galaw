@@ -1,5 +1,6 @@
 package com.example.galaw;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -7,28 +8,38 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.cardview.widget.CardView;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
+import com.example.galaw.note.EditNote;
 import com.example.galaw.note.NoteDetails;
 import com.example.galaw.model.Note;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
@@ -40,6 +51,8 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -71,6 +84,9 @@ public class fragProfile extends Fragment {
     FirebaseUser user;
     FirestoreRecyclerAdapter<Note, NoteViewHolder> noteAdapter;
     RecyclerView noteLists;
+    NavigationView nav_view;
+    DrawerLayout drawerLayout;
+    ActionBarDrawerToggle toggle;
 
 
 
@@ -143,19 +159,49 @@ public class fragProfile extends Fragment {
                 noteViewHolder.noteContent.setText(note.getContent());
                 final int code = getRandomColor();
                 noteViewHolder.mCardView.setCardBackgroundColor(noteViewHolder.view.getResources().getColor(code, null));
-                final String docId = noteAdapter.getSnapshots().getSnapshot(i).getId();
-                noteViewHolder.view.setOnClickListener(new View.OnClickListener() {
+
+                ImageView menuIcon = noteViewHolder.view.findViewById(R.id.menuIcon);
+                menuIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(View v) {
-                        Intent i = new Intent(v.getContext(), NoteDetails.class);
-                        i.putExtra("title",note.getTitle());
-                        i.putExtra("content",note.getContent());
-                        i.putExtra("code",code);
-                        i.putExtra("noteId",docId);
-                        v.getContext().startActivity(i);
+                    public void onClick(final View v) {
+                        final String docId = noteAdapter.getSnapshots().getSnapshot(i).getId();
+                        PopupMenu menu = new PopupMenu(v.getContext(),v);
+                        menu.setGravity(Gravity.END);
+                        menu.getMenu().add("Edit").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                            @Override
+                            public boolean onMenuItemClick(MenuItem item) {
+                                startActivity(new Intent(getApplicationContext(),EditNote.class));
+                                return false;
+                            }
+
+                            private Context getApplicationContext() {
+                                return null;
+                            }
+                        });
+
+                        menu.getMenu().add("Delete").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                            @Override
+                            public boolean onMenuItemClick(MenuItem item) {
+                                DocumentReference docRef = fStore.collection("Diary").document(user.getUid()).collection("myNotes").document(docId);
+                                docRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        // note deleted
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+
+                                    }
+                                });
+                                return false;
+                            }
+                        });
+
+                        menu.show();
+
                     }
                 });
-
 
 
             }
