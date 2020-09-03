@@ -82,15 +82,15 @@ public class actStressHeal1 extends AppCompatActivity {
     StressText S09 = new StressText(R.drawable.b9,"Teman yang membuatmu gelisah.");
     StressText S10 = new StressText(R.drawable.b10,"Ucapan-ucapan yang menyakitkan hati.");
     StressText S11 = new StressText(R.drawable.b11,"Dijauhi orang tersayang.");
-    StressText S12 = new StressText(R.drawable.b12,"Tuntutan orantuamu yang terasa terlampau berat.");
+    StressText S12 = new StressText(R.drawable.b12,"Tuntutan orang tuamu yang terasa terlampau berat.");
     StressText S13 = new StressText(R.drawable.b13,"Kamu telah melakukan yang terbaik.");
     StressText S14 = new StressText(R.drawable.b14,"Kehendak dunia yang dapat membuat hari menjadi sendu.");
     StressText S15 = new StressText(R.drawable.b15,"Kamu patut menghargai diri dan berbangga hati.");
     StressText S16 = new StressText(R.drawable.b16,"Kamu sudah melakukan yang terbaik hingga detik ini.");
-    StressText S17 = new StressText(R.drawable.b17,"Terlalu besar usahamu hingga lupa dirimu perlu istirahat");
+    StressText S17 = new StressText(R.drawable.b17,"Terlalu besar usahamu hingga lupa dirimu perlu istirahat.");
     StressText S18 = new StressText(R.drawable.b18,"Tenanglah, tidak mengapa..");
-    StressText S19 = new StressText(R.drawable.b19,"Sekarang kamu disini, sekarang kamu bisa istirahatkan diri");
-    StressText S20 = new StressText(R.drawable.b20,"Pikirin dirimu dan semua tentangmu");
+    StressText S19 = new StressText(R.drawable.b19,"Sekarang kamu disini, sekarang kamu bisa istirahatkan diri.");
+    StressText S20 = new StressText(R.drawable.b20,"Pikirkan dirimu dan semua tentangmu.");
     StressText S21 = new StressText(R.drawable.b21,"Selanjutnya kami akan membantumu lebih rileks.");
 
 

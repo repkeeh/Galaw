@@ -170,15 +170,14 @@ public class fragProfile extends Fragment {
                         menu.getMenu().add("Edit").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
                             @Override
                             public boolean onMenuItemClick(MenuItem item) {
-                                startActivity(new Intent(getApplicationContext(),EditNote.class));
+                                Intent i = new Intent(v.getContext(), EditNote.class);
+                                i.putExtra("title",note.getTitle());
+                                i.putExtra("content",note.getContent());
+                                i.putExtra("noteId",docId);
+                                startActivity(i);
                                 return false;
                             }
-
-                            private Context getApplicationContext() {
-                                return null;
-                            }
                         });
-
                         menu.getMenu().add("Delete").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
                             @Override
                             public boolean onMenuItemClick(MenuItem item) {
